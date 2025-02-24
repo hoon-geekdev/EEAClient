@@ -4,22 +4,19 @@ using EEA.SOData;
 using EEA.UI;
 using EEA.Manager;
 using UnityEngine;
+using EEA.Define;
 
 namespace EEA.Manager
 {
     public class GameManager : SingletonMono<GameManager>
     {
-        [SerializeField] private GameObject _levelUpPopupPref;
         [SerializeField] private SOPlayerData _data;
-
-        private Canvas _canvas;
 
         private int _level;
         private int _killCount;
         private int _exp;
 
         private Player _player;
-
 
         private float _time;
         private int[] LevelUpExp = {10, 30, 60, 100, 150, 210, 280, 360, 450, 550 };
@@ -35,9 +32,8 @@ namespace EEA.Manager
 
         protected override void OnAwake()
         {
-            // Player tag·Î Ã£±â
+            // Player tagë¡œ ì°¾ê¸°
             _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-            _canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
 
             _player.Init(500, 3f);
         }
@@ -49,14 +45,14 @@ namespace EEA.Manager
                 InventorySessionAbility.AddItem(_data.SessionAbilities[i], i, 0);
             }
 
-            // ÀÓ½Ã ÄÚµå
-            int abilityIdx = 0;
-            int level = 4;
-            SessionAbilityItem ability = InventorySessionAbility.GetItem(abilityIdx);
-            InventorySessionAbility.AddItem(ability.Data, abilityIdx, level);
+            // ì„ì‹œ ì½”ë“œ
+            //int abilityIdx = 0;
+            //int level = 4;
+            //SessionAbilityItem ability = InventorySessionAbility.GetItem(abilityIdx);
+            //InventorySessionAbility.AddItem(ability.Data, abilityIdx, level);
 
-            Player.AddOrLevelUpSessionAbility(abilityIdx);
-            // ÀÓ½Ã ÄÚµå ¿£µå
+            //Player.AddOrLevelUpSessionAbility(abilityIdx);
+            // ì„ì‹œ ì½”ë“œ ì—”ë“œ
         }
 
         private void Update()
@@ -81,8 +77,9 @@ namespace EEA.Manager
                 _exp -= LevelUpExp[_level];
                 _level++;
 
-                // ·¹º§¾÷ ÆË¾÷
-                UILevelUpPopup _levelUpPopup = Instantiate(_levelUpPopupPref, _canvas.transform).GetComponent<UILevelUpPopup>();
+                // ë ˆë²¨ì—… íŒì—…
+                //UIAbilitySelectPopup _levelUpPopup = Instantiate(_levelUpPopupPref, _canvas.transform).GetComponent<UIAbilitySelectPopup>();
+                UIManager.Instance.CreateUI<UIAbilitySelectPopup>(AssetPathUI.UIAbilitySelectPopup);
             }
         }
 

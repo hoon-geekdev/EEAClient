@@ -1,4 +1,5 @@
 using EEA.Extension;
+using EEA.Manager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -37,6 +38,7 @@ namespace EEA.UI
         private void OnClickBtn()
         {
             //GameManager.Instance.TryLogin();
+            SceneManager.Instance.ChangeScene(eScene.LobbyScene);
         }
 
         public void StartBtnEnable(bool isEnable)

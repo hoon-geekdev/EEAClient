@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace EEA.Manager
 {
@@ -21,15 +20,11 @@ namespace EEA.Manager
                         if (_instance == null)
                         {
                             _instance = FindInstanceInActiveScene();
-                            if (_instance != null)
-                            {
-                                (_instance as SingletonMono<T>)?.OnAwake();
-                            }
-                            else
+                            if (_instance == null)
                             {
                                 GameObject instanceObject = new GameObject();
                                 _instance = instanceObject.AddComponent<T>();
-                                (_instance as SingletonMono<T>)?.OnAwake();
+                                _instance.name = typeof(T).ToString();
                             }
                         }
                     }
@@ -66,16 +61,9 @@ namespace EEA.Manager
             _isDestroyed = true;
         }
 
-        public virtual IEnumerator InitAsync()
-        {
-            yield return null;
-        }
-
-        public virtual void Init() { }
-
         private static T FindInstanceInActiveScene()
         {
-            foreach (GameObject root in SceneManager.GetActiveScene().GetRootGameObjects())
+            foreach (GameObject root in UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects())
             {
                 T instance = root.GetComponentInChildren<T>(true);
                 if (instance != null)

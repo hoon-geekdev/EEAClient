@@ -21,6 +21,16 @@ namespace EEA.Object
         public Inventory Inventory => _inventory;
         public InventorySessionAbility InventorySessionAbility => _inventorySessionAbility;
 
+        public float LookAngle()
+        {
+            // 캐릭터가 초기에 바라 보는 방향
+            if (_prevInputVector == Vector2.zero)
+                return 180f;
+
+            float angle = Mathf.Atan2(_prevInputVector.y, _prevInputVector.x) * Mathf.Rad2Deg;
+            return angle;
+        }
+
         protected override void OnAwake()
         {
             Finder = GetComponent<ObjectFinder>();

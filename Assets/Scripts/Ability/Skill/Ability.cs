@@ -6,20 +6,31 @@ namespace EEA.AbilitySystem
 {
     public class Ability : MonoBehaviour
     {
-        [SerializeField] protected GameObject _pref;
+        [SerializeField] protected GameObject _unitPref;
+        protected ObjectBase _owner;
         protected float _damage;
         protected int _level = 0;
         protected float _speed;
         protected float _delay;
+        protected float _duration;
         protected int _penetration;
         protected int _count;
-        protected ObjectBase _owner;
         private long _uid;
 
         private void Awake()
         {
             _owner = GetComponentInParent<ObjectBase>();
+
+            OnAwake();
         }
+
+        private void Start()
+        {
+            OnStart();
+        }
+
+        protected virtual void OnAwake() { }
+        protected virtual void OnStart() { }
 
         public void Init(long uid)
         {
