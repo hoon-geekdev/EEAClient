@@ -17,20 +17,9 @@ namespace EEA.AbilitySystem
         protected override void OnStart()
         {
             _player = _owner as Player;
-            _delay = 1f;
-            _duration = 0.2f;
-            _damage = 30f;
-
             _particle = GetComponentInChildren<ParticleSystem>();
 
             StartCoroutine(Effect());
-        }
-
-        // 이펙트의 범위를 표시하기 위한 기즈모
-        private void OnDrawGizmos()
-        {
-            if (_player == null)
-                return;
         }
 
         private IEnumerator Effect()

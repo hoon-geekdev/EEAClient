@@ -1,6 +1,4 @@
-using EEA.Object;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EEA.AbilitySystem

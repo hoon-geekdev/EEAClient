@@ -21,6 +21,7 @@ MonoBehaviour:
   _abilityPref: {fileID: 9054894921970558047, guid: 4b873de231ff51248b4d31b606d92906, type: 3}
   _baseSpeed: -150
   _baseDelay: 2
+  _baseDuration: 3
   _baseAbility: 20
   _abilityByLevel:
   - 0.5

@@ -46,12 +46,12 @@ namespace EEA.Manager
             }
 
             // 임시 코드
-            //int abilityIdx = 0;
-            //int level = 4;
-            //SessionAbilityItem ability = InventorySessionAbility.GetItem(abilityIdx);
-            //InventorySessionAbility.AddItem(ability.Data, abilityIdx, level);
+            int abilityIdx = 5;
+            int level = 4;
+            SessionAbilityItem ability = InventorySessionAbility.GetItem(abilityIdx);
+            InventorySessionAbility.AddItem(ability.Data, abilityIdx, level);
 
-            //Player.AddOrLevelUpSessionAbility(abilityIdx);
+            Player.AddOrLevelUpSessionAbility(abilityIdx);
             // 임시 코드 엔드
         }
 

@@ -18,10 +18,11 @@ MonoBehaviour:
   _icon: {fileID: 0}
   _type: 0
   _statusType: 0
-  _abilityPref: {fileID: 0}
+  _abilityPref: {fileID: 8493198232875286761, guid: afd7d2758557fe544827b41258784c20, type: 3}
   _baseSpeed: 0
-  _baseDelay: 0
-  _baseAbility: 0
+  _baseDelay: 1
+  _baseDuration: 0.2
+  _baseAbility: 50
   _abilityByLevel: []
   _countByLevel: 
   _penetrationByLevel: 

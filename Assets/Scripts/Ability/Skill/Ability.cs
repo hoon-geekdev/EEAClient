@@ -19,7 +19,7 @@ namespace EEA.AbilitySystem
 
         private void Awake()
         {
-            _owner = GetComponentInParent<ObjectBase>();
+            _owner = GameManager.Instance.Player;
 
             OnAwake();
         }
@@ -54,6 +54,7 @@ namespace EEA.AbilitySystem
             _delay = ability.Data._baseDelay;
             _count = ability.ObjectCount;
             _penetration = ability.Penetration;
+            _duration = ability.Data._baseDuration;
 
             OnRefreshData();
         }

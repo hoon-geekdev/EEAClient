@@ -95,7 +95,7 @@ namespace EEA.Object
             Vector3 playerPos = GameManager.Instance.Player.transform.position;
             Vector3 dir = (transform.position - playerPos);
 
-            _rigid.AddForce(dir.normalized * 3, ForceMode2D.Impulse);
+            _rigid.AddForce(dir.normalized * 1, ForceMode2D.Impulse);
         }
 
         private IEnumerator Dead()

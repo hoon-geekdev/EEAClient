@@ -19,6 +19,7 @@ namespace EEA.SOData
         public GameObject _abilityPref;
         public float _baseSpeed;
         public float _baseDelay;
+        public float _baseDuration;
 
         [Header("Level Info")]
         public float _baseAbility;

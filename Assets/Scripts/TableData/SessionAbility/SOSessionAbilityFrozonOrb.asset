@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6f29c30c0976a4ba304fba34c96eeb, type: 3}
+  m_Name: SOSessionAbilityFrozonOrb
+  m_EditorClassIdentifier: 
+  _id: 0
+  _name: IceBall
+  _desc: "\uB370\uBBF8\uC9C0 {0}% \uC99D\uAC00\n\uBCF4\uC870 \uD22C\uC0AC\uCCB4 {1}\uAC1C
+    \uC99D\uAC00"
+  _icon: {fileID: -205726582, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
+  _type: 0
+  _statusType: 0
+  _abilityPref: {fileID: 1988454257624267340, guid: 21b98c7a606436b41adf3c6a7d7139c3, type: 3}
+  _baseSpeed: 3
+  _baseDelay: 5
+  _baseAbility: 20
+  _abilityByLevel:
+  - 0.35
+  - 0.7
+  - 1
+  - 1.4
+  - 2
+  _countByLevel: 05000000080000000c000000140000001e000000
+  _penetrationByLevel: ffffffffffffffffffffffffffffffffffffffff

@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unitPref: {fileID: 1566101834187318993, guid: e03f885c0db2a9644a40be122fd85726, type: 3}
+  _unitPrefIndex: 2

@@ -17,7 +17,7 @@ MonoBehaviour:
   _desc: "\uC774\uB3D9 \uC18D\uB3C4 {0}% \uC99D\uAC00"
   _icon: {fileID: -966295699, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   _type: 1
-  _statusType: 1
+  _statusType: 2
   _abilityPref: {fileID: 0}
   _baseSpeed: 0
   _baseDelay: 0

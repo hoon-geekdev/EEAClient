@@ -6,6 +6,7 @@ namespace EEA.Object
 {
     public enum StatusType
     {
+        None,
         Health,
         MoveSpeed, 
         AbilitySpeed 

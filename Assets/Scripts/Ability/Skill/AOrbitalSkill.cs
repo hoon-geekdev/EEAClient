@@ -6,7 +6,6 @@ namespace EEA.AbilitySystem
 {
     public class AOrbitalSkill : Ability
     {
-        private float _duration = 3f;
         protected override void OnRefreshData()
         {
             Arrange();
