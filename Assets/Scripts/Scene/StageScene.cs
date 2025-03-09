@@ -10,6 +10,9 @@ namespace EEA.Scene
         protected override IEnumerator OnEnterAsync(params object[] args)
         {
             UIStageHUD hud = UIManager.Instance.CreateUI<UIStageHUD>(AssetPathUI.UIStageHUD);
+            GameManager.Instance.InitUserData();
+            StageManager.Instance.SetStage(11000001);
+
             yield return base.OnEnterAsync();
         }
 

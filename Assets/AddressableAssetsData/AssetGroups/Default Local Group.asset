@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: ad2f733c2e91ac044b58303da293112d
   m_SerializeEntries:
+  - m_GUID: 0fa5ccb9b3b94bc4b85afee66f7d6385
+    m_Address: Object
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 11c377dc900fdca4ba6b06475853cf45
     m_Address: Texture
     m_ReadOnly: 0
@@ -32,6 +37,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ca9d3e252c18aa649b289b0501310e10
     m_Address: Sounds
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d182d5ded0d6c874299bba2b4451d174
+    m_Address: Prefabs
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

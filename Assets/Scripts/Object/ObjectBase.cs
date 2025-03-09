@@ -6,6 +6,7 @@ namespace EEA.Object
 {
     public class ObjectBase : MonoBehaviour
     {
+        protected int _id;
         protected Status _status = new Status();
         protected float _health;
         protected Rigidbody2D _rigid;

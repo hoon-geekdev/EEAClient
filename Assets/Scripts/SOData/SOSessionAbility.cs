@@ -6,7 +6,7 @@ namespace EEA.SOData
     [CreateAssetMenu(fileName = "SOSessionAbility", menuName = "SO/SessionAbility")]
     public class SOSessionAbility : ScriptableObject
     {
-        public enum AbilityType { Skill, Item, Heal }
+        
         public int _id;
         public string _name;
         [TextArea]

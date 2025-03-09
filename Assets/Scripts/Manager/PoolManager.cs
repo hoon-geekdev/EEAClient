@@ -13,6 +13,8 @@ namespace EEA.Manager
         private List<GameObject>[] _objectPool;
         private List<GameObject>[] _effectPool;
 
+        private Dictionary<string, List<GameObject>> _newObjectPool = new Dictionary<string, List<GameObject>>();
+
         protected override void OnAwake()
         {
             base.OnAwake();
@@ -57,6 +59,30 @@ namespace EEA.Manager
             }
             GameObject obj = Instantiate(_effectPrefabs[idx]);
             _effectPool[idx].Add(obj);
+            return obj;
+        }
+
+        public GameObject GetObject(string path)
+        {
+            if (_newObjectPool.ContainsKey(path))
+            {
+                for (int i = 0; i < _newObjectPool[path].Count; i++)
+                {
+                    if (_newObjectPool[path][i].activeSelf == false)
+                    {
+                        _newObjectPool[path][i].SetActive(true);
+                        return _newObjectPool[path][i];
+                    }
+                }
+            }
+
+            GameObject obj = ResourceManager.Instance.Create(path, transform);
+
+            if (!_newObjectPool.ContainsKey(path))
+                _newObjectPool.Add(path, new List<GameObject> { obj });
+            else
+                _newObjectPool[path].Add(obj);
+
             return obj;
         }
     }

@@ -11,6 +11,7 @@ TagManager:
   - Skill
   - FxTemporaire
   - Canvas
+  - DropItem
   layers:
   - Default
   - TransparentFX

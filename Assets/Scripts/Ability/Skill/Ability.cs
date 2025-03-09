@@ -9,13 +9,12 @@ namespace EEA.AbilitySystem
         [SerializeField] protected GameObject _unitPref;
         protected ObjectBase _owner;
         protected float _damage;
-        protected int _level = 0;
         protected float _speed;
         protected float _delay;
         protected float _duration;
         protected int _penetration;
         protected int _count;
-        private long _uid;
+        private int _tableCode;
 
         private void Awake()
         {
@@ -32,29 +31,28 @@ namespace EEA.AbilitySystem
         protected virtual void OnAwake() { }
         protected virtual void OnStart() { }
 
-        public void Init(long uid)
+        public void Init(int tableCode)
         {
-            _uid = uid;
+            _tableCode = tableCode;
             RefreshData();
         }
 
         public void RefreshData()
         {
-            SessionAbilityItem ability = GameManager.Instance.InventorySessionAbility.GetItem(_uid);
+            SessionAbilityData ability = GameManager.Instance.InventorySessionAbility.GetItem(_tableCode);
 
             if (ability == null)
             {
-                Debug.LogError($"Ability is null. uid: {_uid}");
+                Debug.LogError($"Ability is null. uid: {_tableCode}");
                 return;
             }
 
-            _level = ability.Level;
-            _damage = ability.Data._baseAbility * ability.Ability;
-            _speed = ability.Data._baseSpeed;
-            _delay = ability.Data._baseDelay;
-            _count = ability.ObjectCount;
-            _penetration = ability.Penetration;
-            _duration = ability.Data._baseDuration;
+            _damage = ability.GetCalcAbility();
+            _speed = ability.GetSpeed();
+            _delay = ability.GetDelay();
+            _count = ability.GetCount();
+            _penetration = ability.GetPenetration();
+            _duration = ability.GetDuration();
 
             OnRefreshData();
         }

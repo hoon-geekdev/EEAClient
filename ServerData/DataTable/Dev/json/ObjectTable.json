@@ -1,0 +1,135 @@
+[
+  {
+    "Code": 13000001,
+    "Unique_name": "쫄병1",
+    "Health": 10,
+    "Move_speed": 0.5,
+    "Drop_items": [
+      0,
+      14000010,
+      14000011,
+      14000012
+    ],
+    "Drop_rates": [
+      400,
+      480,
+      100,
+      20
+    ],
+    "Asset_path": "Object/Monster/EnemyA.prefab"
+  },
+  {
+    "Code": 13000002,
+    "Unique_name": "쫄병2",
+    "Health": 15,
+    "Move_speed": 1.0,
+    "Drop_items": [
+      0,
+      14000010,
+      14000011,
+      14000012
+    ],
+    "Drop_rates": [
+      400,
+      480,
+      100,
+      20
+    ],
+    "Asset_path": "Object/Monster/EnemyB.prefab"
+  },
+  {
+    "Code": 13000003,
+    "Unique_name": "쫄병3",
+    "Health": 20,
+    "Move_speed": 1.2,
+    "Drop_items": [
+      0,
+      14000010,
+      14000011,
+      14000012
+    ],
+    "Drop_rates": [
+      400,
+      480,
+      100,
+      20
+    ],
+    "Asset_path": "Object/Monster/EnemyB.prefab"
+  },
+  {
+    "Code": 13000004,
+    "Unique_name": "쫄병4",
+    "Health": 30,
+    "Move_speed": 1.0,
+    "Drop_items": [
+      0,
+      14000010,
+      14000011,
+      14000012
+    ],
+    "Drop_rates": [
+      400,
+      480,
+      100,
+      20
+    ],
+    "Asset_path": "Object/Monster/EnemyA.prefab"
+  },
+  {
+    "Code": 13000005,
+    "Unique_name": "쫄병5",
+    "Health": 40,
+    "Move_speed": 1.0,
+    "Drop_items": [
+      0,
+      14000010,
+      14000011,
+      14000012
+    ],
+    "Drop_rates": [
+      400,
+      480,
+      100,
+      20
+    ],
+    "Asset_path": "Object/Monster/EnemyB.prefab"
+  },
+  {
+    "Code": 13000006,
+    "Unique_name": "쫄병6",
+    "Health": 50,
+    "Move_speed": 1.2,
+    "Drop_items": [
+      0,
+      14000010,
+      14000011,
+      14000012
+    ],
+    "Drop_rates": [
+      300,
+      250,
+      250,
+      200
+    ],
+    "Asset_path": "Object/Monster/EnemyB.prefab"
+  },
+  {
+    "Code": 13000007,
+    "Unique_name": "쫄병7",
+    "Health": 60,
+    "Move_speed": 1.0,
+    "Drop_items": [
+      0,
+      14000010,
+      14000011,
+      14000012
+    ],
+    "Drop_rates": [
+      300,
+      250,
+      250,
+      200
+    ],
+    "Asset_path": "Object/Monster/EnemyA.prefab"
+  }
+]

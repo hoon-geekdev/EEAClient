@@ -1,5 +1,7 @@
 using EEA.Manager;
 using System.Collections;
+using System.Linq;
+using TableData;
 using UnityEngine;
 
 namespace EEA.Object
@@ -19,6 +21,20 @@ namespace EEA.Object
             _rigid.simulated = true;
             _animator.SetBool("Dead", false);
             _spriteRenderer.sortingOrder = 25;
+        }
+
+        public void Init(int tableId)
+        {
+            _id = tableId;
+            ObjectTable table = TableManager.Instance.GetData<ObjectTable>(_id);
+
+            _target = GameManager.Instance.Player.GetComponent<Rigidbody2D>();
+            _collider.enabled = true;
+            _rigid.simulated = true;
+            _animator.SetBool("Dead", false);
+            _spriteRenderer.sortingOrder = 25;
+
+            base.Init(table.Health, table.Move_speed);
         }
 
         private void OnEnable()
@@ -85,7 +101,7 @@ namespace EEA.Object
             else
             {
                 _animator.SetTrigger("Hit");
-                StartCoroutine(KnockBack());
+                //StartCoroutine(KnockBack());
             }
         }
 
@@ -112,6 +128,36 @@ namespace EEA.Object
             yield return new WaitForSeconds(0.8f);
             gameObject.SetActive(false);
 
+            ItemDrop();
+
+        }
+
+        private void ItemDrop()
+        {
+            ObjectTable table = TableManager.Instance.GetData<ObjectTable>(_id);
+            int sumWeight = table.Drop_rates.Sum();
+            int random = Random.Range(0, sumWeight);
+            int dropItemCode = 0;
+
+            for (int i = 0; i < table.Drop_items.Length; i++)
+            {
+                random -= table.Drop_rates[i];
+                if (random <= 0)
+                {
+                    dropItemCode = table.Drop_items[i];
+                    break;
+                }
+            }
+
+            if (dropItemCode != 0)
+            {
+                ItemTable itemTable = TableManager.Instance.GetData<ItemTable>(dropItemCode);
+                GameObject dropGo = PoolManager.Instance.GetObject(itemTable.Asset_path);
+                dropGo.transform.position = transform.position;
+
+                DropItem dropItem = dropGo.GetComponent<DropItem>();
+                dropItem.Init(dropItemCode);
+            }
         }
     }
 }

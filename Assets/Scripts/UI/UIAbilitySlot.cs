@@ -6,6 +6,9 @@ using UnityEngine.UI;
 using EEA.Manager;
 using EEA.SOData;
 using System;
+using EEA.Object;
+using TableData;
+using UnityEditor.Playables;
 
 namespace EEA.UI
 {
@@ -17,7 +20,8 @@ namespace EEA.UI
         [SerializeField] private TextMeshProUGUI _textLevel;
         [SerializeField] private Button _btnLevelUp;
 
-        private long _uid;
+        private int _tableCode;
+        private SessionAbilityData _nextAbilityData;
         private Action _onCmdClose;
 
         private void Awake()
@@ -30,53 +34,82 @@ namespace EEA.UI
             OnClick();
         }
 
-        public void Init(long uid, Action onCmdClose)
+        public void Init(int tableCode, Action onCmdClose)
         {
-            _uid = uid;
+            _tableCode = tableCode;
             string name = string.Empty;
 
-            SessionAbilityItem ability = GameManager.Instance.InventorySessionAbility.GetItem(_uid);
-            switch (ability.Data._type)
-            {
-                case SOSessionAbility.AbilityType.Skill:
-                    int value = 0;
-                    if (ability.ObjectCount > 0)
-                        value = ability.ObjectCount;
-                    else if (ability.Penetration > 0)
-                        value = ability.Penetration;
+            SessionAbilityData curAbility = GameManager.Instance.InventorySessionAbility.GetItem(_tableCode);
+            int levelCode;
 
-                    _textDesc.text = string.Format(ability.Data._desc, ability.Ability * 100, value);
-                    _textLevel.text = $"Lv. {ability.Level:D2}";
+            AbilityTable abilityTable = TableManager.Instance.GetData<AbilityTable>(_tableCode);
+            if (curAbility != null)
+                levelCode = curAbility.GetNextLevelCode();
+            else
+                levelCode = abilityTable.Level_datas.Length > 0 ? abilityTable.Level_datas[0] : 0;
+
+            AbilityLevelTable levelTable = null;
+            if (levelCode > 0)
+                levelTable = TableManager.Instance.GetData<AbilityLevelTable>(levelCode);
+
+            _nextAbilityData = new SessionAbilityData(abilityTable, levelTable);
+
+            switch (_nextAbilityData.GetAbilityType())
+            {
+                case AbilityType.Skill:
+                    {
+                        int curValue = 0;
+                        int value = 0;
+                        float curAbilityValue = curAbility != null ? curAbility.GetAbility() : 0f;
+                        float abilityValue = _nextAbilityData.GetAbility();
+                        if (_nextAbilityData.GetCount() > 0)
+                        {
+                            curValue = curAbility != null ? curAbility.GetCount() : 0;
+                            value = _nextAbilityData.GetCount();
+                        }
+                        else if (_nextAbilityData.GetPenetration() > 0)
+                        {
+                            curValue = curAbility != null ? curAbility.GetPenetration() : 0;
+                            value = _nextAbilityData.GetPenetration();
+                        }
+
+                        _textDesc.text = string.Format(_nextAbilityData.GetDesc(), (abilityValue - curAbilityValue) * 100, value - curValue);
+                        _textLevel.text = $"Lv. {_nextAbilityData.Level:D2}";
+                    }
+                    
                     break;
-                case SOSessionAbility.AbilityType.Item:
-                    _textLevel.text = $"Lv. {ability.Level:D2}";
-                    _textDesc.text = string.Format(ability.Data._desc, ability.Ability * 100);
+                case AbilityType.Status:
+                    {
+                        float curAbilityValue = curAbility != null ? curAbility.GetAbility() : 0f;
+                        float abilityValue = _nextAbilityData.GetAbility();
+                        _textLevel.text = $"Lv. {_nextAbilityData.Level:D2}";
+                        _textDesc.text = string.Format(_nextAbilityData.GetDesc(), (abilityValue - curAbilityValue) * 100);
+                    }
                     break;
-                case SOSessionAbility.AbilityType.Heal:
+                case AbilityType.Consumable:
                     _textLevel.text = string.Empty;
                     break;
             }
 
-            _imgIcon.sprite = ability.Data._icon;
-            _textName.text = ability.Data._name;
+            _imgIcon.sprite = ResourceManager.Instance.LoadAsset<Sprite>(_nextAbilityData.GetIconPath());
+            _textName.text = _nextAbilityData.GetName();
 
             _onCmdClose = onCmdClose;
         }
 
         private void OnClick()
         {
-            SessionAbilityItem ability = GameManager.Instance.InventorySessionAbility.GetItem(_uid);
-            switch (ability.Data._type)
+            switch (_nextAbilityData.GetAbilityType())
             {
-                case SOSessionAbility.AbilityType.Skill:
-                    SessionAbilityItem afterItem = GameManager.Instance.InventorySessionAbility.AddItem(ability.Data, _uid, ability.Level + 1);
-                    GameManager.Instance.Player.AddOrLevelUpSessionAbility(_uid);
+                case AbilityType.Skill:
+                    SessionAbilityData afterItem = GameManager.Instance.InventorySessionAbility.AddData(_tableCode, _nextAbilityData.LevelCode);
+                    GameManager.Instance.Player.AddOrLevelUpSessionAbility(_tableCode);
                     break;
-                case SOSessionAbility.AbilityType.Item:
-                    GameManager.Instance.InventorySessionAbility.AddItem(ability.Data, _uid, ability.Level + 1);
+                case AbilityType.Status:
+                    GameManager.Instance.InventorySessionAbility.AddData(_tableCode, _nextAbilityData.LevelCode);
                     break;
-                case SOSessionAbility.AbilityType.Heal:
-                    GameManager.Instance.Player.Recovery(ability.Data._baseAbility);
+                case AbilityType.Consumable:
+                    GameManager.Instance.Player.Recovery(_nextAbilityData.GetCalcAbility());
                     break;
             }
 

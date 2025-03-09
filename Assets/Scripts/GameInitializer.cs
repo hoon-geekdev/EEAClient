@@ -25,6 +25,13 @@ namespace EEA
 
             //SceneManager.Instance.Init();
 
+            bool isTableLoaded = false;
+            TableManager.Instance.Load(() => { isTableLoaded = true; });
+
+            WaitUntil waitUntil = new WaitUntil(() => isTableLoaded);
+            if (isTableLoaded == false)
+                yield return waitUntil;
+
             yield return SceneManager.Instance.ChangeSceneAsync(_enterScene);
         }
     }

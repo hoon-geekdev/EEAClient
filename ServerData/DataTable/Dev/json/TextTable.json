@@ -1,0 +1,44 @@
+[
+  {
+    "Code": 99000001,
+    "Unique_name": "text",
+    "Name_kr": "파이어볼",
+    "Desc_kr": "데미지 {0}% 증가\\r\\n관통력 {1}개 증가"
+  },
+  {
+    "Code": 99000002,
+    "Unique_name": "text",
+    "Name_kr": "얼음구슬",
+    "Desc_kr": "데미지 {0}% 증가\\r\\n보조 투사체 {1}개 증가"
+  },
+  {
+    "Code": 99000003,
+    "Unique_name": "text",
+    "Name_kr": "회전구슬",
+    "Desc_kr": "데미지 {0}% 증가\\r\\n회전체 {1}개 추가"
+  },
+  {
+    "Code": 99000004,
+    "Unique_name": "text",
+    "Name_kr": "검격",
+    "Desc_kr": "데미지 {0}% 증가"
+  },
+  {
+    "Code": 99000005,
+    "Unique_name": "text",
+    "Name_kr": "신발",
+    "Desc_kr": "이동속도 {0}% 증가"
+  },
+  {
+    "Code": 99000006,
+    "Unique_name": "text",
+    "Name_kr": "글로브",
+    "Desc_kr": "시전속도 {0}% 증가"
+  },
+  {
+    "Code": 99000007,
+    "Unique_name": "text",
+    "Name_kr": "회복약",
+    "Desc_kr": "체력을 {0}% 만큼 회복"
+  }
+]

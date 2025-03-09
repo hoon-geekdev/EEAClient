@@ -4,6 +4,14 @@ using UnityEngine;
 
 namespace EEA.Object
 {
+    public enum AbilityType 
+    { 
+        None,
+        Skill, 
+        Status,
+        Consumable,
+    }
+
     public enum StatusType
     {
         None,

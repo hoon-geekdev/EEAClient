@@ -1,5 +1,5 @@
 using EEA.AbilitySystem;
-using EEA.SOData;
+using EEA.Manager;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -65,30 +65,30 @@ namespace EEA.Object
             _animator.SetBool("IsMove", isMoving);
         }
 
-        public void AddOrLevelUpSessionAbility(long uid)
+        public void AddOrLevelUpSessionAbility(int tableCode)
         {
-            if (_abilities.ContainsKey(uid) == false)
+            if (_abilities.ContainsKey(tableCode) == false)
             {
-                SessionAbilityItem abilty = _inventorySessionAbility.GetItem(uid);
+                SessionAbilityData abilty = _inventorySessionAbility.GetItem(tableCode);
                 if (abilty == null)
                 {
-                    Debug.LogError($"Not found session ability item. uid: {uid}");
+                    Debug.LogError($"Not found session ability item. tableCode: {tableCode}");
                     return;
                 }
 
-                if (abilty.Data._type != SOSessionAbility.AbilityType.Skill)
+                if (abilty.GetAbilityType() != AbilityType.Skill)
                 {
-                    Debug.LogError($"Not skill type. uid: {uid}");
+                    Debug.LogError($"Not skill type. tableCode: {tableCode}");
                     return;
                 }
 
-                Ability effect = Instantiate(abilty.Data._abilityPref, transform).GetComponent<Ability>();
-                effect.Init(uid);
-                _abilities.Add(uid, effect);
+                Ability effect = ResourceManager.Instance.Create(abilty.GetAssetPath(), transform).GetComponent<Ability>();
+                effect.Init(tableCode);
+                _abilities.Add(tableCode, effect);
             }
             else
             {
-                Ability effect = _abilities[uid];
+                Ability effect = _abilities[tableCode];
                 effect.RefreshData();
             }
         }

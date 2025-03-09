@@ -1,0 +1,42 @@
+[
+  {
+    "Code": 14000001,
+    "Unique_name": "골드",
+    "Type": 1,
+    "Ability": 0.0,
+    "Drop_icon_path": "",
+    "Asset_path": ""
+  },
+  {
+    "Code": 14000002,
+    "Unique_name": "다이아",
+    "Type": 2,
+    "Ability": 0.0,
+    "Drop_icon_path": "",
+    "Asset_path": ""
+  },
+  {
+    "Code": 14000010,
+    "Unique_name": "경험치1",
+    "Type": 11,
+    "Ability": 1.0,
+    "Drop_icon_path": "UI/Temp/Sprites/Props.png[Exp 0]",
+    "Asset_path": "Object/DropItem/DropItemExp.prefab"
+  },
+  {
+    "Code": 14000011,
+    "Unique_name": "경험치2",
+    "Type": 11,
+    "Ability": 3.0,
+    "Drop_icon_path": "UI/Temp/Sprites/Props.png[Exp 1]",
+    "Asset_path": "Object/DropItem/DropItemExp.prefab"
+  },
+  {
+    "Code": 14000012,
+    "Unique_name": "경험치3",
+    "Type": 11,
+    "Ability": 6.0,
+    "Drop_icon_path": "UI/Temp/Sprites/Props.png[Exp 2]",
+    "Asset_path": "Object/DropItem/DropItemExp.prefab"
+  }
+]

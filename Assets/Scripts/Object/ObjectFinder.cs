@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace EEA.Object
@@ -8,9 +9,8 @@ namespace EEA.Object
     {
         [SerializeField] private float _scanRange;
         [SerializeField] private LayerMask _scanLayer;
-        private RaycastHit2D[] _scanTargets;
-        // ¿ì¼±¼øÀ§ Å¥¸¦ È°¿ëÇÑ °¡±î¿î Å¸°Ù ¼øÀ¸·Î Á¤·Ä
-        private SortedList<float, Transform> _sortedTargets;
+        private List<RaycastHit2D> _scanTargets;
+        // ìš°ì„ ìˆœìœ„ íë¥¼ í™œìš©í•œ ê°€ê¹Œìš´ íƒ€ê²Ÿ ìˆœìœ¼ë¡œ ì •ë ¬
 
         //private void FixedUpdate()
         //{
@@ -32,48 +32,37 @@ namespace EEA.Object
 
         private IEnumerator Scan()
         {
+            yield return new WaitForSeconds(1f);
+
             while (true)
             {
-                _scanTargets = Physics2D.CircleCastAll(transform.position, _scanRange, Vector2.zero, 0, _scanLayer);
-                if (_scanTargets.Length > 0)
-                    _sortedTargets = GetNearest();
+                _scanTargets = Physics2D.CircleCastAll(transform.position, _scanRange, Vector2.zero, 0, _scanLayer).ToList();
+                SortTargets();
                 yield return new WaitForSeconds(0.1f);
             }
         }
 
         public Transform PeakNearTarget()
         {
-            if (_sortedTargets == null)
+            if (_scanTargets == null || _scanTargets.Count <= 0)
                 return null;
 
-            if (_sortedTargets.Count > 0)
-            {
-                Transform target = _sortedTargets.Values[0];
-                _sortedTargets.RemoveAt(0);
-                return target;
-            }
-            
-            return null;
+            Transform target = _scanTargets[0].transform;
+            _scanTargets.RemoveAt(0);
+            return target;
         }
 
-        SortedList<float, Transform> GetNearest()
+        private void SortTargets()
         {
-            SortedList<float, Transform> sortedTargets = new SortedList<float, Transform>();
-            int i = 0;
-            foreach (RaycastHit2D hit in _scanTargets)
+            if (_scanTargets == null || _scanTargets.Count <= 0)
+                return;
+
+            _scanTargets.Sort((a, b) =>
             {
-                if (i > 30)
-                    break;
-
-                i++;
-                float distance = Vector2.Distance(transform.position, hit.transform.position);
-                if (!sortedTargets.ContainsKey(distance))
-                {
-                    sortedTargets.Add(distance, hit.transform);
-                }
-            }
-
-            return sortedTargets;
+                float distA = Vector2.Distance(transform.position, a.transform.position);
+                float distB = Vector2.Distance(transform.position, b.transform.position);
+                return distA.CompareTo(distB);
+            });
         }
     }
 }
