@@ -1,15 +1,15 @@
 [
   {
     "fileName": "StageTable.bin",
-    "md5Hash": "39f3d8aab721e3106ca89e1a3a682b7e"
+    "md5Hash": "77af8c1d027adf71673f6348d696c7c9"
   },
   {
     "fileName": "StageWaveTable.bin",
-    "md5Hash": "a6bbd99f389fdfaf43d47034d5732060"
+    "md5Hash": "9a8739ec2815a33311aa0ef353416ff0"
   },
   {
     "fileName": "ObjectTable.bin",
-    "md5Hash": "bad0d65301c26be5d28bb9bf509cb323"
+    "md5Hash": "011a7e92ba16dcd99827ba227b8be104"
   },
   {
     "fileName": "ItemTable.bin",
@@ -17,14 +17,18 @@
   },
   {
     "fileName": "AbilityTable.bin",
-    "md5Hash": "c2250033b95367f9de25dd4f0418304a"
+    "md5Hash": "40b5b5ccde4e9543f3775b25a4da2f86"
   },
   {
     "fileName": "TextTable.bin",
-    "md5Hash": "f89b1b4a19bfb018fd22fe677eb34569"
+    "md5Hash": "cb074f0417ee89dd68563c7d8737261b"
   },
   {
     "fileName": "AbilityLevelTable.bin",
-    "md5Hash": "f4058b1dfedd1cb04297eb6d1d06fa0b"
+    "md5Hash": "7bf26efef36930afe2499c0c2f7e3aaa"
+  },
+  {
+    "fileName": "LevelTable.bin",
+    "md5Hash": "38448680d85353114d60ce72e621c033"
   }
 ]

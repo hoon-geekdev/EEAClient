@@ -10,6 +10,8 @@ namespace TableData {
 		public float Base_delay { get; set; }
 		public float Base_duration { get; set; }
 		public float Base_ability { get; set; }
+		public float Base_range { get; set; }
+		public float Base_tick { get; set; }
 		public int[] Level_datas { get; set; }
 		public int Name_key { get; set; }
 		public int Desc_key { get; set; }

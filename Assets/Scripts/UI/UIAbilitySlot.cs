@@ -61,7 +61,7 @@ namespace EEA.UI
                         int curValue = 0;
                         int value = 0;
                         float curAbilityValue = curAbility != null ? curAbility.GetAbility() : 0f;
-                        float abilityValue = _nextAbilityData.GetAbility();
+                        float abilityValue = curAbility == null ? 0 : _nextAbilityData.GetAbility();
                         if (_nextAbilityData.GetCount() > 0)
                         {
                             curValue = curAbility != null ? curAbility.GetCount() : 0;
@@ -73,17 +73,17 @@ namespace EEA.UI
                             value = _nextAbilityData.GetPenetration();
                         }
 
-                        _textDesc.text = string.Format(_nextAbilityData.GetDesc(), (abilityValue - curAbilityValue) * 100, value - curValue);
+                        _textDesc.text = string.Format(_nextAbilityData.GetDesc(), Math.Round((abilityValue - curAbilityValue) * 100, 3), value - curValue);
                         _textLevel.text = $"Lv. {_nextAbilityData.Level:D2}";
                     }
                     
                     break;
                 case AbilityType.Status:
                     {
-                        float curAbilityValue = curAbility != null ? curAbility.GetAbility() : 0f;
+                        float curAbilityValue = curAbility != null ? curAbility.GetAbility() : _nextAbilityData.GetBaseAbility();
                         float abilityValue = _nextAbilityData.GetAbility();
                         _textLevel.text = $"Lv. {_nextAbilityData.Level:D2}";
-                        _textDesc.text = string.Format(_nextAbilityData.GetDesc(), (abilityValue - curAbilityValue) * 100);
+                        _textDesc.text = string.Format(_nextAbilityData.GetDesc(), Math.Round((abilityValue - curAbilityValue) * 100, 3));
                     }
                     break;
                 case AbilityType.Consumable:

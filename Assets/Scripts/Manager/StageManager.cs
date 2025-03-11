@@ -117,16 +117,16 @@ namespace EEA.Manager
                 switch(waveData._spawnAreaType)
                 {
                     case "left":
-                        go.transform.position = new Vector2(-10f, Random.Range(-5f, 5f));
+                        go.transform.position = playerPos + new Vector2(-15f, Random.Range(-10f, 10f));
                         break;
                     case "right":
-                        go.transform.position = new Vector2(10f, Random.Range(-5f, 5f));
+                        go.transform.position = playerPos + new Vector2(15f, Random.Range(-10f, 10f));
                         break;
                     case "top":
-                        go.transform.position = new Vector2(Random.Range(-5f, 5f), 10f);
+                        go.transform.position = playerPos + new Vector2(Random.Range(-10f, 10f), 15f);
                         break;
                     case "bottom":
-                        go.transform.position = new Vector2(Random.Range(-5f, 5f), -10f);
+                        go.transform.position = playerPos + new Vector2(Random.Range(-10f, 10f), -15f);
                         break;
                     case "circle":
                         float angle = (360f / waveData._spawnMaxCount) * waveData._spawnCurCount;

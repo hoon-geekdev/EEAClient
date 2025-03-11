@@ -5,7 +5,7 @@
     "Wave": 1,
     "Time": 0.0,
     "Monster_id": 13000001,
-    "Spawn_count": 50,
+    "Spawn_count": 100,
     "Spawn_interval": 0.5,
     "Spawn_area": "random"
   },
@@ -24,8 +24,8 @@
     "Unique_name": "챕터1스테이지1웨이브1",
     "Wave": 1,
     "Time": 60.0,
-    "Monster_id": 13000002,
-    "Spawn_count": 30,
+    "Monster_id": 13000003,
+    "Spawn_count": 100,
     "Spawn_interval": 0.5,
     "Spawn_area": "left"
   },
@@ -34,7 +34,7 @@
     "Unique_name": "챕터1스테이지1웨이브1",
     "Wave": 1,
     "Time": 60.0,
-    "Monster_id": 13000001,
+    "Monster_id": 13000003,
     "Spawn_count": 40,
     "Spawn_interval": 0.5,
     "Spawn_area": "right"
@@ -44,8 +44,8 @@
     "Unique_name": "챕터1스테이지1웨이브1",
     "Wave": 1,
     "Time": 90.0,
-    "Monster_id": 13000002,
-    "Spawn_count": 50,
+    "Monster_id": 13000004,
+    "Spawn_count": 100,
     "Spawn_interval": 0.5,
     "Spawn_area": "random"
   },
@@ -54,8 +54,8 @@
     "Unique_name": "챕터1스테이지1웨이브1",
     "Wave": 1,
     "Time": 120.0,
-    "Monster_id": 13000002,
-    "Spawn_count": 30,
+    "Monster_id": 13000004,
+    "Spawn_count": 50,
     "Spawn_interval": 0.2,
     "Spawn_area": "circle"
   },
@@ -64,8 +64,88 @@
     "Unique_name": "챕터1스테이지1웨이브1",
     "Wave": 1,
     "Time": 125.0,
-    "Monster_id": 13000002,
+    "Monster_id": 13000005,
+    "Spawn_count": 50,
+    "Spawn_interval": 0.2,
+    "Spawn_area": "circle"
+  },
+  {
+    "Code": 12000008,
+    "Unique_name": "챕터1스테이지1웨이브2",
+    "Wave": 2,
+    "Time": 0.0,
+    "Monster_id": 13000004,
+    "Spawn_count": 100,
+    "Spawn_interval": 0.5,
+    "Spawn_area": "random"
+  },
+  {
+    "Code": 12000009,
+    "Unique_name": "챕터1스테이지1웨이브3",
+    "Wave": 2,
+    "Time": 30.0,
+    "Monster_id": 13000005,
     "Spawn_count": 30,
+    "Spawn_interval": 0.7,
+    "Spawn_area": "random"
+  },
+  {
+    "Code": 12000010,
+    "Unique_name": "챕터1스테이지1웨이브4",
+    "Wave": 2,
+    "Time": 60.0,
+    "Monster_id": 13000004,
+    "Spawn_count": 100,
+    "Spawn_interval": 0.5,
+    "Spawn_area": "left"
+  },
+  {
+    "Code": 12000011,
+    "Unique_name": "챕터1스테이지1웨이브5",
+    "Wave": 2,
+    "Time": 60.0,
+    "Monster_id": 13000006,
+    "Spawn_count": 40,
+    "Spawn_interval": 0.5,
+    "Spawn_area": "right"
+  },
+  {
+    "Code": 12000012,
+    "Unique_name": "챕터1스테이지1웨이브6",
+    "Wave": 2,
+    "Time": 90.0,
+    "Monster_id": 13000005,
+    "Spawn_count": 100,
+    "Spawn_interval": 0.5,
+    "Spawn_area": "random"
+  },
+  {
+    "Code": 12000013,
+    "Unique_name": "챕터1스테이지1웨이브7",
+    "Wave": 2,
+    "Time": 120.0,
+    "Monster_id": 13000006,
+    "Spawn_count": 50,
+    "Spawn_interval": 0.2,
+    "Spawn_area": "circle"
+  },
+  {
+    "Code": 12000014,
+    "Unique_name": "챕터1스테이지1웨이브8",
+    "Wave": 2,
+    "Time": 125.0,
+    "Monster_id": 13000007,
+    "Spawn_count": 50,
+    "Spawn_interval": 0.2,
+    "Spawn_area": "right"
+  },
+  {
+    "Code": 12000015,
+    "Unique_name": "챕터1스테이지1웨이브9",
+    "Wave": 2,
+    "Time": 125.0,
+    "Monster_id": 13000008,
+    "Spawn_count": 50,
     "Spawn_interval": 0.2,
     "Spawn_area": "circle"
   }

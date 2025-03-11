@@ -1,10 +1,11 @@
 using EEA.AbilitySystem;
 using EEA.Object;
-using EEA.SOData;
 using EEA.UI;
 using EEA.Manager;
 using UnityEngine;
 using EEA.Define;
+using TableData;
+using System.Collections.Generic;
 
 namespace EEA.Manager
 {
@@ -17,23 +18,24 @@ namespace EEA.Manager
         private Player _player;
 
         private float _time;
-        private int[] LevelUpExp = {5, 10, 20, 30, 40, 50, 60, 70, 80, 90 };
+        private List<LevelTable> _levelDatas;
 
         public Player Player => _player;
         public Inventory Inventory => Player.Inventory;
         public InventorySessionAbility InventorySessionAbility => Player.InventorySessionAbility;
         public int Level => _level;
         public int KillCount => _killCount;
-        public int Exp => _exp;
-        public int MaxExp => LevelUpExp[_level];
         public float GameTime => _time;
 
         protected override void OnAwake()
         {
             // Player tag로 찾기
             _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            _player.Init(500, 2f);
 
-            _player.Init(500, 3f);
+            List<LevelTable> tables = TableManager.Instance.GetDataList<LevelTable>();
+            // tables에서 Type이 1인 데이터만 가져오기
+            _levelDatas = tables.Count > 0 ? tables.FindAll(x => x.Type == 1) : new List<LevelTable>();
         }
 
         private void Start()
@@ -64,8 +66,8 @@ namespace EEA.Manager
             _killCount = 0;
             _exp = 0;
 
-            InventorySessionAbility.AddData(15000001, 16000001);
-            Player.AddOrLevelUpSessionAbility(15000001);
+            InventorySessionAbility.AddData(15000004, 16000046);
+            Player.AddOrLevelUpSessionAbility(15000004);
         }
 
         public void AddKillCount()
@@ -74,15 +76,35 @@ namespace EEA.Manager
             //AddExp(1);
         }
 
+        public int GetNeedExp()
+        {
+            if (_level >= _levelDatas.Count)
+                return 0;
+
+            return _levelDatas[_level].Need_exp;
+        }
+
+        public int GetPrevLevelExp()
+        {
+            if (_level >= _levelDatas.Count)
+                return 0;
+
+            return _levelDatas[_level].Prev_exp;
+        }
+
+        public int GetCurExp()
+        {
+            return _exp;
+        }
+
         public void AddExp(int exp)
         {
-            if (_level >= LevelUpExp.Length - 1)
+            if (_levelDatas.Count <= _level)
                 return;
 
             _exp += exp;
-            if (_exp >= LevelUpExp[_level])
+            if (_exp >= _levelDatas[_level].Need_exp)
             {
-                _exp -= LevelUpExp[_level];
                 _level++;
 
                 // 레벨업 팝업

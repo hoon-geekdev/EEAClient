@@ -9,7 +9,7 @@ namespace EEA.AbilitySystem
     {
         [SerializeField] private int _unitPrefIndex;
         private Player _player;
-        private void Start()
+        protected override void OnStart()
         {
             _player = _owner as Player;
             StartCoroutine(Fire());

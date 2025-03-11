@@ -56,10 +56,21 @@ namespace EEA.Object
                 return;
 
             Vector2 dir = _target.position - _rigid.position;
+
+            // 플레이어와 가까이 붙으면 kinematic으로 변경
+            if (dir.magnitude <= 1.5f)
+                _rigid.bodyType = RigidbodyType2D.Kinematic;
+            else
+                _rigid.bodyType = RigidbodyType2D.Dynamic;
+
+            if (dir.magnitude <= 0.5f)
+                return;
+
             Vector2 moveVec = dir.normalized * MoveSpeed * Time.fixedDeltaTime;
 
             _rigid.MovePosition(_rigid.position + moveVec);
             _rigid.linearVelocity = Vector2.zero;
+
         }
 
         protected override void OnLateUpdate()

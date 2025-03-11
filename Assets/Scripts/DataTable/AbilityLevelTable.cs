@@ -8,6 +8,7 @@ namespace TableData {
 		public float Fixed_value { get; set; }
 		public int Fixed_count { get; set; }
 		public int Fixed_penetration { get; set; }
+		public float Range { get; set; }
 		
     }
 }

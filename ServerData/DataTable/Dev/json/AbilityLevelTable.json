@@ -3,480 +3,945 @@
     "Code": 16000001,
     "Unique_name": "파이어볼1",
     "Level": 1,
-    "Fixed_value": 0.1,
+    "Fixed_value": 0.0,
     "Fixed_count": 1,
-    "Fixed_penetration": 2
+    "Fixed_penetration": 2,
+    "Range": 0.0
   },
   {
     "Code": 16000002,
     "Unique_name": "파이어볼2",
     "Level": 2,
-    "Fixed_value": 0.2,
+    "Fixed_value": 0.1,
     "Fixed_count": 1,
-    "Fixed_penetration": 2
+    "Fixed_penetration": 2,
+    "Range": 0.0
   },
   {
     "Code": 16000003,
     "Unique_name": "파이어볼3",
     "Level": 3,
-    "Fixed_value": 0.3,
+    "Fixed_value": 0.2,
     "Fixed_count": 2,
-    "Fixed_penetration": 3
+    "Fixed_penetration": 3,
+    "Range": 0.0
   },
   {
     "Code": 16000004,
     "Unique_name": "파이어볼4",
     "Level": 4,
-    "Fixed_value": 0.4,
+    "Fixed_value": 0.3,
     "Fixed_count": 2,
-    "Fixed_penetration": 3
+    "Fixed_penetration": 3,
+    "Range": 0.0
   },
   {
     "Code": 16000005,
     "Unique_name": "파이어볼5",
     "Level": 5,
-    "Fixed_value": 0.5,
+    "Fixed_value": 0.4,
     "Fixed_count": 2,
-    "Fixed_penetration": 3
+    "Fixed_penetration": 3,
+    "Range": 0.0
   },
   {
     "Code": 16000006,
     "Unique_name": "파이어볼6",
     "Level": 6,
-    "Fixed_value": 0.6,
+    "Fixed_value": 0.5,
     "Fixed_count": 2,
-    "Fixed_penetration": 4
+    "Fixed_penetration": 4,
+    "Range": 0.0
   },
   {
     "Code": 16000007,
     "Unique_name": "파이어볼7",
     "Level": 7,
-    "Fixed_value": 0.7,
+    "Fixed_value": 0.6,
     "Fixed_count": 2,
-    "Fixed_penetration": 4
+    "Fixed_penetration": 4,
+    "Range": 0.0
   },
   {
     "Code": 16000008,
     "Unique_name": "파이어볼8",
     "Level": 8,
-    "Fixed_value": 0.8,
+    "Fixed_value": 0.7,
     "Fixed_count": 2,
-    "Fixed_penetration": 4
+    "Fixed_penetration": 4,
+    "Range": 0.0
   },
   {
     "Code": 16000009,
     "Unique_name": "파이어볼9",
     "Level": 9,
-    "Fixed_value": 0.9,
+    "Fixed_value": 0.8,
     "Fixed_count": 2,
-    "Fixed_penetration": 5
+    "Fixed_penetration": 5,
+    "Range": 0.0
   },
   {
     "Code": 16000010,
     "Unique_name": "파이어볼10",
     "Level": 10,
-    "Fixed_value": 0.1,
+    "Fixed_value": 0.9,
     "Fixed_count": 2,
-    "Fixed_penetration": 5
+    "Fixed_penetration": 5,
+    "Range": 0.0
   },
   {
     "Code": 16000011,
     "Unique_name": "파이어볼11",
     "Level": 11,
-    "Fixed_value": 0.11,
+    "Fixed_value": 0.1,
     "Fixed_count": 2,
-    "Fixed_penetration": 5
+    "Fixed_penetration": 5,
+    "Range": 0.0
   },
   {
     "Code": 16000012,
     "Unique_name": "파이어볼12",
     "Level": 12,
-    "Fixed_value": 0.12,
+    "Fixed_value": 0.11,
     "Fixed_count": 2,
-    "Fixed_penetration": 6
+    "Fixed_penetration": 6,
+    "Range": 0.0
   },
   {
     "Code": 16000013,
     "Unique_name": "파이어볼13",
     "Level": 13,
-    "Fixed_value": 0.13,
+    "Fixed_value": 0.12,
     "Fixed_count": 2,
-    "Fixed_penetration": 6
+    "Fixed_penetration": 6,
+    "Range": 0.0
   },
   {
     "Code": 16000014,
     "Unique_name": "파이어볼14",
     "Level": 14,
-    "Fixed_value": 0.14,
+    "Fixed_value": 0.13,
     "Fixed_count": 2,
-    "Fixed_penetration": 6
+    "Fixed_penetration": 6,
+    "Range": 0.0
   },
   {
     "Code": 16000015,
     "Unique_name": "파이어볼15",
     "Level": 15,
-    "Fixed_value": 0.15,
+    "Fixed_value": 0.14,
     "Fixed_count": 2,
-    "Fixed_penetration": 7
+    "Fixed_penetration": 7,
+    "Range": 0.0
   },
   {
     "Code": 16000016,
     "Unique_name": "얼음구슬1",
     "Level": 1,
-    "Fixed_value": 0.1,
+    "Fixed_value": 0.0,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000017,
     "Unique_name": "얼음구슬2",
     "Level": 2,
-    "Fixed_value": 0.2,
+    "Fixed_value": 0.1,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000018,
     "Unique_name": "얼음구슬3",
     "Level": 3,
-    "Fixed_value": 0.3,
+    "Fixed_value": 0.2,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000019,
     "Unique_name": "얼음구슬4",
     "Level": 4,
-    "Fixed_value": 0.4,
+    "Fixed_value": 0.3,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000020,
     "Unique_name": "얼음구슬5",
     "Level": 5,
-    "Fixed_value": 0.5,
+    "Fixed_value": 0.4,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000021,
     "Unique_name": "얼음구슬6",
     "Level": 6,
-    "Fixed_value": 0.6,
+    "Fixed_value": 0.5,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000022,
     "Unique_name": "얼음구슬7",
     "Level": 7,
-    "Fixed_value": 0.7,
+    "Fixed_value": 0.6,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000023,
     "Unique_name": "얼음구슬8",
     "Level": 8,
-    "Fixed_value": 0.8,
+    "Fixed_value": 0.7,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000024,
     "Unique_name": "얼음구슬9",
     "Level": 9,
-    "Fixed_value": 0.9,
+    "Fixed_value": 0.8,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000025,
     "Unique_name": "얼음구슬10",
     "Level": 10,
-    "Fixed_value": 0.1,
+    "Fixed_value": 0.9,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000026,
     "Unique_name": "얼음구슬11",
     "Level": 11,
-    "Fixed_value": 0.11,
+    "Fixed_value": 0.1,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000027,
     "Unique_name": "얼음구슬12",
     "Level": 12,
-    "Fixed_value": 0.12,
+    "Fixed_value": 0.11,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000028,
     "Unique_name": "얼음구슬13",
     "Level": 13,
-    "Fixed_value": 0.13,
+    "Fixed_value": 0.12,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000029,
     "Unique_name": "얼음구슬14",
     "Level": 14,
-    "Fixed_value": 0.14,
+    "Fixed_value": 0.13,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000030,
     "Unique_name": "얼음구슬15",
     "Level": 15,
-    "Fixed_value": 0.15,
+    "Fixed_value": 0.14,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000031,
     "Unique_name": "회전구슬1",
     "Level": 1,
-    "Fixed_value": 0.1,
+    "Fixed_value": 0.0,
     "Fixed_count": 2,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000032,
     "Unique_name": "회전구슬2",
     "Level": 2,
-    "Fixed_value": 0.2,
+    "Fixed_value": 0.1,
     "Fixed_count": 3,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000033,
     "Unique_name": "회전구슬3",
     "Level": 3,
-    "Fixed_value": 0.3,
+    "Fixed_value": 0.2,
     "Fixed_count": 4,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000034,
     "Unique_name": "회전구슬4",
     "Level": 4,
-    "Fixed_value": 0.4,
+    "Fixed_value": 0.3,
     "Fixed_count": 5,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000035,
     "Unique_name": "회전구슬5",
     "Level": 5,
-    "Fixed_value": 0.5,
+    "Fixed_value": 0.4,
     "Fixed_count": 5,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000036,
     "Unique_name": "회전구슬6",
     "Level": 6,
-    "Fixed_value": 0.6,
+    "Fixed_value": 0.5,
     "Fixed_count": 5,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000037,
     "Unique_name": "회전구슬7",
     "Level": 7,
-    "Fixed_value": 0.7,
+    "Fixed_value": 0.6,
     "Fixed_count": 5,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000038,
     "Unique_name": "회전구슬8",
     "Level": 8,
-    "Fixed_value": 0.8,
+    "Fixed_value": 0.7,
     "Fixed_count": 6,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000039,
     "Unique_name": "회전구슬9",
     "Level": 9,
-    "Fixed_value": 0.9,
+    "Fixed_value": 0.8,
     "Fixed_count": 6,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000040,
     "Unique_name": "회전구슬10",
     "Level": 10,
-    "Fixed_value": 0.1,
+    "Fixed_value": 0.9,
     "Fixed_count": 6,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000041,
     "Unique_name": "회전구슬11",
     "Level": 11,
-    "Fixed_value": 0.11,
+    "Fixed_value": 0.1,
     "Fixed_count": 7,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000042,
     "Unique_name": "회전구슬12",
     "Level": 12,
-    "Fixed_value": 0.12,
+    "Fixed_value": 0.11,
     "Fixed_count": 7,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000043,
     "Unique_name": "회전구슬13",
     "Level": 13,
-    "Fixed_value": 0.13,
+    "Fixed_value": 0.12,
     "Fixed_count": 7,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000044,
     "Unique_name": "회전구슬14",
     "Level": 14,
-    "Fixed_value": 0.14,
+    "Fixed_value": 0.13,
     "Fixed_count": 8,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000045,
     "Unique_name": "회전구슬15",
     "Level": 15,
-    "Fixed_value": 0.15,
+    "Fixed_value": 0.14,
     "Fixed_count": 8,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000046,
     "Unique_name": "검격1",
     "Level": 1,
-    "Fixed_value": 0.1,
+    "Fixed_value": 0.0,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000047,
     "Unique_name": "검격2",
     "Level": 2,
-    "Fixed_value": 0.2,
+    "Fixed_value": 0.1,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000048,
     "Unique_name": "검격3",
     "Level": 3,
-    "Fixed_value": 0.3,
+    "Fixed_value": 0.2,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000049,
     "Unique_name": "검격4",
     "Level": 4,
-    "Fixed_value": 0.4,
+    "Fixed_value": 0.3,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000050,
     "Unique_name": "검격5",
     "Level": 5,
-    "Fixed_value": 0.5,
+    "Fixed_value": 0.4,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000051,
     "Unique_name": "검격6",
     "Level": 6,
-    "Fixed_value": 0.6,
+    "Fixed_value": 0.5,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000052,
     "Unique_name": "검격7",
     "Level": 7,
-    "Fixed_value": 0.7,
+    "Fixed_value": 0.6,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000053,
     "Unique_name": "검격8",
     "Level": 8,
-    "Fixed_value": 0.8,
+    "Fixed_value": 0.7,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000054,
     "Unique_name": "검격9",
     "Level": 9,
-    "Fixed_value": 0.9,
+    "Fixed_value": 0.8,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000055,
     "Unique_name": "검격10",
     "Level": 10,
-    "Fixed_value": 0.1,
+    "Fixed_value": 0.9,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000056,
     "Unique_name": "검격11",
     "Level": 11,
-    "Fixed_value": 0.11,
+    "Fixed_value": 0.1,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000057,
     "Unique_name": "검격12",
     "Level": 12,
-    "Fixed_value": 0.12,
+    "Fixed_value": 0.11,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000058,
     "Unique_name": "검격13",
     "Level": 13,
-    "Fixed_value": 0.13,
+    "Fixed_value": 0.12,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000059,
     "Unique_name": "검격14",
     "Level": 14,
-    "Fixed_value": 0.14,
+    "Fixed_value": 0.13,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
   },
   {
     "Code": 16000060,
     "Unique_name": "검격15",
     "Level": 15,
-    "Fixed_value": 0.15,
+    "Fixed_value": 0.14,
     "Fixed_count": 1,
-    "Fixed_penetration": -1
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000061,
+    "Unique_name": "프리즌서클1",
+    "Level": 1,
+    "Fixed_value": 0.0,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000062,
+    "Unique_name": "프리즌서클2",
+    "Level": 2,
+    "Fixed_value": 0.1,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.1
+  },
+  {
+    "Code": 16000063,
+    "Unique_name": "프리즌서클3",
+    "Level": 3,
+    "Fixed_value": 0.2,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.2
+  },
+  {
+    "Code": 16000064,
+    "Unique_name": "프리즌서클4",
+    "Level": 4,
+    "Fixed_value": 0.3,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.3
+  },
+  {
+    "Code": 16000065,
+    "Unique_name": "프리즌서클5",
+    "Level": 5,
+    "Fixed_value": 0.4,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.4
+  },
+  {
+    "Code": 16000066,
+    "Unique_name": "프리즌서클6",
+    "Level": 6,
+    "Fixed_value": 0.5,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.5
+  },
+  {
+    "Code": 16000067,
+    "Unique_name": "프리즌서클7",
+    "Level": 7,
+    "Fixed_value": 0.6,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.6
+  },
+  {
+    "Code": 16000068,
+    "Unique_name": "프리즌서클8",
+    "Level": 8,
+    "Fixed_value": 0.7,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.7
+  },
+  {
+    "Code": 16000069,
+    "Unique_name": "프리즌서클9",
+    "Level": 9,
+    "Fixed_value": 0.8,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.8
+  },
+  {
+    "Code": 16000070,
+    "Unique_name": "프리즌서클10",
+    "Level": 10,
+    "Fixed_value": 0.9,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.9
+  },
+  {
+    "Code": 16000071,
+    "Unique_name": "프리즌서클11",
+    "Level": 11,
+    "Fixed_value": 0.1,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 1.0
+  },
+  {
+    "Code": 16000072,
+    "Unique_name": "프리즌서클12",
+    "Level": 12,
+    "Fixed_value": 0.11,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 1.1
+  },
+  {
+    "Code": 16000073,
+    "Unique_name": "프리즌서클13",
+    "Level": 13,
+    "Fixed_value": 0.12,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 1.2
+  },
+  {
+    "Code": 16000074,
+    "Unique_name": "프리즌서클14",
+    "Level": 14,
+    "Fixed_value": 0.13,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 1.3
+  },
+  {
+    "Code": 16000075,
+    "Unique_name": "프리즌서클15",
+    "Level": 15,
+    "Fixed_value": 0.14,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 1.4
+  },
+  {
+    "Code": 16000076,
+    "Unique_name": "신발1",
+    "Level": 1,
+    "Fixed_value": 0.0,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000077,
+    "Unique_name": "신발2",
+    "Level": 2,
+    "Fixed_value": 0.1,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000078,
+    "Unique_name": "신발3",
+    "Level": 3,
+    "Fixed_value": 0.2,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000079,
+    "Unique_name": "신발4",
+    "Level": 4,
+    "Fixed_value": 0.3,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000080,
+    "Unique_name": "신발5",
+    "Level": 5,
+    "Fixed_value": 0.4,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000081,
+    "Unique_name": "신발6",
+    "Level": 6,
+    "Fixed_value": 0.5,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000082,
+    "Unique_name": "신발7",
+    "Level": 7,
+    "Fixed_value": 0.6,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000083,
+    "Unique_name": "신발8",
+    "Level": 8,
+    "Fixed_value": 0.7,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000084,
+    "Unique_name": "신발9",
+    "Level": 9,
+    "Fixed_value": 0.8,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000085,
+    "Unique_name": "신발10",
+    "Level": 10,
+    "Fixed_value": 0.9,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000086,
+    "Unique_name": "신발11",
+    "Level": 11,
+    "Fixed_value": 0.1,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000087,
+    "Unique_name": "신발12",
+    "Level": 12,
+    "Fixed_value": 0.11,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000088,
+    "Unique_name": "신발13",
+    "Level": 13,
+    "Fixed_value": 0.12,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000089,
+    "Unique_name": "신발14",
+    "Level": 14,
+    "Fixed_value": 0.13,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000090,
+    "Unique_name": "신발15",
+    "Level": 15,
+    "Fixed_value": 0.14,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000091,
+    "Unique_name": "글로브1",
+    "Level": 1,
+    "Fixed_value": 0.0,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000092,
+    "Unique_name": "글로브2",
+    "Level": 2,
+    "Fixed_value": 0.1,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000093,
+    "Unique_name": "글로브3",
+    "Level": 3,
+    "Fixed_value": 0.2,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000094,
+    "Unique_name": "글로브4",
+    "Level": 4,
+    "Fixed_value": 0.3,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000095,
+    "Unique_name": "글로브5",
+    "Level": 5,
+    "Fixed_value": 0.4,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000096,
+    "Unique_name": "글로브6",
+    "Level": 6,
+    "Fixed_value": 0.5,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000097,
+    "Unique_name": "글로브7",
+    "Level": 7,
+    "Fixed_value": 0.6,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000098,
+    "Unique_name": "글로브8",
+    "Level": 8,
+    "Fixed_value": 0.7,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000099,
+    "Unique_name": "글로브9",
+    "Level": 9,
+    "Fixed_value": 0.8,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000100,
+    "Unique_name": "글로브10",
+    "Level": 10,
+    "Fixed_value": 0.9,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000101,
+    "Unique_name": "글로브11",
+    "Level": 11,
+    "Fixed_value": 0.1,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000102,
+    "Unique_name": "글로브12",
+    "Level": 12,
+    "Fixed_value": 0.11,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000103,
+    "Unique_name": "글로브13",
+    "Level": 13,
+    "Fixed_value": 0.12,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000104,
+    "Unique_name": "글로브14",
+    "Level": 14,
+    "Fixed_value": 0.13,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000105,
+    "Unique_name": "글로브15",
+    "Level": 15,
+    "Fixed_value": 0.14,
+    "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
   }
 ]

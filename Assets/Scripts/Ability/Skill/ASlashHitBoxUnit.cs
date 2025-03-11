@@ -27,11 +27,11 @@ namespace EEA.AbilitySystem
 
         private void Update()
         {
-            if (_duration > 0)
-            {
-                _angle += _range * Time.deltaTime / _duration;
-                transform.rotation = Quaternion.Euler(0, 0, _angle);
-            }
+            //if (_duration > 0)
+            //{
+            //    _angle += _range * Time.deltaTime / _duration;
+            //    transform.rotation = Quaternion.Euler(0, 0, _angle);
+            //}
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

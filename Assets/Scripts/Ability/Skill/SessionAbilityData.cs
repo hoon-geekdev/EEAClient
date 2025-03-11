@@ -52,6 +52,17 @@ namespace EEA.AbilitySystem
             return _data.Base_duration;
         }
 
+        public float GetCalcRange()
+        {
+            float multipleValue = _levelData != null ? _levelData.Range : 1;
+            return _data.Base_range + _data.Base_range * multipleValue;
+        }
+
+        public float GetTick()
+        {
+            return _data.Base_tick;
+        }
+
         public int GetCount()
         {
             return _levelData == null ? 0 : _levelData.Fixed_count;
@@ -65,6 +76,11 @@ namespace EEA.AbilitySystem
         public float GetAbility()
         {
             return _levelData == null ? _data.Base_ability : _levelData.Fixed_value;
+        }
+
+        public float GetBaseAbility()
+        {
+            return _data.Base_ability;
         }
 
         public bool IsMaxLevel() 

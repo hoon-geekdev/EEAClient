@@ -28,10 +28,10 @@ namespace EEA.UI
             switch (_infoType)
             {
                 case InfoType.Exp:
-                    float curExp = GameManager.Instance.Exp;
-                    float maxExp = GameManager.Instance.MaxExp;
-
-                    _slider.value = curExp / maxExp;
+                    float curExp = GameManager.Instance.GetCurExp();
+                    float maxExp = GameManager.Instance.GetNeedExp();
+                    float prevLevelExp = GameManager.Instance.GetPrevLevelExp();
+                    _slider.value = (curExp - prevLevelExp) / (maxExp - prevLevelExp);
                     break;
                 case InfoType.Level:
                     _text.text = $"Lv. {GameManager.Instance.Level + 1}";

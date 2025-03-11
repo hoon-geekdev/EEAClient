@@ -18,6 +18,7 @@ public class DataTableGenerate {
 			case "ItemTable": JsonToBin<TableData.ItemTable>(className, jsonPath, binOutputPath); break;
 			case "AbilityTable": JsonToBin<TableData.AbilityTable>(className, jsonPath, binOutputPath); break;
 			case "AbilityLevelTable": JsonToBin<TableData.AbilityLevelTable>(className, jsonPath, binOutputPath); break;
+			case "LevelTable": JsonToBin<TableData.LevelTable>(className, jsonPath, binOutputPath); break;
 			case "TextTable": JsonToBin<TableData.TextTable>(className, jsonPath, binOutputPath); break;
 			
         }
@@ -35,6 +36,7 @@ public class DataTableGenerate {
 			case "ItemTable": return BinToObject<TableData.ItemTable>(data);
 			case "AbilityTable": return BinToObject<TableData.AbilityTable>(data);
 			case "AbilityLevelTable": return BinToObject<TableData.AbilityLevelTable>(data);
+			case "LevelTable": return BinToObject<TableData.LevelTable>(data);
 			case "TextTable": return BinToObject<TableData.TextTable>(data);
 			
             }
@@ -61,6 +63,7 @@ public class DataTableGenerate {
 			case "ItemTable": return JsonConvert.DeserializeObject<TableData.ItemTable[]>(jsonText);
 			case "AbilityTable": return JsonConvert.DeserializeObject<TableData.AbilityTable[]>(jsonText);
 			case "AbilityLevelTable": return JsonConvert.DeserializeObject<TableData.AbilityLevelTable[]>(jsonText);
+			case "LevelTable": return JsonConvert.DeserializeObject<TableData.LevelTable[]>(jsonText);
 			case "TextTable": return JsonConvert.DeserializeObject<TableData.TextTable[]>(jsonText);
 			
             }

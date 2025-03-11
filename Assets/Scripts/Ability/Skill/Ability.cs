@@ -14,6 +14,8 @@ namespace EEA.AbilitySystem
         protected float _duration;
         protected int _penetration;
         protected int _count;
+        protected float _range;
+        protected float _tick;
         private int _tableCode;
 
         private void Awake()
@@ -53,6 +55,8 @@ namespace EEA.AbilitySystem
             _count = ability.GetCount();
             _penetration = ability.GetPenetration();
             _duration = ability.GetDuration();
+            _range = ability.GetCalcRange();
+            _tick = ability.GetTick();
 
             OnRefreshData();
         }

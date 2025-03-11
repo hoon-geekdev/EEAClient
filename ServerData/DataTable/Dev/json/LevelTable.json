@@ -1,0 +1,402 @@
+[
+  {
+    "Code": 17000001,
+    "Unique_name": "스테이지레벨1",
+    "Type": 1,
+    "Level": 1,
+    "Prev_exp": 0,
+    "Need_exp": 5
+  },
+  {
+    "Code": 17000002,
+    "Unique_name": "스테이지레벨2",
+    "Type": 1,
+    "Level": 2,
+    "Prev_exp": 5,
+    "Need_exp": 11
+  },
+  {
+    "Code": 17000003,
+    "Unique_name": "스테이지레벨3",
+    "Type": 1,
+    "Level": 3,
+    "Prev_exp": 11,
+    "Need_exp": 18
+  },
+  {
+    "Code": 17000004,
+    "Unique_name": "스테이지레벨4",
+    "Type": 1,
+    "Level": 4,
+    "Prev_exp": 18,
+    "Need_exp": 27
+  },
+  {
+    "Code": 17000005,
+    "Unique_name": "스테이지레벨5",
+    "Type": 1,
+    "Level": 5,
+    "Prev_exp": 27,
+    "Need_exp": 37
+  },
+  {
+    "Code": 17000006,
+    "Unique_name": "스테이지레벨6",
+    "Type": 1,
+    "Level": 6,
+    "Prev_exp": 37,
+    "Need_exp": 49
+  },
+  {
+    "Code": 17000007,
+    "Unique_name": "스테이지레벨7",
+    "Type": 1,
+    "Level": 7,
+    "Prev_exp": 49,
+    "Need_exp": 64
+  },
+  {
+    "Code": 17000008,
+    "Unique_name": "스테이지레벨8",
+    "Type": 1,
+    "Level": 8,
+    "Prev_exp": 64,
+    "Need_exp": 82
+  },
+  {
+    "Code": 17000009,
+    "Unique_name": "스테이지레벨9",
+    "Type": 1,
+    "Level": 9,
+    "Prev_exp": 82,
+    "Need_exp": 103
+  },
+  {
+    "Code": 17000010,
+    "Unique_name": "스테이지레벨10",
+    "Type": 1,
+    "Level": 10,
+    "Prev_exp": 103,
+    "Need_exp": 129
+  },
+  {
+    "Code": 17000011,
+    "Unique_name": "스테이지레벨11",
+    "Type": 1,
+    "Level": 11,
+    "Prev_exp": 129,
+    "Need_exp": 160
+  },
+  {
+    "Code": 17000012,
+    "Unique_name": "스테이지레벨12",
+    "Type": 1,
+    "Level": 12,
+    "Prev_exp": 160,
+    "Need_exp": 197
+  },
+  {
+    "Code": 17000013,
+    "Unique_name": "스테이지레벨13",
+    "Type": 1,
+    "Level": 13,
+    "Prev_exp": 197,
+    "Need_exp": 242
+  },
+  {
+    "Code": 17000014,
+    "Unique_name": "스테이지레벨14",
+    "Type": 1,
+    "Level": 14,
+    "Prev_exp": 242,
+    "Need_exp": 296
+  },
+  {
+    "Code": 17000015,
+    "Unique_name": "스테이지레벨15",
+    "Type": 1,
+    "Level": 15,
+    "Prev_exp": 296,
+    "Need_exp": 361
+  },
+  {
+    "Code": 17000016,
+    "Unique_name": "스테이지레벨16",
+    "Type": 1,
+    "Level": 16,
+    "Prev_exp": 361,
+    "Need_exp": 439
+  },
+  {
+    "Code": 17000017,
+    "Unique_name": "스테이지레벨17",
+    "Type": 1,
+    "Level": 17,
+    "Prev_exp": 439,
+    "Need_exp": 533
+  },
+  {
+    "Code": 17000018,
+    "Unique_name": "스테이지레벨18",
+    "Type": 1,
+    "Level": 18,
+    "Prev_exp": 533,
+    "Need_exp": 646
+  },
+  {
+    "Code": 17000019,
+    "Unique_name": "스테이지레벨19",
+    "Type": 1,
+    "Level": 19,
+    "Prev_exp": 646,
+    "Need_exp": 781
+  },
+  {
+    "Code": 17000020,
+    "Unique_name": "스테이지레벨20",
+    "Type": 1,
+    "Level": 20,
+    "Prev_exp": 781,
+    "Need_exp": 944
+  },
+  {
+    "Code": 17000021,
+    "Unique_name": "스테이지레벨21",
+    "Type": 1,
+    "Level": 21,
+    "Prev_exp": 944,
+    "Need_exp": 1140
+  },
+  {
+    "Code": 17000022,
+    "Unique_name": "스테이지레벨22",
+    "Type": 1,
+    "Level": 22,
+    "Prev_exp": 1140,
+    "Need_exp": 1376
+  },
+  {
+    "Code": 17000023,
+    "Unique_name": "스테이지레벨23",
+    "Type": 1,
+    "Level": 23,
+    "Prev_exp": 1376,
+    "Need_exp": 1660
+  },
+  {
+    "Code": 17000024,
+    "Unique_name": "스테이지레벨24",
+    "Type": 1,
+    "Level": 24,
+    "Prev_exp": 1660,
+    "Need_exp": 2001
+  },
+  {
+    "Code": 17000025,
+    "Unique_name": "스테이지레벨25",
+    "Type": 1,
+    "Level": 25,
+    "Prev_exp": 2001,
+    "Need_exp": 2411
+  },
+  {
+    "Code": 17000026,
+    "Unique_name": "스테이지레벨26",
+    "Type": 1,
+    "Level": 26,
+    "Prev_exp": 2411,
+    "Need_exp": 2905
+  },
+  {
+    "Code": 17000027,
+    "Unique_name": "스테이지레벨27",
+    "Type": 1,
+    "Level": 27,
+    "Prev_exp": 2905,
+    "Need_exp": 3499
+  },
+  {
+    "Code": 17000028,
+    "Unique_name": "스테이지레벨28",
+    "Type": 1,
+    "Level": 28,
+    "Prev_exp": 3499,
+    "Need_exp": 4214
+  },
+  {
+    "Code": 17000029,
+    "Unique_name": "스테이지레벨29",
+    "Type": 1,
+    "Level": 29,
+    "Prev_exp": 4214,
+    "Need_exp": 5074
+  },
+  {
+    "Code": 17000030,
+    "Unique_name": "스테이지레벨30",
+    "Type": 1,
+    "Level": 30,
+    "Prev_exp": 5074,
+    "Need_exp": 6110
+  },
+  {
+    "Code": 17000031,
+    "Unique_name": "스테이지레벨31",
+    "Type": 1,
+    "Level": 31,
+    "Prev_exp": 6110,
+    "Need_exp": 7357
+  },
+  {
+    "Code": 17000032,
+    "Unique_name": "스테이지레벨32",
+    "Type": 1,
+    "Level": 32,
+    "Prev_exp": 7357,
+    "Need_exp": 8858
+  },
+  {
+    "Code": 17000033,
+    "Unique_name": "스테이지레벨33",
+    "Type": 1,
+    "Level": 33,
+    "Prev_exp": 8858,
+    "Need_exp": 10665
+  },
+  {
+    "Code": 17000034,
+    "Unique_name": "스테이지레벨34",
+    "Type": 1,
+    "Level": 34,
+    "Prev_exp": 10665,
+    "Need_exp": 12840
+  },
+  {
+    "Code": 17000035,
+    "Unique_name": "스테이지레벨35",
+    "Type": 1,
+    "Level": 35,
+    "Prev_exp": 12840,
+    "Need_exp": 15459
+  },
+  {
+    "Code": 17000036,
+    "Unique_name": "스테이지레벨36",
+    "Type": 1,
+    "Level": 36,
+    "Prev_exp": 15459,
+    "Need_exp": 18613
+  },
+  {
+    "Code": 17000037,
+    "Unique_name": "스테이지레벨37",
+    "Type": 1,
+    "Level": 37,
+    "Prev_exp": 18613,
+    "Need_exp": 22411
+  },
+  {
+    "Code": 17000038,
+    "Unique_name": "스테이지레벨38",
+    "Type": 1,
+    "Level": 38,
+    "Prev_exp": 22411,
+    "Need_exp": 26986
+  },
+  {
+    "Code": 17000039,
+    "Unique_name": "스테이지레벨39",
+    "Type": 1,
+    "Level": 39,
+    "Prev_exp": 26986,
+    "Need_exp": 32496
+  },
+  {
+    "Code": 17000040,
+    "Unique_name": "스테이지레벨40",
+    "Type": 1,
+    "Level": 40,
+    "Prev_exp": 32496,
+    "Need_exp": 39133
+  },
+  {
+    "Code": 17000041,
+    "Unique_name": "스테이지레벨41",
+    "Type": 1,
+    "Level": 41,
+    "Prev_exp": 39133,
+    "Need_exp": 47129
+  },
+  {
+    "Code": 17000042,
+    "Unique_name": "스테이지레벨42",
+    "Type": 1,
+    "Level": 42,
+    "Prev_exp": 47129,
+    "Need_exp": 56762
+  },
+  {
+    "Code": 17000043,
+    "Unique_name": "스테이지레벨43",
+    "Type": 1,
+    "Level": 43,
+    "Prev_exp": 56762,
+    "Need_exp": 68369
+  },
+  {
+    "Code": 17000044,
+    "Unique_name": "스테이지레벨44",
+    "Type": 1,
+    "Level": 44,
+    "Prev_exp": 68369,
+    "Need_exp": 82355
+  },
+  {
+    "Code": 17000045,
+    "Unique_name": "스테이지레벨45",
+    "Type": 1,
+    "Level": 45,
+    "Prev_exp": 82355,
+    "Need_exp": 99210
+  },
+  {
+    "Code": 17000046,
+    "Unique_name": "스테이지레벨46",
+    "Type": 1,
+    "Level": 46,
+    "Prev_exp": 99210,
+    "Need_exp": 119523
+  },
+  {
+    "Code": 17000047,
+    "Unique_name": "스테이지레벨47",
+    "Type": 1,
+    "Level": 47,
+    "Prev_exp": 119523,
+    "Need_exp": 144006
+  },
+  {
+    "Code": 17000048,
+    "Unique_name": "스테이지레벨48",
+    "Type": 1,
+    "Level": 48,
+    "Prev_exp": 144006,
+    "Need_exp": 173518
+  },
+  {
+    "Code": 17000049,
+    "Unique_name": "스테이지레벨49",
+    "Type": 1,
+    "Level": 49,
+    "Prev_exp": 173518,
+    "Need_exp": 209094
+  },
+  {
+    "Code": 17000050,
+    "Unique_name": "스테이지레벨50",
+    "Type": 1,
+    "Level": 50,
+    "Prev_exp": 209094,
+    "Need_exp": 251984
+  }
+]

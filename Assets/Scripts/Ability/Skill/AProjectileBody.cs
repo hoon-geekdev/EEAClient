@@ -8,7 +8,7 @@ namespace EEA.AbilitySystem
     public class AProjectileBody : Ability
     {
         private Player _player;
-        private void Start()
+        protected override void OnStart()
         {
             _player = _owner as Player;
             StartCoroutine(Fire());
