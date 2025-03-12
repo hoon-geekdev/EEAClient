@@ -54,5 +54,6 @@ namespace EEA.Define
         public const string UIAbilitySelectPopup = "UI/UIAbilitySelectPopup/UIAbilitySelectPopup.prefab";
         public const string UIAbilityItem = "UI/UIAbilitySelectPopup/UIAbilityItem.prefab";
         public const string UIJoystick = "UI/UIJoystick/UIJoystick.prefab";
+        public const string UIDamageText = "UI/UIDamageText/UIDamageText.prefab";
     }
 }

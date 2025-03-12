@@ -30,7 +30,7 @@ namespace EEA.Object
         void PlayDropEffect()
         {
             Vector3 startPos = transform.position; // 현재 드랍된 위치 저장
-            transform.DOMoveY(startPos.y + 0.5f, 0.2f)
+            transform.DOMoveY(startPos.y + 1f, 0.2f)
             .SetEase(Ease.OutQuad)
             .OnComplete(() => transform.DOMoveY(startPos.y, 0.2f).SetEase(Ease.InBounce));
         }

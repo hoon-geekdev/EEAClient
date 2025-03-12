@@ -1,4 +1,6 @@
+using EEA.Define;
 using EEA.Manager;
+using EEA.UI;
 using System.Collections;
 using System.Linq;
 using TableData;
@@ -114,6 +116,10 @@ namespace EEA.Object
                 _animator.SetTrigger("Hit");
                 //StartCoroutine(KnockBack());
             }
+
+            GameObject go = PoolManager.Instance.GetObject(AssetPathUI.UIDamageText);
+            UIDamageText damageText = go.GetComponent<UIDamageText>();
+            damageText.SetText(transform, damage);
         }
 
         private IEnumerator KnockBack()
