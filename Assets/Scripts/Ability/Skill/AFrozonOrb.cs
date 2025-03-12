@@ -7,7 +7,6 @@ namespace EEA.AbilitySystem
 {
     public class AFrozonOrb : Ability
     {
-        [SerializeField] private int _unitPrefIndex;
         private Player _player;
         protected override void OnStart()
         {
@@ -44,7 +43,7 @@ namespace EEA.AbilitySystem
                     Vector3 targetPos = nearTarget.position;
                     Vector3 dir = (targetPos - transform.position).normalized;
 
-                    Transform unit = PoolManager.Instance.GetObject(_unitPrefIndex).transform;
+                    Transform unit = PoolManager.Instance.GetObject(_tableData.Asset_path_unit).transform;
                     unit.position = transform.position;
                     unit.rotation = Quaternion.FromToRotation(Vector3.up, dir);
 

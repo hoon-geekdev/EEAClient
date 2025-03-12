@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace EEA.AbilitySystem
 {
@@ -10,11 +11,12 @@ namespace EEA.AbilitySystem
         private int _penetration;
         private float _lifeTime = 4f;
 
-        public void Init(float damage, float speed, int penetration)
+        public void Init(float damage, float speed, int penetration, float lifetime = 4f)
         {
             _damage = damage;
             _speed = speed;
             _penetration = penetration;
+            _lifeTime = lifetime;
 
             StartCoroutine(LifeTime());
         }
@@ -27,7 +29,7 @@ namespace EEA.AbilitySystem
 
         private void Update()
         {
-            transform.Translate(Vector3.up * _speed * Time.deltaTime);
+            transform.Translate(transform.up * _speed * Time.deltaTime, Space.World);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -41,7 +43,7 @@ namespace EEA.AbilitySystem
 
                     collision.GetComponent<Object.ObjectBase>().TakeDamage(_damage);
 
-                    if (_penetration <= 0)
+                    if (_penetration == 0)
                         gameObject.SetActive(false);
                 }
             }

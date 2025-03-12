@@ -1,6 +1,8 @@
+using EEA.Manager;
 using EEA.Object;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Pool;
 
 namespace EEA.AbilitySystem
 {
@@ -49,9 +51,15 @@ namespace EEA.AbilitySystem
             {
                 Transform trf;
                 if (i < transform.childCount)
+                {
                     trf = transform.GetChild(i);
+                }
                 else
-                    trf = Instantiate(_unitPref, transform).transform;
+                {
+                    trf = PoolManager.Instance.GetObject(_tableData.Asset_path_unit).transform;
+                    trf.SetParent(transform);
+                }
+
 
                 trf.localRotation = Quaternion.identity;
                 trf.localPosition = Vector3.zero;

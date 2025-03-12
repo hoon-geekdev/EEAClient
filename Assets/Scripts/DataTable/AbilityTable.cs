@@ -17,6 +17,7 @@ namespace TableData {
 		public int Desc_key { get; set; }
 		public string Icon_path { get; set; }
 		public string Asset_path { get; set; }
+		public string Asset_path_unit { get; set; }
 		
     }
 }

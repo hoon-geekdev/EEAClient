@@ -25,10 +25,10 @@ namespace EEA.Object
         {
             // 캐릭터가 초기에 바라 보는 방향
             if (_prevInputVector == Vector2.zero)
-                return 180f;
+                return 90f;
 
             float angle = Mathf.Atan2(_prevInputVector.y, _prevInputVector.x) * Mathf.Rad2Deg;
-            return angle;
+            return angle - 90f;
         }
 
         protected override void OnAwake()

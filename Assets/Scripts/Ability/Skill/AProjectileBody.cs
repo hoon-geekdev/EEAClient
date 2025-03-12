@@ -27,7 +27,7 @@ namespace EEA.AbilitySystem
                     Vector3 targetPos = nearTarget.position;
                     Vector3 dir = (targetPos - transform.position).normalized;
 
-                    Transform unit = PoolManager.Instance.GetObject(2).transform;
+                    Transform unit = PoolManager.Instance.GetObject(_tableData.Asset_path_unit).transform;
                     unit.position = transform.position;
                     unit.rotation = Quaternion.FromToRotation(Vector3.up, dir);
 

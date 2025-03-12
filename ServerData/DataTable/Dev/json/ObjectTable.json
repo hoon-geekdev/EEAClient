@@ -22,7 +22,7 @@
     "Code": 13000002,
     "Unique_name": "쫄병2",
     "Health": 15,
-    "Move_speed": 1.0,
+    "Move_speed": 0.7,
     "Drop_items": [
       0,
       14000010,
@@ -41,7 +41,7 @@
     "Code": 13000003,
     "Unique_name": "쫄병3",
     "Health": 20,
-    "Move_speed": 1.2,
+    "Move_speed": 0.7,
     "Drop_items": [
       0,
       14000010,
@@ -60,7 +60,7 @@
     "Code": 13000004,
     "Unique_name": "쫄병4",
     "Health": 30,
-    "Move_speed": 1.0,
+    "Move_speed": 0.7,
     "Drop_items": [
       0,
       14000010,
@@ -79,7 +79,7 @@
     "Code": 13000005,
     "Unique_name": "쫄병5",
     "Health": 40,
-    "Move_speed": 1.0,
+    "Move_speed": 0.8,
     "Drop_items": [
       0,
       14000010,
@@ -98,7 +98,7 @@
     "Code": 13000006,
     "Unique_name": "쫄병6",
     "Health": 50,
-    "Move_speed": 1.2,
+    "Move_speed": 0.9,
     "Drop_items": [
       0,
       14000010,
@@ -117,7 +117,7 @@
     "Code": 13000007,
     "Unique_name": "쫄병7",
     "Health": 60,
-    "Move_speed": 1.0,
+    "Move_speed": 0.9,
     "Drop_items": [
       0,
       14000010,

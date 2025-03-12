@@ -25,7 +25,8 @@
     "Name_key": 99000001,
     "Desc_key": 99000001,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 3]",
-    "Asset_path": "Prefabs/Ability/AFireBallBody.prefab"
+    "Asset_path": "Prefabs/Ability/AFireBallBody.prefab",
+    "Asset_path_unit": "Prefabs/Ability/AFireBallUnit.prefab"
   },
   {
     "Code": 15000002,
@@ -53,7 +54,8 @@
     "Name_key": 99000002,
     "Desc_key": 99000002,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 3]",
-    "Asset_path": "Prefabs/Ability/AFrozonOrbBody.prefab"
+    "Asset_path": "Prefabs/Ability/AFrozonOrbBody.prefab",
+    "Asset_path_unit": "Prefabs/Ability/AFrozonOrbUnit.prefab"
   },
   {
     "Code": 15000003,
@@ -81,14 +83,15 @@
     "Name_key": 99000003,
     "Desc_key": 99000003,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 0]",
-    "Asset_path": "Prefabs/Ability/AOrbSphereBody.prefab"
+    "Asset_path": "Prefabs/Ability/AOrbSphereBody.prefab",
+    "Asset_path_unit": "Prefabs/Ability/AOrbSphereUnit.prefab"
   },
   {
     "Code": 15000004,
     "Unique_name": "검격",
     "Type": 1,
     "Status_type": 0,
-    "Base_speed": 0.0,
+    "Base_speed": 6.0,
     "Base_delay": 1.5,
     "Base_duration": 0.2,
     "Base_ability": 4.0,
@@ -109,7 +112,8 @@
     "Name_key": 99000004,
     "Desc_key": 99000004,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 0]",
-    "Asset_path": "Prefabs/Ability/ASlashBody.prefab"
+    "Asset_path": "Prefabs/Ability/ASlashBody.prefab",
+    "Asset_path_unit": "Prefabs/Ability/ASlashUnit.prefab"
   },
   {
     "Code": 15000005,
@@ -137,7 +141,8 @@
     "Name_key": 99000005,
     "Desc_key": 99000005,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 7]",
-    "Asset_path": ""
+    "Asset_path": "",
+    "Asset_path_unit": ""
   },
   {
     "Code": 15000006,
@@ -165,7 +170,8 @@
     "Name_key": 99000006,
     "Desc_key": 99000006,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 6]",
-    "Asset_path": ""
+    "Asset_path": "",
+    "Asset_path_unit": ""
   },
   {
     "Code": 15000007,
@@ -182,7 +188,8 @@
     "Name_key": 99000007,
     "Desc_key": 99000007,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 8]",
-    "Asset_path": ""
+    "Asset_path": "",
+    "Asset_path_unit": ""
   },
   {
     "Code": 15000008,
@@ -210,6 +217,7 @@
     "Name_key": 99000008,
     "Desc_key": 99000008,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 9]",
-    "Asset_path": "Prefabs/Ability/AFreezeCircle.prefab"
+    "Asset_path": "Prefabs/Ability/AFreezeCircle.prefab",
+    "Asset_path_unit": ""
   }
 ]

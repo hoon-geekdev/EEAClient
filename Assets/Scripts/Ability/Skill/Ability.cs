@@ -1,12 +1,12 @@
 using EEA.Manager;
 using EEA.Object;
+using TableData;
 using UnityEngine;
 
 namespace EEA.AbilitySystem
 {
     public class Ability : MonoBehaviour
     {
-        [SerializeField] protected GameObject _unitPref;
         protected ObjectBase _owner;
         protected float _damage;
         protected float _speed;
@@ -16,12 +16,12 @@ namespace EEA.AbilitySystem
         protected int _count;
         protected float _range;
         protected float _tick;
+        protected AbilityTable _tableData;
         private int _tableCode;
 
         private void Awake()
         {
             _owner = GameManager.Instance.Player;
-
             OnAwake();
         }
 
@@ -36,6 +36,7 @@ namespace EEA.AbilitySystem
         public void Init(int tableCode)
         {
             _tableCode = tableCode;
+            _tableData = TableManager.Instance.GetData<AbilityTable>(_tableCode);
             RefreshData();
         }
 
