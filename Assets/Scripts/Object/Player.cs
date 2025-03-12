@@ -42,27 +42,32 @@ namespace EEA.Object
         {
             Vector2 moveVector = _inputVector.normalized * MoveSpeed * Time.fixedDeltaTime;
             _rigid.MovePosition(_rigid.position + moveVector);
-        }
 
-        protected override void OnLateUpdate()
-        {
-            bool isMoving = _inputVector != Vector2.zero;
-            if (isMoving)
+            if (_inputVector != Vector2.zero)
             {
                 _animator.SetFloat("SpeedX", _inputVector.x);
                 _animator.SetFloat("SpeedY", _inputVector.y);
-
-                _prevInputVector = _inputVector;
-                if (_inputVector.x != 0)
-                    _spriteRenderer.flipX = _inputVector.x > 0;
-            }
-            else
-            {
-                _animator.SetFloat("LookX", _prevInputVector.x);
-                _animator.SetFloat("LookY", _prevInputVector.y);
             }
 
-            _animator.SetBool("IsMove", isMoving);
+            _animator.SetBool("IsMove", _inputVector != Vector2.zero);
+        }
+
+        public void MoveDir(Vector2 vec)
+        {
+            _inputVector = vec;
+        }
+
+        public void LookDir(Vector2 vec)
+        {
+            if (vec == Vector2.zero)
+                return;
+
+            _prevInputVector = vec;
+            _animator.SetFloat("LookX", vec.x);
+            _animator.SetFloat("LookY", vec.y);
+
+            if (vec.x != 0)
+                _spriteRenderer.flipX = vec.x > 0;
         }
 
         public void AddOrLevelUpSessionAbility(int tableCode)
