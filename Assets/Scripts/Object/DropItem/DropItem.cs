@@ -19,6 +19,7 @@ namespace EEA.Object
 
         public void Init(int tableCode)
         {
+            transform.localScale = new Vector3(1, 1, 1);
             _dropItem = TableManager.Instance.GetData<ItemTable>(tableCode);
             Sprite icon = ResourceManager.Instance.LoadAsset<Sprite>(_dropItem.Drop_icon_path);
 
