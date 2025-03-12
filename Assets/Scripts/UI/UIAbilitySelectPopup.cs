@@ -27,9 +27,7 @@ namespace EEA.UI
             // 아이템과 스킬이 맥스레벨이 아닌 것들을 랜덤으로 3개 선택
             int slotIdx = 0;
             List<AbilityTable> datas = TableManager.Instance.GetDataList<AbilityTable>();
-            datas.Sort((a, b) => Random.Range(-1, 2));
-            datas.Sort((a, b) => Random.Range(-1, 2));
-            datas.Sort((a, b) => Random.Range(-1, 2));
+            ShuffleList(datas);
 
             for (int i = 0; i < datas.Count; ++i)
             {
@@ -43,6 +41,20 @@ namespace EEA.UI
 
                 if (slotIdx >= 3)
                     break;
+            }
+        }
+
+        private void ShuffleList<T>(List<T> list)
+        {
+            System.Random rng = new System.Random(); // 시드값을 다르게 주면 매번 다른 순서가 나옴
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1); // 0부터 n까지의 무작위 값
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
             }
         }
     }
