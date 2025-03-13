@@ -46,5 +46,11 @@
     "Unique_name": "text",
     "Name_kr": "프리즌서클",
     "Desc_kr": "장판스킬"
+  },
+  {
+    "Code": 99000009,
+    "Unique_name": "text",
+    "Name_kr": "메테오",
+    "Desc_kr": "메테오"
   }
 ]

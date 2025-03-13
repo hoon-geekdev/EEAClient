@@ -83,7 +83,11 @@ namespace EEA.UI
                         float curAbilityValue = curAbility != null ? curAbility.GetAbility() : _nextAbilityData.GetBaseAbility();
                         float abilityValue = _nextAbilityData.GetAbility();
                         _textLevel.text = $"Lv. {_nextAbilityData.Level:D2}";
-                        _textDesc.text = string.Format(_nextAbilityData.GetDesc(), Math.Round((abilityValue - curAbilityValue) * 100, 3));
+
+                        if (abilityValue > 0)
+                            _textDesc.text = string.Format(_nextAbilityData.GetDesc(), Math.Round((abilityValue - curAbilityValue) * 100, 3));
+                        else
+                            _textDesc.text = string.Format(_nextAbilityData.GetDesc(), Math.Round((curAbilityValue) * 100, 3));
                     }
                     break;
                 case AbilityType.Consumable:

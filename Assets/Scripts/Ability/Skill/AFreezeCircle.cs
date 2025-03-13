@@ -1,8 +1,6 @@
 using EEA.Object;
-using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
 
 namespace EEA.AbilitySystem
 {
@@ -10,30 +8,36 @@ namespace EEA.AbilitySystem
     {
         private ParticleSystem _particle;
 
-        protected override void OnRefreshData()
-        {
-            MainModule mainModule = _particle.main;
-            mainModule.startSizeMultiplier = _range;
-        }
-
         protected override void OnAwake()
         {
             _particle = GetComponentInChildren<ParticleSystem>();
             _particle.gameObject.SetActive(false);
+        }
+
+        protected override void OnRefreshData()
+        {
+            ParticleSystem.MainModule mainModule = _particle.main;
+            mainModule.startSizeMultiplier = _range;
+
+            StopAllCoroutines();
             StartCoroutine(Effect());
         }
 
+
         private IEnumerator Effect()
         {
+            WaitForSeconds wait1 = new WaitForSeconds(_delay);
+            WaitForSeconds wait2 = new WaitForSeconds(_duration);
             while (true)
             {
-                yield return new WaitForSeconds(_delay);
+                yield return wait1;
 
                 StartCoroutine("HitCheck");
                 _particle.gameObject.SetActive(true);
-                MainModule main = _particle.main;
+                ParticleSystem.MainModule main = _particle.main;
                 main.simulationSpeed = _particle.main.duration / _duration;
-                yield return new WaitForSeconds(_duration);
+
+                yield return wait2;
 
                 _particle.gameObject.SetActive(false);
                 StopCoroutine("HitCheck");
@@ -44,6 +48,7 @@ namespace EEA.AbilitySystem
         {
             int maxTickCount = Mathf.RoundToInt(_duration / _tick);
             int curCount = 0;
+            WaitForSeconds wait = new WaitForSeconds(_tick);
             while (curCount++ < maxTickCount)
             {
                 // 2D에서 OverlapCircleAll 사용 (적 레이어만 탐색)
@@ -58,7 +63,7 @@ namespace EEA.AbilitySystem
                     target.TakeDamage(_damage);
                 }
 
-                yield return new WaitForSeconds(_tick);
+                yield return wait;
             }
         }
 

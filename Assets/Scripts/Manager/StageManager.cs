@@ -106,10 +106,10 @@ namespace EEA.Manager
             }
 
             wait = new WaitForSeconds(waveData._spawnInterval);
-            Vector2 playerPos = _player.transform.position;
 
             while (waveData._spawnCurCount < waveData._spawnMaxCount)
             {
+                Vector2 playerPos = _player.transform.position;
                 GameObject go = PoolManager.Instance.GetObject(objectData.Asset_path);
                 Enemy enemy = go.GetComponent<Enemy>();
                 enemy.Init(objectData.Code);

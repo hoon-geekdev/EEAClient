@@ -9,14 +9,14 @@ namespace EEA.AbilitySystem
     {
         private Player _player;
 
-        protected override void OnRefreshData()
-        {
-        }
-
-        protected override void OnStart()
+        protected override void OnAwake()
         {
             _player = _owner as Player;
             StartCoroutine(Fire());
+        }
+
+        protected override void OnRefreshData()
+        {
         }
 
         private IEnumerator Fire()
@@ -34,7 +34,10 @@ namespace EEA.AbilitySystem
                     Projectile projectile = unit.GetComponent<Projectile>();
                     float multiplier = _owner.Status.GetStatus(StatusType.AbilitySpeed, StatusSubType.Multiply);
                     float speed = _speed + (_speed * multiplier);
-                    projectile.Init(_damage, speed, _penetration, _duration);
+
+                    // _range만큼 이동 할 때까지의 시간
+                    float lifeTime = _range / speed;
+                    projectile.Init(_damage, speed, _penetration, lifeTime);
                 }
 
                 yield return new WaitForSeconds(_delay);

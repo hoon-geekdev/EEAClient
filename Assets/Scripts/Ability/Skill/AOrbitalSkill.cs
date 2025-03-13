@@ -2,20 +2,19 @@ using EEA.Manager;
 using EEA.Object;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Pool;
 
 namespace EEA.AbilitySystem
 {
     public class AOrbitalSkill : Ability
     {
+        protected override void OnAwake()
+        {
+            StartCoroutine(Effect());
+        }
+
         protected override void OnRefreshData()
         {
             Arrange();
-        }
-
-        protected override void OnStart()
-        {
-            StartCoroutine(Effect());
         }
 
         private IEnumerator Effect()

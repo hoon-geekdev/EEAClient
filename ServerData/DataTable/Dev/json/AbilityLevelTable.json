@@ -420,7 +420,7 @@
     "Fixed_value": 0.1,
     "Fixed_count": 1,
     "Fixed_penetration": -1,
-    "Range": 0.0
+    "Range": 0.1
   },
   {
     "Code": 16000048,
@@ -429,7 +429,7 @@
     "Fixed_value": 0.2,
     "Fixed_count": 1,
     "Fixed_penetration": -1,
-    "Range": 0.0
+    "Range": 0.2
   },
   {
     "Code": 16000049,
@@ -438,7 +438,7 @@
     "Fixed_value": 0.3,
     "Fixed_count": 1,
     "Fixed_penetration": -1,
-    "Range": 0.0
+    "Range": 0.3
   },
   {
     "Code": 16000050,
@@ -447,7 +447,7 @@
     "Fixed_value": 0.4,
     "Fixed_count": 1,
     "Fixed_penetration": -1,
-    "Range": 0.0
+    "Range": 0.4
   },
   {
     "Code": 16000051,
@@ -456,7 +456,7 @@
     "Fixed_value": 0.5,
     "Fixed_count": 1,
     "Fixed_penetration": -1,
-    "Range": 0.0
+    "Range": 0.5
   },
   {
     "Code": 16000052,
@@ -465,7 +465,7 @@
     "Fixed_value": 0.6,
     "Fixed_count": 1,
     "Fixed_penetration": -1,
-    "Range": 0.0
+    "Range": 0.6
   },
   {
     "Code": 16000053,
@@ -474,7 +474,7 @@
     "Fixed_value": 0.7,
     "Fixed_count": 1,
     "Fixed_penetration": -1,
-    "Range": 0.0
+    "Range": 0.7
   },
   {
     "Code": 16000054,
@@ -483,7 +483,7 @@
     "Fixed_value": 0.8,
     "Fixed_count": 1,
     "Fixed_penetration": -1,
-    "Range": 0.0
+    "Range": 0.8
   },
   {
     "Code": 16000055,
@@ -492,7 +492,7 @@
     "Fixed_value": 0.9,
     "Fixed_count": 1,
     "Fixed_penetration": -1,
-    "Range": 0.0
+    "Range": 0.9
   },
   {
     "Code": 16000056,
@@ -501,7 +501,7 @@
     "Fixed_value": 0.1,
     "Fixed_count": 1,
     "Fixed_penetration": -1,
-    "Range": 0.0
+    "Range": 1.0
   },
   {
     "Code": 16000057,
@@ -510,7 +510,7 @@
     "Fixed_value": 0.11,
     "Fixed_count": 1,
     "Fixed_penetration": -1,
-    "Range": 0.0
+    "Range": 1.1
   },
   {
     "Code": 16000058,
@@ -519,7 +519,7 @@
     "Fixed_value": 0.12,
     "Fixed_count": 1,
     "Fixed_penetration": -1,
-    "Range": 0.0
+    "Range": 1.2
   },
   {
     "Code": 16000059,
@@ -528,7 +528,7 @@
     "Fixed_value": 0.13,
     "Fixed_count": 1,
     "Fixed_penetration": -1,
-    "Range": 0.0
+    "Range": 1.3
   },
   {
     "Code": 16000060,
@@ -537,7 +537,7 @@
     "Fixed_value": 0.14,
     "Fixed_count": 1,
     "Fixed_penetration": -1,
-    "Range": 0.0
+    "Range": 1.4
   },
   {
     "Code": 16000061,
@@ -941,6 +941,141 @@
     "Level": 15,
     "Fixed_value": 0.14,
     "Fixed_count": 0,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000106,
+    "Unique_name": "메테오1",
+    "Level": 1,
+    "Fixed_value": 0.0,
+    "Fixed_count": 2,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000107,
+    "Unique_name": "메테오2",
+    "Level": 2,
+    "Fixed_value": 0.1,
+    "Fixed_count": 3,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000108,
+    "Unique_name": "메테오3",
+    "Level": 3,
+    "Fixed_value": 0.2,
+    "Fixed_count": 4,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000109,
+    "Unique_name": "메테오4",
+    "Level": 4,
+    "Fixed_value": 0.3,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000110,
+    "Unique_name": "메테오5",
+    "Level": 5,
+    "Fixed_value": 0.4,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000111,
+    "Unique_name": "메테오6",
+    "Level": 6,
+    "Fixed_value": 0.5,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000112,
+    "Unique_name": "메테오7",
+    "Level": 7,
+    "Fixed_value": 0.6,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000113,
+    "Unique_name": "메테오8",
+    "Level": 8,
+    "Fixed_value": 0.7,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000114,
+    "Unique_name": "메테오9",
+    "Level": 9,
+    "Fixed_value": 0.8,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000115,
+    "Unique_name": "메테오10",
+    "Level": 10,
+    "Fixed_value": 0.9,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000116,
+    "Unique_name": "메테오11",
+    "Level": 11,
+    "Fixed_value": 0.1,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000117,
+    "Unique_name": "메테오12",
+    "Level": 12,
+    "Fixed_value": 0.11,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000118,
+    "Unique_name": "메테오13",
+    "Level": 13,
+    "Fixed_value": 0.12,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000119,
+    "Unique_name": "메테오14",
+    "Level": 14,
+    "Fixed_value": 0.13,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000120,
+    "Unique_name": "메테오15",
+    "Level": 15,
+    "Fixed_value": 0.14,
+    "Fixed_count": 5,
     "Fixed_penetration": -1,
     "Range": 0.0
   }

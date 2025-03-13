@@ -93,9 +93,9 @@
     "Status_type": 0,
     "Base_speed": 6.0,
     "Base_delay": 1.5,
-    "Base_duration": 0.2,
-    "Base_ability": 4.0,
-    "Base_range": 0.0,
+    "Base_duration": 0.0,
+    "Base_ability": 10.0,
+    "Base_range": 2.0,
     "Base_tick": 0.0,
     "Level_datas": [
       16000046,
@@ -197,10 +197,10 @@
     "Type": 1,
     "Status_type": 0,
     "Base_speed": 0.0,
-    "Base_delay": 2.0,
-    "Base_duration": 1.0,
-    "Base_ability": 1.0,
-    "Base_range": 5.0,
+    "Base_delay": 1.0,
+    "Base_duration": 2.0,
+    "Base_ability": 3.0,
+    "Base_range": 4.0,
     "Base_tick": 0.33,
     "Level_datas": [
       16000061,
@@ -219,5 +219,34 @@
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 9]",
     "Asset_path": "Prefabs/Ability/AFreezeCircle.prefab",
     "Asset_path_unit": ""
+  },
+  {
+    "Code": 15000009,
+    "Unique_name": "메테오",
+    "Type": 1,
+    "Status_type": 0,
+    "Base_speed": 3.0,
+    "Base_delay": 4.0,
+    "Base_duration": 1.0,
+    "Base_ability": 15.0,
+    "Base_range": 1.0,
+    "Base_tick": 0.0,
+    "Level_datas": [
+      16000106,
+      16000107,
+      16000108,
+      16000109,
+      16000110,
+      16000111,
+      16000112,
+      16000113,
+      16000114,
+      16000115
+    ],
+    "Name_key": 99000009,
+    "Desc_key": 99000009,
+    "Icon_path": "UI/Temp/Sprites/UI.png[Select 4]",
+    "Asset_path": "Prefabs/Ability/AMeteoBody.prefab",
+    "Asset_path_unit": "Prefabs/Ability/AMeteoUnit.prefab"
   }
 ]
