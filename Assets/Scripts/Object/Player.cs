@@ -98,6 +98,15 @@ namespace EEA.Object
             }
         }
 
+        protected override void OnTakeDamage(float damage)
+        {
+            base.OnTakeDamage(damage);
+            if (IsDead == true)
+                return;
+
+            _health -= damage;
+        }
+
         void OnMove(InputValue value)
         {
             _inputVector = value.Get<Vector2>();

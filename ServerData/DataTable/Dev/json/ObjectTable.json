@@ -4,6 +4,7 @@
     "Unique_name": "쫄병1",
     "Health": 10,
     "Move_speed": 0.5,
+    "Damage": 6.0,
     "Drop_items": [
       0,
       14000010,
@@ -23,6 +24,7 @@
     "Unique_name": "쫄병2",
     "Health": 15,
     "Move_speed": 0.7,
+    "Damage": 6.0,
     "Drop_items": [
       0,
       14000010,
@@ -42,6 +44,7 @@
     "Unique_name": "쫄병3",
     "Health": 20,
     "Move_speed": 0.7,
+    "Damage": 6.0,
     "Drop_items": [
       0,
       14000010,
@@ -61,6 +64,7 @@
     "Unique_name": "쫄병4",
     "Health": 30,
     "Move_speed": 0.7,
+    "Damage": 8.0,
     "Drop_items": [
       0,
       14000010,
@@ -80,6 +84,7 @@
     "Unique_name": "쫄병5",
     "Health": 40,
     "Move_speed": 0.8,
+    "Damage": 8.0,
     "Drop_items": [
       0,
       14000010,
@@ -99,6 +104,7 @@
     "Unique_name": "쫄병6",
     "Health": 50,
     "Move_speed": 0.9,
+    "Damage": 8.0,
     "Drop_items": [
       0,
       14000010,
@@ -118,6 +124,7 @@
     "Unique_name": "쫄병7",
     "Health": 60,
     "Move_speed": 0.9,
+    "Damage": 10.0,
     "Drop_items": [
       0,
       14000010,

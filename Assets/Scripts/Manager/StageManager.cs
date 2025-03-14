@@ -117,16 +117,16 @@ namespace EEA.Manager
                 switch(waveData._spawnAreaType)
                 {
                     case "left":
-                        go.transform.position = playerPos + new Vector2(-15f, Random.Range(-10f, 10f));
+                        go.transform.position = playerPos + new Vector2(-15f, Random.Range(-5f, 5f));
                         break;
                     case "right":
-                        go.transform.position = playerPos + new Vector2(15f, Random.Range(-10f, 10f));
+                        go.transform.position = playerPos + new Vector2(15f, Random.Range(-5f, 5f));
                         break;
                     case "top":
-                        go.transform.position = playerPos + new Vector2(Random.Range(-10f, 10f), 15f);
+                        go.transform.position = playerPos + new Vector2(Random.Range(-10f, 10f), 5f);
                         break;
                     case "bottom":
-                        go.transform.position = playerPos + new Vector2(Random.Range(-10f, 10f), -15f);
+                        go.transform.position = playerPos + new Vector2(Random.Range(-10f, 10f), -5f);
                         break;
                     case "circle":
                         float angle = (360f / waveData._spawnMaxCount) * waveData._spawnCurCount;
@@ -136,6 +136,8 @@ namespace EEA.Manager
                         break;
                     case "Random":
                     default:
+                        //Vector3 pos = playerPos + new Vector2(Random.Range(-10f, 10f), Random.Range(-5f, 5f));
+                        //go.transform.position = pos;
                         go.transform.position = playerPos + Random.insideUnitCircle.normalized * Random.Range(10f, 20f);
                         break;
                 }

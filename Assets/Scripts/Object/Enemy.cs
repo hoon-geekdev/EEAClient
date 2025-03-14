@@ -12,6 +12,8 @@ namespace EEA.Object
     {
         private Rigidbody2D _target;
         private WaitForSeconds _waitForSec = new WaitForSeconds(0);
+        private ObjectTable _table;
+        private bool _isCollidingWithPlayer = false;
 
         public void Init(float hp, float speed, int type)
         {
@@ -28,7 +30,7 @@ namespace EEA.Object
         public void Init(int tableId)
         {
             _id = tableId;
-            ObjectTable table = TableManager.Instance.GetData<ObjectTable>(_id);
+            _table = TableManager.Instance.GetData<ObjectTable>(_id);
 
             _target = GameManager.Instance.Player.GetComponent<Rigidbody2D>();
             _collider.enabled = true;
@@ -36,7 +38,7 @@ namespace EEA.Object
             _animator.SetBool("Dead", false);
             _spriteRenderer.sortingOrder = 25;
 
-            base.Init(table.Health, table.Move_speed);
+            base.Init(_table.Health, _table.Move_speed);
         }
 
         private void OnEnable()
@@ -91,11 +93,49 @@ namespace EEA.Object
                 Vector3 dist = playerPos - transform.position;
                 if (dist.magnitude >= 20)
                 {
-                    Vector3 randomPos = new Vector3(Random.Range(5f, 15f), Random.Range(5f, 15f), 0f);
+                    Vector3 randomPos = new Vector3(Random.Range(10f, 15f), Random.Range(5f, 10f), 0f);
                     transform.Translate(randomPos + dist);
                 }
 
                 yield return new WaitForSeconds(0.5f);
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                // 처음 충돌 시 즉시 데미지
+                collision.GetComponent<ObjectBase>().TakeDamage(_table.Damage);
+
+                // 이미 데미지를 주는 중이 아니라면, 지속적인 데미지 코루틴 시작
+                if (!_isCollidingWithPlayer)
+                {
+                    _isCollidingWithPlayer = true;
+                    StartCoroutine(DealDamageOverTime(collision));
+                }
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                // 플레이어가 나가면 코루틴 중지
+                _isCollidingWithPlayer = false;
+            }
+        }
+
+        private IEnumerator DealDamageOverTime(Collider2D player)
+        {
+            while (_isCollidingWithPlayer)
+            {
+                yield return new WaitForSeconds(2f); // 0.5초마다 실행
+
+                if (player != null) // 플레이어가 사라지지 않았는지 확인
+                {
+                    player.GetComponent<ObjectBase>().TakeDamage(_table.Damage);
+                }
             }
         }
 

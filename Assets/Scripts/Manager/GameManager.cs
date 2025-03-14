@@ -31,7 +31,7 @@ namespace EEA.Manager
         {
             // Player tag로 찾기
             _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-            _player.Init(500, 2f);
+            _player.Init(100, 2f);
 
             List<LevelTable> tables = TableManager.Instance.GetDataList<LevelTable>();
             // tables에서 Type이 1인 데이터만 가져오기
