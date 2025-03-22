@@ -52,6 +52,17 @@ namespace EEA.Object
             return target;
         }
 
+        public Transform PeakRandomTarget()
+        {
+            if (_scanTargets == null || _scanTargets.Count <= 0)
+                return null;
+
+            int index = Random.Range(0, _scanTargets.Count);
+            Transform target = _scanTargets[index].transform;
+            _scanTargets.RemoveAt(index);
+            return target;
+        }
+
         private void SortTargets()
         {
             if (_scanTargets == null || _scanTargets.Count <= 0)

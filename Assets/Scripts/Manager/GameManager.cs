@@ -6,11 +6,20 @@ using UnityEngine;
 using EEA.Define;
 using TableData;
 using System.Collections.Generic;
+using EEA.Utils;
+using Cinemachine;
 
 namespace EEA.Manager
 {
     public class GameManager : SingletonMono<GameManager>
     {
+        public Player Player => _player;
+        public Inventory Inventory => Player.Inventory;
+        public InventorySessionAbility InventorySessionAbility => Player.InventorySessionAbility;
+        public int Level => _level;
+        public int KillCount => _killCount;
+        public float GameTime => _time;
+
         private int _level;
         private int _killCount;
         private int _exp;
@@ -19,19 +28,16 @@ namespace EEA.Manager
 
         private float _time;
         private List<LevelTable> _levelDatas;
-
-        public Player Player => _player;
-        public Inventory Inventory => Player.Inventory;
-        public InventorySessionAbility InventorySessionAbility => Player.InventorySessionAbility;
-        public int Level => _level;
-        public int KillCount => _killCount;
-        public float GameTime => _time;
+        private CameraShake _cameraShake;
 
         protected override void OnAwake()
         {
             // Player tag로 찾기
             _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
             _player.Init(100, 2f);
+
+            CinemachineVirtualCamera virtualCamera = GameObject.FindGameObjectWithTag("vCamCharacterFollow").GetComponent<CinemachineVirtualCamera>();
+            _cameraShake = virtualCamera.GetComponent<CameraShake>();
 
             List<LevelTable> tables = TableManager.Instance.GetDataList<LevelTable>();
             // tables에서 Type이 1인 데이터만 가져오기
@@ -60,6 +66,11 @@ namespace EEA.Manager
             _time += Time.deltaTime;
         }
 
+        public void ShakeCamera()
+        {
+            _cameraShake.TriggerShake();
+        }
+
         public void InitUserData()
         {
             _level = 0;
@@ -67,10 +78,10 @@ namespace EEA.Manager
             _exp = 0;
 
             //InventorySessionAbility.AddData(15000004, 16000046);
-            InventorySessionAbility.AddData(15000010, 16000132);
             InventorySessionAbility.AddData(15000009, 16000113);
-            Player.AddOrLevelUpSessionAbility(15000010);
+            InventorySessionAbility.AddData(15000010, 16000132);
             Player.AddOrLevelUpSessionAbility(15000009);
+            Player.AddOrLevelUpSessionAbility(15000010);
         }
 
         public void AddKillCount()

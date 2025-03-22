@@ -12,6 +12,7 @@ TagManager:
   - FxTemporaire
   - Canvas
   - DropItem
+  - vCamCharacterFollow
   layers:
   - Default
   - TransparentFX

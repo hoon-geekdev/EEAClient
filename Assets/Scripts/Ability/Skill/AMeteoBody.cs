@@ -34,7 +34,7 @@ namespace EEA.AbilitySystem
                     yield return new WaitForSeconds(0.1f);
                 }
 
-                yield return new WaitForSeconds(_delay);
+                yield return new WaitForSeconds(_delay - (_count * 0.1f));
             }
         }
 
