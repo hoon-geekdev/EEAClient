@@ -96,14 +96,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6115218042889694103, guid: 1f545bb067e51d24c8a41a67194c0d38, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6115218042889694103, guid: 1f545bb067e51d24c8a41a67194c0d38, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7590660109427801070, guid: 1f545bb067e51d24c8a41a67194c0d38, type: 3}
       propertyPath: m_Name
       value: Laser
@@ -131,22 +123,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2345168113531894226}
     m_Modifications:
-    - target: {fileID: 570957156437218463, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 570957156437218463, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643106481202847655, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643106481202847655, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3610196239739360637, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -161,23 +137,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3610196239739360637, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.94832367
       objectReference: {fileID: 0}
     - target: {fileID: 3610196239739360637, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.31730464
       objectReference: {fileID: 0}
     - target: {fileID: 3610196239739360637, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3610196239739360637, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3610196239739360637, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -37
       objectReference: {fileID: 0}
     - target: {fileID: 3610196239739360637, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -189,47 +165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4015306620809019976, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
       propertyPath: m_Name
-      value: LaserSmoke
-      objectReference: {fileID: 0}
-    - target: {fileID: 4015306620809019976, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5276589812919924695, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5276589812919924695, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6028445322604192824, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6028445322604192824, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6028445322604192824, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6696574012796093398, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6696574012796093398, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8822538713879645016, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8822538713879645016, guid: 48f17dad47dd749439eabdb8caf51d9e, type: 3}
-      propertyPath: playOnAwake
-      value: 0
+      value: LaserExplosion
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

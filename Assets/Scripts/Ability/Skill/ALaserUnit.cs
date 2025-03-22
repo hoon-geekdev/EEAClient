@@ -45,6 +45,7 @@ namespace EEA.AbilitySystem
                 target.TakeDamage(_damage);
             }
 
+            GameManager.Instance.ShakeCamera();
             yield return new WaitForSeconds(1f);
 
             gameObject.SetActive(false);
