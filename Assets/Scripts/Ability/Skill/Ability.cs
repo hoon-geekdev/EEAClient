@@ -52,7 +52,10 @@ namespace EEA.AbilitySystem
 
             _damage = ability.GetCalcAbility();
             _speed = ability.GetSpeed();
+
+            float multiplier = _owner.Status.GetStatus(StatusType.Cooltime, StatusSubType.Multiply);
             _delay = ability.GetDelay();
+            _delay += _delay * multiplier;
             _count = ability.GetCount();
             _penetration = ability.GetPenetration();
             _duration = ability.GetDuration();

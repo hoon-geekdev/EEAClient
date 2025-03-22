@@ -26,11 +26,11 @@ namespace EEA.AbilitySystem
         private IEnumerator Fire()
         {
             _laser.gameObject.SetActive(true);
-            _laser.Play();
-            yield return new WaitForSeconds(0.1f);
-
             _explosion.gameObject.SetActive(true);
+
+            _laser.Play();
             _explosion.Play();
+            yield return new WaitForSeconds(0.1f);
 
             // position보다 0.5만큼 위에 생성
             Vector3 pos = transform.position + Vector3.up * 0.5f;

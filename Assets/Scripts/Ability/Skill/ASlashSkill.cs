@@ -32,12 +32,11 @@ namespace EEA.AbilitySystem
                     unit.rotation = Quaternion.Euler(0, 0, _player.LookAngle());
 
                     Projectile projectile = unit.GetComponent<Projectile>();
-                    float multiplier = _owner.Status.GetStatus(StatusType.AbilitySpeed, StatusSubType.Multiply);
-                    float speed = _speed + (_speed * multiplier);
+                    float multiplier = _owner.Status.GetStatus(StatusType.Cooltime, StatusSubType.Multiply);
 
                     // _range만큼 이동 할 때까지의 시간
-                    float lifeTime = _range / speed;
-                    projectile.Init(_damage, speed, _penetration, lifeTime);
+                    float lifeTime = _range / _speed;
+                    projectile.Init(_damage, _speed, _penetration, lifeTime);
                 }
 
                 yield return new WaitForSeconds(_delay);

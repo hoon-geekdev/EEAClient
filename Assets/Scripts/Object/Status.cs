@@ -17,7 +17,7 @@ namespace EEA.Object
         None,
         Health,
         MoveSpeed, 
-        AbilitySpeed 
+        Cooltime 
     }
 
     public enum StatusSubType

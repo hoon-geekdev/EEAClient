@@ -32,9 +32,7 @@ namespace EEA.AbilitySystem
                     unit.rotation = Quaternion.FromToRotation(Vector3.up, dir);
 
                     Projectile projectile = unit.GetComponent<Projectile>();
-                    float multiplier = _owner.Status.GetStatus(StatusType.AbilitySpeed, StatusSubType.Multiply);
-                    float speed = _speed + (_speed * multiplier);
-                    projectile.Init(_damage, speed, _penetration);
+                    projectile.Init(_damage, _speed, _penetration);
                 }
 
                 yield return new WaitForSeconds(_delay);

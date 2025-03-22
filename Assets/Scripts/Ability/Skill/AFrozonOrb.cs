@@ -48,9 +48,7 @@ namespace EEA.AbilitySystem
                     unit.rotation = Quaternion.FromToRotation(Vector3.up, dir);
 
                     AFrozonOrbUnit projectile = unit.GetComponent<AFrozonOrbUnit>();
-                    float multiplier = _owner.Status.GetStatus(StatusType.AbilitySpeed, StatusSubType.Multiply);
-                    float speed = _speed + (_speed * multiplier);
-                    projectile.Init(_damage, speed, _penetration, nearTarget);
+                    projectile.Init(_damage, _speed, _penetration, nearTarget);
                 }
 
                 yield return new WaitForSeconds(_delay);

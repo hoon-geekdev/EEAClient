@@ -39,9 +39,7 @@ namespace EEA.AbilitySystem
 
         private void Update()
         {
-            float multiplier = _owner.Status.GetStatus(StatusType.AbilitySpeed, StatusSubType.Multiply);
-            float speed = _speed + (_speed * multiplier);
-            transform.Rotate(Vector3.back * speed * Time.deltaTime);
+            transform.Rotate(Vector3.back * _speed * Time.deltaTime);
         }
 
         private void Arrange()
