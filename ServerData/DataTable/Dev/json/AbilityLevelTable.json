@@ -1078,5 +1078,140 @@
     "Fixed_count": 5,
     "Fixed_penetration": -1,
     "Range": 0.0
+  },
+  {
+    "Code": 16000121,
+    "Unique_name": "레이저1",
+    "Level": 1,
+    "Fixed_value": 0.0,
+    "Fixed_count": 1,
+    "Fixed_penetration": -1,
+    "Range": 0.0
+  },
+  {
+    "Code": 16000122,
+    "Unique_name": "레이저2",
+    "Level": 2,
+    "Fixed_value": 0.1,
+    "Fixed_count": 2,
+    "Fixed_penetration": -1,
+    "Range": 0.1
+  },
+  {
+    "Code": 16000123,
+    "Unique_name": "레이저3",
+    "Level": 3,
+    "Fixed_value": 0.2,
+    "Fixed_count": 2,
+    "Fixed_penetration": -1,
+    "Range": 0.1
+  },
+  {
+    "Code": 16000124,
+    "Unique_name": "레이저4",
+    "Level": 4,
+    "Fixed_value": 0.3,
+    "Fixed_count": 3,
+    "Fixed_penetration": -1,
+    "Range": 0.1
+  },
+  {
+    "Code": 16000125,
+    "Unique_name": "레이저5",
+    "Level": 5,
+    "Fixed_value": 0.4,
+    "Fixed_count": 3,
+    "Fixed_penetration": -1,
+    "Range": 0.1
+  },
+  {
+    "Code": 16000126,
+    "Unique_name": "레이저6",
+    "Level": 6,
+    "Fixed_value": 0.5,
+    "Fixed_count": 4,
+    "Fixed_penetration": -1,
+    "Range": 0.1
+  },
+  {
+    "Code": 16000127,
+    "Unique_name": "레이저7",
+    "Level": 7,
+    "Fixed_value": 0.6,
+    "Fixed_count": 4,
+    "Fixed_penetration": -1,
+    "Range": 0.1
+  },
+  {
+    "Code": 16000128,
+    "Unique_name": "레이저8",
+    "Level": 8,
+    "Fixed_value": 0.7,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.1
+  },
+  {
+    "Code": 16000129,
+    "Unique_name": "레이저9",
+    "Level": 9,
+    "Fixed_value": 0.8,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.1
+  },
+  {
+    "Code": 16000130,
+    "Unique_name": "레이저10",
+    "Level": 10,
+    "Fixed_value": 0.9,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.1
+  },
+  {
+    "Code": 16000131,
+    "Unique_name": "레이저11",
+    "Level": 11,
+    "Fixed_value": 0.1,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.1
+  },
+  {
+    "Code": 16000132,
+    "Unique_name": "레이저12",
+    "Level": 12,
+    "Fixed_value": 0.11,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.1
+  },
+  {
+    "Code": 16000133,
+    "Unique_name": "레이저13",
+    "Level": 13,
+    "Fixed_value": 0.12,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.1
+  },
+  {
+    "Code": 16000134,
+    "Unique_name": "레이저14",
+    "Level": 14,
+    "Fixed_value": 0.13,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.1
+  },
+  {
+    "Code": 16000135,
+    "Unique_name": "레이저15",
+    "Level": 15,
+    "Fixed_value": 0.14,
+    "Fixed_count": 5,
+    "Fixed_penetration": -1,
+    "Range": 0.1
   }
 ]

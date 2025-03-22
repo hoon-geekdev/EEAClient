@@ -227,7 +227,7 @@
     "Status_type": 0,
     "Base_speed": 3.0,
     "Base_delay": 4.0,
-    "Base_duration": 1.0,
+    "Base_duration": 0.0,
     "Base_ability": 15.0,
     "Base_range": 1.0,
     "Base_tick": 0.0,
@@ -248,5 +248,34 @@
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 4]",
     "Asset_path": "Prefabs/Ability/AMeteoBody.prefab",
     "Asset_path_unit": "Prefabs/Ability/AMeteoUnit.prefab"
+  },
+  {
+    "Code": 15000010,
+    "Unique_name": "레이저",
+    "Type": 1,
+    "Status_type": 0,
+    "Base_speed": 0.0,
+    "Base_delay": 4.0,
+    "Base_duration": 0.0,
+    "Base_ability": 10.0,
+    "Base_range": 5.0,
+    "Base_tick": 0.0,
+    "Level_datas": [
+      16000121,
+      16000122,
+      16000123,
+      16000124,
+      16000125,
+      16000126,
+      16000127,
+      16000128,
+      16000129,
+      16000130
+    ],
+    "Name_key": 99000010,
+    "Desc_key": 99000010,
+    "Icon_path": "UI/Temp/Sprites/UI.png[Select 6]",
+    "Asset_path": "Prefabs/Ability/ALaserBody.prefab",
+    "Asset_path_unit": "Prefabs/Ability/ALaserUnit.prefab"
   }
 ]

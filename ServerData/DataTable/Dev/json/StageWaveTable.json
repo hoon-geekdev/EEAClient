@@ -144,8 +144,18 @@
     "Unique_name": "챕터1스테이지1웨이브9",
     "Wave": 2,
     "Time": 125.0,
-    "Monster_id": 13000008,
+    "Monster_id": 13000007,
     "Spawn_count": 50,
+    "Spawn_interval": 0.2,
+    "Spawn_area": "circle"
+  },
+  {
+    "Code": 12000016,
+    "Unique_name": "챕터1스테이지1웨이브10",
+    "Wave": 1,
+    "Time": 60.0,
+    "Monster_id": 13000008,
+    "Spawn_count": 1,
     "Spawn_interval": 0.2,
     "Spawn_area": "circle"
   }

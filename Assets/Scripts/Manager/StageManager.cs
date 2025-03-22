@@ -114,33 +114,39 @@ namespace EEA.Manager
                 Enemy enemy = go.GetComponent<Enemy>();
                 enemy.Init(objectData.Code);
 
-                switch(waveData._spawnAreaType)
-                {
-                    case "left":
-                        go.transform.position = playerPos + new Vector2(-15f, Random.Range(-5f, 5f));
-                        break;
-                    case "right":
-                        go.transform.position = playerPos + new Vector2(15f, Random.Range(-5f, 5f));
-                        break;
-                    case "top":
-                        go.transform.position = playerPos + new Vector2(Random.Range(-10f, 10f), 5f);
-                        break;
-                    case "bottom":
-                        go.transform.position = playerPos + new Vector2(Random.Range(-10f, 10f), -5f);
-                        break;
-                    case "circle":
-                        float angle = (360f / waveData._spawnMaxCount) * waveData._spawnCurCount;
-                        float radian = angle * Mathf.Deg2Rad; // 도(degree) → 라디안(radian) 변환
+                // 임시 코드. ㅋ
+                if (objectData.Code == 13000008)
+                    enemy.transform.localScale = new Vector3(2.5f, 2.5f, 1f);
+                else
+                    enemy.transform.localScale = new Vector3(1f, 1f, 1f);
 
-                        go.transform.position = playerPos + new Vector2(Mathf.Cos(radian), Mathf.Sin(radian)) * 10;
-                        break;
+                switch (waveData._spawnAreaType)
+                    {
+                        case "left":
+                            go.transform.position = playerPos + new Vector2(-15f, Random.Range(-5f, 5f));
+                            break;
+                        case "right":
+                            go.transform.position = playerPos + new Vector2(15f, Random.Range(-5f, 5f));
+                            break;
+                        case "top":
+                            go.transform.position = playerPos + new Vector2(Random.Range(-10f, 10f), 5f);
+                            break;
+                        case "bottom":
+                            go.transform.position = playerPos + new Vector2(Random.Range(-10f, 10f), -5f);
+                            break;
+                        case "circle":
+                            float angle = (360f / waveData._spawnMaxCount) * waveData._spawnCurCount;
+                            float radian = angle * Mathf.Deg2Rad; // 도(degree) → 라디안(radian) 변환
+
+                            go.transform.position = playerPos + new Vector2(Mathf.Cos(radian), Mathf.Sin(radian)) * 10;
+                            break;
                     case "Random":
-                    default:
-                        //Vector3 pos = playerPos + new Vector2(Random.Range(-10f, 10f), Random.Range(-5f, 5f));
-                        //go.transform.position = pos;
-                        go.transform.position = playerPos + Random.insideUnitCircle.normalized * Random.Range(10f, 20f);
-                        break;
-                }
+                        default:
+                            //Vector3 pos = playerPos + new Vector2(Random.Range(-10f, 10f), Random.Range(-5f, 5f));
+                            //go.transform.position = pos;
+                            go.transform.position = playerPos + Random.insideUnitCircle.normalized * Random.Range(10f, 20f);
+                            break;
+                    }
 
                 waveData._spawnCurCount++;
                 yield return wait;

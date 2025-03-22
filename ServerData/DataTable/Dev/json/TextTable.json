@@ -52,5 +52,11 @@
     "Unique_name": "text",
     "Name_kr": "메테오",
     "Desc_kr": "메테오"
+  },
+  {
+    "Code": 99000010,
+    "Unique_name": "text",
+    "Name_kr": "레이저",
+    "Desc_kr": "레이저"
   }
 ]

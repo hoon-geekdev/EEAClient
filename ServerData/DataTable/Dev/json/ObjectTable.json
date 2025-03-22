@@ -138,5 +138,25 @@
       200
     ],
     "Asset_path": "Object/Monster/EnemyA.prefab"
+  },
+  {
+    "Code": 13000008,
+    "Unique_name": "섭보스",
+    "Health": 500,
+    "Move_speed": 1.2,
+    "Damage": 20.0,
+    "Drop_items": [
+      0,
+      14000010,
+      14000011,
+      14000012
+    ],
+    "Drop_rates": [
+      200,
+      350,
+      250,
+      200
+    ],
+    "Asset_path": "Object/Monster/EnemyA.prefab"
   }
 ]
