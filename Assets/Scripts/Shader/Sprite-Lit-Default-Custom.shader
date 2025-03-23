@@ -6,6 +6,7 @@ Shader "Custom/Sprite-Lit-Default-Custom"
         _MaskTex("Mask", 2D) = "white" {}
         _NormalMap("Normal Map", 2D) = "bump" {}
         _ZWrite("ZWrite", Float) = 0
+        _HitEffect("Hit Flash Amount", Range(0,1)) = 0
 
         [HideInInspector] _Color("Tint", Color) = (1,1,1,1)
         [HideInInspector] _RendererColor("RendererColor", Color) = (1,1,1,1)
@@ -70,6 +71,7 @@ Shader "Custom/Sprite-Lit-Default-Custom"
 
             CBUFFER_START(UnityPerMaterial)
                 half4 _Color;
+                float _HitEffect;
             CBUFFER_END
 
             #if USE_SHAPE_LIGHT_TYPE_0
@@ -115,7 +117,7 @@ Shader "Custom/Sprite-Lit-Default-Custom"
                 half4 main = i.color * texColor;
 
                 // HitEffect: 흰색으로 플래시 효과
-                main.rgb = lerp(main.rgb, 1.0, saturate(0.7));
+                main.rgb = lerp(main.rgb, 1.0, saturate(_HitEffect));
 
                 const half4 mask = SAMPLE_TEXTURE2D(_MaskTex, sampler_MaskTex, i.uv);
                 SurfaceData2D surfaceData;
@@ -174,6 +176,7 @@ Shader "Custom/Sprite-Lit-Default-Custom"
 
             CBUFFER_START(UnityPerMaterial)
                 half4 _Color;
+                float _HitEffect;
             CBUFFER_END
 
             Varyings NormalsRenderingVertex(Attributes attributes)
@@ -248,6 +251,7 @@ Shader "Custom/Sprite-Lit-Default-Custom"
 
             CBUFFER_START(UnityPerMaterial)
                 half4 _Color;
+                float _HitEffect;
             CBUFFER_END
 
             Varyings UnlitVertex(Attributes attributes)
@@ -270,7 +274,8 @@ Shader "Custom/Sprite-Lit-Default-Custom"
             float4 UnlitFragment(Varyings i) : SV_Target
             {
                 float4 mainTex = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv);
-                mainTex.rgb = float3(0.7, 0.7, 0.7);
+                mainTex.rgb = float3(_HitEffect, _HitEffect, _HitEffect);
+                //lerp(mainTex.rgb, 1.0, saturate(_HitEffect));
 
                 #if defined(DEBUG_DISPLAY)
                 SurfaceData2D surfaceData;

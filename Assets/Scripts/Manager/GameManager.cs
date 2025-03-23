@@ -37,6 +37,7 @@ namespace EEA.Manager
         {
             Shader flashShader = Shader.Find("Custom/Sprite-Lit-Default-Custom");
             _sharedHitMaterial = new Material(flashShader);
+            _sharedHitMaterial.SetFloat("_HitEffect", 0.7f);
 
             // Player tag로 찾기
             _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
