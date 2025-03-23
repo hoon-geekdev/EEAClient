@@ -1,3 +1,4 @@
+using EEA.Define;
 using EEA.Manager;
 using EEA.Object;
 using System.Collections;
@@ -36,7 +37,8 @@ namespace EEA.AbilitySystem
 
                     // _range만큼 이동 할 때까지의 시간
                     float lifeTime = _range / _speed;
-                    projectile.Init(_damage, _speed, _penetration, lifeTime);
+                    DamageEvent evt = new DamageEvent() { _damage = _damage, _speed = _speed, _penetration = _penetration, _hitEffect = _tableData.Asset_path_hit };
+                    projectile.Init(evt, lifeTime);
                 }
 
                 yield return new WaitForSeconds(_delay);

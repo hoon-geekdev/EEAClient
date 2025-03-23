@@ -129,10 +129,10 @@ namespace EEA.Manager
                             go.transform.position = playerPos + new Vector2(15f, Random.Range(-5f, 5f));
                             break;
                         case "top":
-                            go.transform.position = playerPos + new Vector2(Random.Range(-10f, 10f), 5f);
+                            go.transform.position = playerPos + new Vector2(Random.Range(-10f, 10f), 7f);
                             break;
                         case "bottom":
-                            go.transform.position = playerPos + new Vector2(Random.Range(-10f, 10f), -5f);
+                            go.transform.position = playerPos + new Vector2(Random.Range(-10f, 10f), -7f);
                             break;
                         case "circle":
                             float angle = (360f / waveData._spawnMaxCount) * waveData._spawnCurCount;

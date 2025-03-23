@@ -84,11 +84,15 @@ namespace EEA.Manager
             _killCount = 0;
             _exp = 0;
 
+            InventorySessionAbility.AddData(15000002, 16000016);
+            InventorySessionAbility.AddData(15000003, 16000031);
             InventorySessionAbility.AddData(15000004, 16000046);
             //InventorySessionAbility.AddData(15000009, 16000113);
             //InventorySessionAbility.AddData(15000010, 16000132);
             //Player.AddOrLevelUpSessionAbility(15000009);
             //Player.AddOrLevelUpSessionAbility(15000010);
+            Player.AddOrLevelUpSessionAbility(15000002);
+            Player.AddOrLevelUpSessionAbility(15000003);
             Player.AddOrLevelUpSessionAbility(15000004);
         }
 

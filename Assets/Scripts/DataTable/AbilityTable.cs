@@ -18,6 +18,7 @@ namespace TableData {
 		public string Icon_path { get; set; }
 		public string Asset_path { get; set; }
 		public string Asset_path_unit { get; set; }
+		public string Asset_path_hit { get; set; }
 		
     }
 }

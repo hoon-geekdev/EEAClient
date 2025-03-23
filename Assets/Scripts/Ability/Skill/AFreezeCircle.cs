@@ -1,3 +1,4 @@
+using EEA.Define;
 using EEA.Object;
 using System.Collections;
 using UnityEngine;
@@ -60,7 +61,7 @@ namespace EEA.AbilitySystem
                     if (target == null)
                         continue;
 
-                    target.TakeDamage(_damage);
+                    target.TakeDamage(new DamageEvent() { _damage = _damage, _hitEffect = _tableData.Asset_path_hit});
                 }
 
                 yield return wait;

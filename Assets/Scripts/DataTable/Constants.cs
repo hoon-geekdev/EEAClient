@@ -1,3 +1,7 @@
+using EEA.AbilitySystem;
+using System.Transactions;
+using UnityEngine;
+
 namespace EEA.Define
 {
     public class EditorPrefPathKey
@@ -60,5 +64,19 @@ namespace EEA.Define
         public const string UIAbilityItem = "UI/UIAbilitySelectPopup/UIAbilityItem.prefab";
         public const string UIJoystick = "UI/UIJoystick/UIJoystick.prefab";
         public const string UIDamageText = "UI/UIDamageText/UIDamageText.prefab";
+    }
+
+    public class DamageEvent
+    {
+        public float _damage;
+        public float _range;
+        public float _delay;
+        public float _speed;
+        public float _duration;
+        public int _penetration;
+        public int _count;
+        public float _tick;
+        public string _hitEffect = string.Empty;
+        public Transform _target;
     }
 }

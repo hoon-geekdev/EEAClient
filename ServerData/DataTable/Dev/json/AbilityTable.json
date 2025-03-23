@@ -26,7 +26,8 @@
     "Desc_key": 99000001,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 3]",
     "Asset_path": "Prefabs/Ability/AFireBallBody.prefab",
-    "Asset_path_unit": "Prefabs/Ability/AFireBallUnit.prefab"
+    "Asset_path_unit": "Prefabs/Ability/AFireBallUnit.prefab",
+    "Asset_path_hit": "VFX/Electro hit.prefab"
   },
   {
     "Code": 15000002,
@@ -55,7 +56,8 @@
     "Desc_key": 99000002,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 3]",
     "Asset_path": "Prefabs/Ability/AFrozonOrbBody.prefab",
-    "Asset_path_unit": "Prefabs/Ability/AFrozonOrbUnit.prefab"
+    "Asset_path_unit": "Prefabs/Ability/AFrozonOrbUnit.prefab",
+    "Asset_path_hit": "VFX/Snow hit.prefab"
   },
   {
     "Code": 15000003,
@@ -84,7 +86,8 @@
     "Desc_key": 99000003,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 0]",
     "Asset_path": "Prefabs/Ability/AOrbSphereBody.prefab",
-    "Asset_path_unit": "Prefabs/Ability/AOrbSphereUnit.prefab"
+    "Asset_path_unit": "Prefabs/Ability/AOrbSphereUnit.prefab",
+    "Asset_path_hit": "VFX/Snow hit.prefab"
   },
   {
     "Code": 15000004,
@@ -113,7 +116,8 @@
     "Desc_key": 99000004,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 0]",
     "Asset_path": "Prefabs/Ability/ASlashBody.prefab",
-    "Asset_path_unit": "Prefabs/Ability/ASlashUnit.prefab"
+    "Asset_path_unit": "Prefabs/Ability/ASlashUnit.prefab",
+    "Asset_path_hit": "VFX/Electro hit.prefab"
   },
   {
     "Code": 15000005,
@@ -142,7 +146,8 @@
     "Desc_key": 99000005,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 7]",
     "Asset_path": "",
-    "Asset_path_unit": ""
+    "Asset_path_unit": "",
+    "Asset_path_hit": ""
   },
   {
     "Code": 15000006,
@@ -171,7 +176,8 @@
     "Desc_key": 99000006,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 6]",
     "Asset_path": "",
-    "Asset_path_unit": ""
+    "Asset_path_unit": "",
+    "Asset_path_hit": ""
   },
   {
     "Code": 15000007,
@@ -189,7 +195,8 @@
     "Desc_key": 99000007,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 8]",
     "Asset_path": "",
-    "Asset_path_unit": ""
+    "Asset_path_unit": "",
+    "Asset_path_hit": ""
   },
   {
     "Code": 15000008,
@@ -218,7 +225,8 @@
     "Desc_key": 99000008,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 9]",
     "Asset_path": "Prefabs/Ability/AFreezeCircle.prefab",
-    "Asset_path_unit": ""
+    "Asset_path_unit": "",
+    "Asset_path_hit": "VFX/Electro hit.prefab"
   },
   {
     "Code": 15000009,
@@ -247,7 +255,8 @@
     "Desc_key": 99000009,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 4]",
     "Asset_path": "Prefabs/Ability/AMeteorBody.prefab",
-    "Asset_path_unit": "Prefabs/Ability/AMeteorUnit.prefab"
+    "Asset_path_unit": "Prefabs/Ability/AMeteorUnit.prefab",
+    "Asset_path_hit": "VFX/Electro hit.prefab"
   },
   {
     "Code": 15000010,
@@ -276,6 +285,7 @@
     "Desc_key": 99000010,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 6]",
     "Asset_path": "Prefabs/Ability/ALaserBody.prefab",
-    "Asset_path_unit": "Prefabs/Ability/ALaserUnit.prefab"
+    "Asset_path_unit": "Prefabs/Ability/ALaserUnit.prefab",
+    "Asset_path_hit": "VFX/Electro hit.prefab"
   }
 ]

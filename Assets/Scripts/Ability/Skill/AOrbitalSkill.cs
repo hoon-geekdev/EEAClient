@@ -1,3 +1,4 @@
+using EEA.Define;
 using EEA.Manager;
 using EEA.Object;
 using System.Collections;
@@ -66,7 +67,7 @@ namespace EEA.AbilitySystem
                 trf.Translate(trf.up * 1.2f, Space.World);
 
                 AOrbitalUnit unit = trf.GetComponent<AOrbitalUnit>();
-                unit.Init(_damage);
+                unit.Init(new DamageEvent() { _damage = _damage, _hitEffect = _tableData.Asset_path_hit});
             }
         }
     }

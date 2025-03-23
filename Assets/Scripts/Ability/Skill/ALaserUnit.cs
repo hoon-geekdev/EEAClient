@@ -1,3 +1,4 @@
+using EEA.Define;
 using EEA.Manager;
 using EEA.Object;
 using System.Collections;
@@ -10,16 +11,15 @@ namespace EEA.AbilitySystem
         [SerializeField] private ParticleSystem _explosion;
         [SerializeField] private ParticleSystem _laser;
 
-        private float _damage;
-        private float _range;
+        public DamageEvent _eventData;
 
-        public void Init(float damage, float range)
+        public void Init(DamageEvent evt)
         {
             _explosion.gameObject.SetActive(false);
             _laser.gameObject.SetActive(false);
 
-            _damage = damage;
-            _range = range;
+            _eventData = evt;
+
             StartCoroutine(Fire());
         }
 
@@ -34,7 +34,7 @@ namespace EEA.AbilitySystem
 
             // position보다 0.5만큼 위에 생성
             Vector3 pos = transform.position + Vector3.up * 0.5f;
-            Collider2D[] colliders = Physics2D.OverlapCapsuleAll(pos, new Vector2(_range, 1f), CapsuleDirection2D.Horizontal, 0, LayerMask.GetMask("Enemy"));
+            Collider2D[] colliders = Physics2D.OverlapCapsuleAll(pos, new Vector2(_eventData._range, 1f), CapsuleDirection2D.Horizontal, 0, LayerMask.GetMask("Enemy"));
             
             foreach (Collider2D collider in colliders)
             {
@@ -42,7 +42,7 @@ namespace EEA.AbilitySystem
                 if (target == null)
                     continue;
 
-                target.TakeDamage(_damage);
+                target.TakeDamage(_eventData);
             }
 
             GameManager.Instance.ShakeCamera();

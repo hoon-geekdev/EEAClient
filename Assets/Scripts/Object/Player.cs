@@ -1,4 +1,5 @@
 using EEA.AbilitySystem;
+using EEA.Define;
 using EEA.Manager;
 using System.Collections.Generic;
 using UnityEngine;
@@ -98,13 +99,13 @@ namespace EEA.Object
             }
         }
 
-        protected override void OnTakeDamage(float damage)
+        protected override void OnTakeDamage(DamageEvent evt)
         {
-            base.OnTakeDamage(damage);
+            base.OnTakeDamage(evt);
             if (IsDead == true)
                 return;
 
-            _health -= damage;
+            _health -= evt._damage;
         }
 
         void OnMove(InputValue value)

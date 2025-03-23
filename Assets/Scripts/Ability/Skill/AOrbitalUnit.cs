@@ -1,21 +1,21 @@
+using EEA.Define;
 using UnityEngine;
 
 namespace EEA.AbilitySystem
 {
     public class AOrbitalUnit : MonoBehaviour
     {
-        private float _damage;
-
-        public void Init(float damage)
+        DamageEvent _damageEvent;
+        public void Init(DamageEvent evt)
         {
-            _damage = damage;
+            _damageEvent = evt;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Enemy"))
             {
-                collision.GetComponent<Object.ObjectBase>().TakeDamage(_damage);
+                collision.GetComponent<Object.ObjectBase>().TakeDamage(_damageEvent);
             }
         }
     }

@@ -1,3 +1,4 @@
+using EEA.Define;
 using EEA.Manager;
 using EEA.Object;
 using UnityEngine;
@@ -28,7 +29,7 @@ namespace EEA.AbilitySystem
                     ALaserUnit projectile = unit.GetComponent<ALaserUnit>();
 
                     unit.transform.position = target.position;
-                    projectile.Init(_damage, _range);
+                    projectile.Init(new DamageEvent() { _damage = _damage, _range = _range, _hitEffect = _tableData.Asset_path_hit });
 
                     yield return new WaitForSeconds(0.1f);
                 }

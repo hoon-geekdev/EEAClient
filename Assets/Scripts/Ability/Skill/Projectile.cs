@@ -1,3 +1,4 @@
+using EEA.Define;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -6,16 +7,12 @@ namespace EEA.AbilitySystem
 {
     public class Projectile : MonoBehaviour
     {
-        private float _damage;
-        private float _speed;
-        private int _penetration;
+        private DamageEvent _damageEvent;
         private float _lifeTime = 4f;
 
-        public void Init(float damage, float speed, int penetration, float lifetime = 4f)
+        public void Init(DamageEvent evt, float lifetime = 4f)
         {
-            _damage = damage;
-            _speed = speed;
-            _penetration = penetration;
+            _damageEvent = evt;
             _lifeTime = lifetime;
 
             StartCoroutine(LifeTime());
@@ -29,21 +26,21 @@ namespace EEA.AbilitySystem
 
         private void Update()
         {
-            transform.Translate(transform.up * _speed * Time.deltaTime, Space.World);
+            transform.Translate(transform.up * _damageEvent._speed * Time.deltaTime, Space.World);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (_penetration == -1 || _penetration > 0)
+            if (_damageEvent._penetration == -1 || _damageEvent._penetration > 0)
             {
                 if (collision.CompareTag("Enemy"))
                 {
-                    if (_penetration > 0)
-                        --_penetration;
+                    if (_damageEvent._penetration > 0)
+                        --_damageEvent._penetration;
 
-                    collision.GetComponent<Object.ObjectBase>().TakeDamage(_damage);
+                    collision.GetComponent<Object.ObjectBase>().TakeDamage(_damageEvent);
 
-                    if (_penetration == 0)
+                    if (_damageEvent._penetration == 0)
                         gameObject.SetActive(false);
                 }
             }

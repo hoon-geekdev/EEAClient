@@ -6,7 +6,6 @@ using System.Collections;
 using System.Linq;
 using TableData;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 namespace EEA.Object
 {
@@ -19,6 +18,8 @@ namespace EEA.Object
 
         private Material _defaultMaterial;
         private Material _hitMaterial;
+        private bool _isHiting = false;
+        private Tween _punchTween;
 
         public void Init(float hp, float speed, int type)
         {
@@ -30,6 +31,7 @@ namespace EEA.Object
             _rigid.simulated = true;
             _animator.SetBool("Dead", false);
             _spriteRenderer.sortingOrder = 25;
+            _isHiting = false;
         }
 
         public void Init(int tableId)
@@ -42,12 +44,17 @@ namespace EEA.Object
             _rigid.simulated = true;
             _animator.SetBool("Dead", false);
             _spriteRenderer.sortingOrder = 25;
+            _isHiting = false;
 
             base.Init(_table.Health, _table.Move_speed);
         }
 
         protected override void OnAwake()
         {
+            _punchTween = transform.DOPunchScale(Vector3.one * -0.4f, 0.2f, 10, 1)
+                        .SetAutoKill(false)
+                        .Pause();
+
             _defaultMaterial = _spriteRenderer.sharedMaterial;
             _hitMaterial = GameManager.Instance.SharedHitMaterial;
         }
@@ -117,7 +124,7 @@ namespace EEA.Object
             if (collision.CompareTag("Player"))
             {
                 // 처음 충돌 시 즉시 데미지
-                collision.GetComponent<ObjectBase>().TakeDamage(_table.Damage);
+                collision.GetComponent<ObjectBase>().TakeDamage(new DamageEvent() { _damage = _table.Damage });
 
                 // 이미 데미지를 주는 중이 아니라면, 지속적인 데미지 코루틴 시작
                 if (!_isCollidingWithPlayer)
@@ -137,25 +144,25 @@ namespace EEA.Object
             }
         }
 
-        private IEnumerator DealDamageOverTime(Collider2D player)
+        private IEnumerator DealDamageOverTime(Collider2D collision)
         {
             while (_isCollidingWithPlayer)
             {
                 yield return new WaitForSeconds(2f); // 0.5초마다 실행
 
-                if (player != null) // 플레이어가 사라지지 않았는지 확인
+                if (collision != null) // 플레이어가 사라지지 않았는지 확인
                 {
-                    player.GetComponent<ObjectBase>().TakeDamage(_table.Damage);
+                    collision.GetComponent<ObjectBase>().TakeDamage(new DamageEvent() { _damage = _table.Damage });
                 }
             }
         }
 
-        protected override void OnTakeDamage(float damage)
+        protected override void OnTakeDamage(DamageEvent evt)
         {
             if (IsDead == true)
                 return;
 
-            _health -= damage;
+            _health -= evt._damage;
 
             if (IsDead == true)
             {
@@ -169,25 +176,28 @@ namespace EEA.Object
                 
             }
 
-            StopCoroutine(Hit());
-            StartCoroutine(Hit());
+            if (_isHiting == false)
+                StartCoroutine(Hit(evt));
 
             GameObject go = PoolManager.Instance.GetObject(AssetPathUI.UIDamageText);
             UIDamageText damageText = go.GetComponent<UIDamageText>();
-            damageText.SetText(transform, damage);
+            damageText.SetText(transform, evt._damage);
         }
 
-        private IEnumerator Hit()
+        private IEnumerator Hit(DamageEvent evt)
         {
-            transform.DOComplete();
-            transform.DOPunchScale(Vector3.one * -0.4f, 0.2f, 10, 1);
+            _isHiting = true;
+            _punchTween.Restart();
             _spriteRenderer.sharedMaterial = _hitMaterial;
-            GameObject hit = PoolManager.Instance.GetObject(AssetPathVFX.DefaultHit);
+
+            string hitEffect = evt._hitEffect != string.Empty ? evt._hitEffect : AssetPathVFX.DefaultHit;
+            GameObject hit = PoolManager.Instance.GetObject(hitEffect);
             hit.transform.position = transform.position;
 
             yield return new WaitForSeconds(0.1f);
 
             _spriteRenderer.sharedMaterial = _defaultMaterial;
+            _isHiting = false;
         }
 
         private IEnumerator KnockBack()

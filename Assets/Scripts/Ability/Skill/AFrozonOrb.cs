@@ -1,3 +1,4 @@
+using EEA.Define;
 using EEA.Manager;
 using EEA.Object;
 using System.Collections;
@@ -48,7 +49,15 @@ namespace EEA.AbilitySystem
                     unit.rotation = Quaternion.FromToRotation(Vector3.up, dir);
 
                     AFrozonOrbUnit projectile = unit.GetComponent<AFrozonOrbUnit>();
-                    projectile.Init(_damage, _speed, _penetration, nearTarget);
+                    DamageEvent evt = new DamageEvent() 
+                    { 
+                        _damage = _damage, 
+                        _speed = _speed, 
+                        _penetration = _penetration, 
+                        _hitEffect = _tableData.Asset_path_hit, 
+                        _target = nearTarget
+                    };
+                    projectile.Init(evt);
                 }
 
                 yield return new WaitForSeconds(_delay);

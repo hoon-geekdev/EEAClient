@@ -1,3 +1,4 @@
+using EEA.Define;
 using EEA.Manager;
 using EEA.Object;
 using System.Collections;
@@ -32,7 +33,8 @@ namespace EEA.AbilitySystem
                     unit.rotation = Quaternion.FromToRotation(Vector3.up, dir);
 
                     Projectile projectile = unit.GetComponent<Projectile>();
-                    projectile.Init(_damage, _speed, _penetration);
+                    DamageEvent evt = new DamageEvent() { _damage = _damage, _speed = _speed, _penetration = _penetration, _hitEffect = _tableData.Asset_path_hit};
+                    projectile.Init(evt);
                 }
 
                 yield return new WaitForSeconds(_delay);

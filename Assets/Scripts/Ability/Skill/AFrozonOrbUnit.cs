@@ -1,3 +1,4 @@
+using EEA.Define;
 using EEA.Manager;
 using EEA.Object;
 using System.Collections;
@@ -5,17 +6,16 @@ using UnityEngine;
 
 namespace EEA.AbilitySystem
 {
-    public class AFrozonOrbUnit : Ability
+    public class AFrozonOrbUnit : MonoBehaviour
     {
         private float _lifeTime = 4f;
         private Vector3 _dir;
+        DamageEvent _damageEvent;
 
-        public void Init(float damage, float speed, int penetration, Transform target)
+        public void Init(DamageEvent evt)
         {
-            _damage = damage;
-            _speed = speed;
-            _penetration = penetration;
-            _dir = (target.position - transform.position).normalized; // 방향을 정규화하여 유지
+            _damageEvent = evt;
+            _dir = (evt._target.position - transform.position).normalized; // 방향을 정규화하여 유지
             StartCoroutine(LifeTime());
             //StartCoroutine(CreateUnit());
         }
@@ -51,7 +51,7 @@ namespace EEA.AbilitySystem
         private void Update()
         {
             // 설정된 방향(_dir)으로 이동
-            transform.Translate(_dir * _speed * Time.deltaTime, Space.World);
+            transform.Translate(_dir * _damageEvent._speed * Time.deltaTime, Space.World);
 
             // 로컬 축을 기준으로 회전
             transform.Rotate(Vector3.forward * 360 * Time.deltaTime, Space.Self);
@@ -61,7 +61,7 @@ namespace EEA.AbilitySystem
         {
             if (collision.CompareTag("Enemy"))
             {
-                collision.GetComponent<Object.ObjectBase>().TakeDamage(_damage);
+                collision.GetComponent<Object.ObjectBase>().TakeDamage(_damageEvent);
             }
         }
     }

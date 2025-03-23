@@ -1,3 +1,5 @@
+using EEA.AbilitySystem;
+using EEA.Define;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -64,12 +66,12 @@ namespace EEA.Object
             OnLateUpdate();
         }
 
-        public void TakeDamage(float damage)
+        public void TakeDamage(DamageEvent evt)
         {
-            OnTakeDamage(damage);
+            OnTakeDamage(evt);
         }
 
-        protected virtual void OnTakeDamage(float damage) { }
+        protected virtual void OnTakeDamage(DamageEvent evt) { }
 
         protected virtual void OnAwake() { }
 
