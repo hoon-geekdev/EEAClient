@@ -1,3 +1,4 @@
+using DG.Tweening;
 using EEA.Define;
 using EEA.Manager;
 using EEA.UI;
@@ -5,6 +6,7 @@ using System.Collections;
 using System.Linq;
 using TableData;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 namespace EEA.Object
 {
@@ -14,6 +16,9 @@ namespace EEA.Object
         private WaitForSeconds _waitForSec = new WaitForSeconds(0);
         private ObjectTable _table;
         private bool _isCollidingWithPlayer = false;
+
+        private Material _defaultMaterial;
+        private Material _hitMaterial;
 
         public void Init(float hp, float speed, int type)
         {
@@ -41,6 +46,12 @@ namespace EEA.Object
             base.Init(_table.Health, _table.Move_speed);
         }
 
+        protected override void OnAwake()
+        {
+            _defaultMaterial = _spriteRenderer.sharedMaterial;
+            _hitMaterial = GameManager.Instance.SharedHitMaterial;
+        }
+
         private void OnEnable()
         {
             StartCoroutine(CheckDistance());
@@ -56,8 +67,8 @@ namespace EEA.Object
             if (IsDead == true || _target == null)
                 return;
 
-            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
-                return;
+            //if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
+            //    return;
 
             Vector2 dir = _target.position - _rigid.position;
 
@@ -153,13 +164,27 @@ namespace EEA.Object
             }
             else
             {
-                _animator.SetTrigger("Hit");
+                //_animator.SetTrigger("Hit");
                 //StartCoroutine(KnockBack());
+                
             }
+
+            StopCoroutine(Hit());
+            StartCoroutine(Hit());
 
             GameObject go = PoolManager.Instance.GetObject(AssetPathUI.UIDamageText);
             UIDamageText damageText = go.GetComponent<UIDamageText>();
             damageText.SetText(transform, damage);
+        }
+
+        private IEnumerator Hit()
+        {
+            transform.DOComplete();
+            transform.DOPunchScale(Vector3.one * -0.4f, 0.2f, 10, 1);
+            _spriteRenderer.sharedMaterial = _hitMaterial;
+            yield return new WaitForSeconds(0.1f);
+
+            _spriteRenderer.sharedMaterial = _defaultMaterial;
         }
 
         private IEnumerator KnockBack()

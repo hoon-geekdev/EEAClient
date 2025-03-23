@@ -33,7 +33,7 @@
     "Code": 99000006,
     "Unique_name": "text",
     "Name_kr": "글로브",
-    "Desc_kr": "시전속도 {0}% 증가"
+    "Desc_kr": "쿨타임 {0}% 감소"
   },
   {
     "Code": 99000007,

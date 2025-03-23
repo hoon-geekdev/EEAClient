@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 846881311014354906}
   - component: {fileID: 2008806461002611320}
   m_Layer: 0
-  m_Name: AMeteoUnit
+  m_Name: AMeteorUnit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _explosion: {fileID: 7235238836304109963}
-  _meteo: {fileID: 8320480907469045515}
+  _meteor: {fileID: 8320480907469045515}
 --- !u!1001 &918378421193004493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98,7 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6647589408757777625, guid: 1eefa15aef35a994fb563ec6dbc87ddc, type: 3}
       propertyPath: m_Name
-      value: MeteoExplosion
+      value: MeteorExplosion
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -125,7 +125,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4337095166872020309, guid: 8e23d695039c07646badbd6f5bb76306, type: 3}
       propertyPath: m_Name
-      value: Meteo
+      value: Meteor
       objectReference: {fileID: 0}
     - target: {fileID: 8412050608256144917, guid: 8e23d695039c07646badbd6f5bb76306, type: 3}
       propertyPath: m_LocalPosition.x

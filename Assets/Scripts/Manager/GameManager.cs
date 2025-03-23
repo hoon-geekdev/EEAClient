@@ -30,8 +30,14 @@ namespace EEA.Manager
         private List<LevelTable> _levelDatas;
         private CameraShake _cameraShake;
 
+        private Material _sharedHitMaterial;
+        public Material SharedHitMaterial => _sharedHitMaterial;
+
         protected override void OnAwake()
         {
+            Shader flashShader = Shader.Find("Custom/Sprite-Lit-Default-Custom");
+            _sharedHitMaterial = new Material(flashShader);
+
             // Player tag로 찾기
             _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
             _player.Init(100, 2f);
@@ -77,11 +83,12 @@ namespace EEA.Manager
             _killCount = 0;
             _exp = 0;
 
-            //InventorySessionAbility.AddData(15000004, 16000046);
-            InventorySessionAbility.AddData(15000009, 16000113);
-            InventorySessionAbility.AddData(15000010, 16000132);
-            Player.AddOrLevelUpSessionAbility(15000009);
-            Player.AddOrLevelUpSessionAbility(15000010);
+            InventorySessionAbility.AddData(15000004, 16000046);
+            //InventorySessionAbility.AddData(15000009, 16000113);
+            //InventorySessionAbility.AddData(15000010, 16000132);
+            //Player.AddOrLevelUpSessionAbility(15000009);
+            //Player.AddOrLevelUpSessionAbility(15000010);
+            Player.AddOrLevelUpSessionAbility(15000004);
         }
 
         public void AddKillCount()

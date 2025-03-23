@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace EEA.AbilitySystem
 {
-    public class AMeteoBody : Ability
+    public class AMeteorBody : Ability
     {
         private Player _player;
         protected override void OnStart()
@@ -21,7 +21,7 @@ namespace EEA.AbilitySystem
                 for (int i = 0; i < _count; ++i)
                 {
                     Transform unit = PoolManager.Instance.GetObject(_tableData.Asset_path_unit).transform;
-                    AMeteoUnit projectile = unit.GetComponent<AMeteoUnit>();
+                    AMeteorUnit projectile = unit.GetComponent<AMeteorUnit>();
                     Vector3 pos = new Vector3(
                         _owner.transform.position.x + GetRandomValue(-10f, 10f),
                         _owner.transform.position.y + GetRandomValue(-4f, 4f),

@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace EEA.AbilitySystem
 {
-    public class AMeteoUnit : MonoBehaviour
+    public class AMeteorUnit : MonoBehaviour
     {
         [SerializeField] private ParticleSystem _explosion;
-        [SerializeField] private ParticleSystem _meteo;
+        [SerializeField] private ParticleSystem _meteor;
 
         private float _damage;
         private float _range;
@@ -16,7 +16,7 @@ namespace EEA.AbilitySystem
         public void Init(float damage, float range)
         {
             _explosion.gameObject.SetActive(false);
-            _meteo.gameObject.SetActive(false);
+            _meteor.gameObject.SetActive(false);
 
             _damage = damage;
             _range = range;
@@ -25,9 +25,9 @@ namespace EEA.AbilitySystem
 
         private IEnumerator Fire()
         {
-            _meteo.gameObject.SetActive(true);
+            _meteor.gameObject.SetActive(true);
             _explosion.gameObject.SetActive(true);
-            _meteo.Play();
+            _meteor.Play();
             _explosion.Play();
             yield return new WaitForSeconds(1f);
 

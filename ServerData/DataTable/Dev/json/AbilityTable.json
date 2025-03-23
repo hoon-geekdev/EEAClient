@@ -246,8 +246,8 @@
     "Name_key": 99000009,
     "Desc_key": 99000009,
     "Icon_path": "UI/Temp/Sprites/UI.png[Select 4]",
-    "Asset_path": "Prefabs/Ability/AMeteoBody.prefab",
-    "Asset_path_unit": "Prefabs/Ability/AMeteoUnit.prefab"
+    "Asset_path": "Prefabs/Ability/AMeteorBody.prefab",
+    "Asset_path_unit": "Prefabs/Ability/AMeteorUnit.prefab"
   },
   {
     "Code": 15000010,

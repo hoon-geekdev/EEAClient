@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7903105620653701018}
   - component: {fileID: 2142172053309926270}
   m_Layer: 0
-  m_Name: AMeteoBody
+  m_Name: AMeteorBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
