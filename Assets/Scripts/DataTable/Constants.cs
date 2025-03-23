@@ -25,6 +25,11 @@ namespace EEA.Define
         public const string UICommandEffectCircle = "Effect/Prefab/UI_effect/UICommandEffectCircle.prefab";
     }
 
+    public class AssetPathVFX
+    {
+        public const string DefaultHit = "VFX/Electro hit.prefab";
+    }
+
     public class AssetPathScene
     {
         public const string Intro = "IntroScene";

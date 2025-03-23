@@ -5034,7 +5034,7 @@ GameObject:
   - component: {fileID: 439354342}
   - component: {fileID: 439354344}
   - component: {fileID: 439354343}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ItemRooting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14880,7 +14880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1089492642}
   - component: {fileID: 1089492643}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Area
   m_TagString: Area
   m_Icon: {fileID: 0}
@@ -14958,7 +14958,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1182261610}
   - component: {fileID: 1182261611}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15100,7 +15100,7 @@ GameObject:
   - component: {fileID: 1488009194}
   - component: {fileID: 1488009196}
   - component: {fileID: 1488009197}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}

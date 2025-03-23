@@ -182,6 +182,9 @@ namespace EEA.Object
             transform.DOComplete();
             transform.DOPunchScale(Vector3.one * -0.4f, 0.2f, 10, 1);
             _spriteRenderer.sharedMaterial = _hitMaterial;
+            GameObject hit = PoolManager.Instance.GetObject(AssetPathVFX.DefaultHit);
+            hit.transform.position = transform.position;
+
             yield return new WaitForSeconds(0.1f);
 
             _spriteRenderer.sharedMaterial = _defaultMaterial;

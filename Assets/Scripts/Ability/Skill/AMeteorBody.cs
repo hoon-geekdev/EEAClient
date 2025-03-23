@@ -20,15 +20,14 @@ namespace EEA.AbilitySystem
             {
                 for (int i = 0; i < _count; ++i)
                 {
+                    Transform target = _player.Finder.PeakRandomTarget();
+                    if (target == null)
+                        break;
+
                     Transform unit = PoolManager.Instance.GetObject(_tableData.Asset_path_unit).transform;
                     AMeteorUnit projectile = unit.GetComponent<AMeteorUnit>();
-                    Vector3 pos = new Vector3(
-                        _owner.transform.position.x + GetRandomValue(-10f, 10f),
-                        _owner.transform.position.y + GetRandomValue(-4f, 4f),
-                        0
-                    );
 
-                    unit.transform.position = pos;
+                    unit.transform.position = target.position;
                     projectile.Init(_damage, _range);
 
                     yield return new WaitForSeconds(0.1f);

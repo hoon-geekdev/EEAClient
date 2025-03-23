@@ -1,4 +1,4 @@
-﻿//--------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------
 // Cartoon FX
 // (c) 2012-2020 Jean Moreno
 //--------------------------------------------------------------------------------------------------------------------------------
@@ -44,6 +44,12 @@ namespace CartoonFX
 			None,
 			Disable,
 			Destroy
+		}
+
+		public enum EnableOption
+		{
+			None,
+			Play
 		}
 
 		[System.Serializable]
@@ -445,7 +451,8 @@ namespace CartoonFX
 
 		[Tooltip("Defines an action to execute when the Particle System has completely finished playing and emitting particles.")]
 		public ClearBehavior clearBehavior = ClearBehavior.Destroy;
-		[Space]
+		public EnableOption enableOption = EnableOption.None;
+        [Space]
 		public CameraShake cameraShake;
 		[Space]
 		public AnimatedLight[] animatedLights;
@@ -506,7 +513,12 @@ namespace CartoonFX
 
 			void OnEnable()
 		{
-			foreach (var animLight in animatedLights)
+            if (enableOption == EnableOption.Play && fadeOutReference != null)
+            {
+				fadeOutReference.Play();
+            }
+
+            foreach (var animLight in animatedLights)
 			{
 				if (animLight.light != null)
 				{
