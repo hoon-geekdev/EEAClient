@@ -2,7 +2,7 @@
   {
     "Code": 13000001,
     "Unique_name": "쫄병1",
-    "Health": 10,
+    "Health": 15,
     "Move_speed": 0.5,
     "Damage": 6.0,
     "Drop_items": [
@@ -22,7 +22,7 @@
   {
     "Code": 13000002,
     "Unique_name": "쫄병2",
-    "Health": 15,
+    "Health": 25,
     "Move_speed": 0.7,
     "Damage": 6.0,
     "Drop_items": [
@@ -42,7 +42,7 @@
   {
     "Code": 13000003,
     "Unique_name": "쫄병3",
-    "Health": 20,
+    "Health": 50,
     "Move_speed": 0.7,
     "Damage": 6.0,
     "Drop_items": [
@@ -62,7 +62,7 @@
   {
     "Code": 13000004,
     "Unique_name": "쫄병4",
-    "Health": 30,
+    "Health": 70,
     "Move_speed": 0.7,
     "Damage": 8.0,
     "Drop_items": [
@@ -82,7 +82,7 @@
   {
     "Code": 13000005,
     "Unique_name": "쫄병5",
-    "Health": 40,
+    "Health": 100,
     "Move_speed": 0.8,
     "Damage": 8.0,
     "Drop_items": [
@@ -102,7 +102,7 @@
   {
     "Code": 13000006,
     "Unique_name": "쫄병6",
-    "Health": 50,
+    "Health": 130,
     "Move_speed": 0.9,
     "Damage": 8.0,
     "Drop_items": [
@@ -122,7 +122,7 @@
   {
     "Code": 13000007,
     "Unique_name": "쫄병7",
-    "Health": 60,
+    "Health": 150,
     "Move_speed": 0.9,
     "Damage": 10.0,
     "Drop_items": [

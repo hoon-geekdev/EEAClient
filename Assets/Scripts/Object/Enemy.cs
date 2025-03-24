@@ -30,7 +30,14 @@ namespace EEA.Object
             _collider.enabled = true;
             _rigid.simulated = true;
             _animator.SetBool("Dead", false);
-            _spriteRenderer.sortingOrder = 25;
+            //_spriteRenderer.sortingOrder = 25;
+
+            if (_punchTween != null)
+                _punchTween.Kill();
+            _punchTween = transform.DOPunchScale(Vector3.one * -0.4f, 0.2f, 10, 1)
+            .SetAutoKill(false)
+            .Pause();
+
             _isHiting = false;
         }
 
@@ -43,18 +50,20 @@ namespace EEA.Object
             _collider.enabled = true;
             _rigid.simulated = true;
             _animator.SetBool("Dead", false);
-            _spriteRenderer.sortingOrder = 25;
+            //_spriteRenderer.sortingOrder = 25;
             _isHiting = false;
+
+            if (_punchTween != null)
+                _punchTween.Kill();
+            _punchTween = transform.DOPunchScale(Vector3.one * -0.4f, 0.2f, 10, 1)
+            .SetAutoKill(false)
+            .Pause();
 
             base.Init(_table.Health, _table.Move_speed);
         }
 
         protected override void OnAwake()
         {
-            _punchTween = transform.DOPunchScale(Vector3.one * -0.4f, 0.2f, 10, 1)
-                        .SetAutoKill(false)
-                        .Pause();
-
             _defaultMaterial = _spriteRenderer.sharedMaterial;
             _hitMaterial = GameManager.Instance.SharedHitMaterial;
         }
@@ -194,8 +203,7 @@ namespace EEA.Object
             GameObject hit = PoolManager.Instance.GetObject(hitEffect);
             hit.transform.position = transform.position;
 
-            yield return new WaitForSeconds(0.1f);
-
+            yield return new WaitForSeconds(0.2f);
             _spriteRenderer.sharedMaterial = _defaultMaterial;
             _isHiting = false;
         }
@@ -214,7 +222,7 @@ namespace EEA.Object
             _collider.enabled = false;
             _rigid.simulated = false;
             _animator.SetBool("Dead", true);
-            _spriteRenderer.sortingOrder = 0;
+            //_spriteRenderer.sortingOrder = 0;
 
             GameManager.Instance.AddKillCount();
             yield return new WaitForSeconds(0.1f);

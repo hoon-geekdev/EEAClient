@@ -20,7 +20,7 @@
     "Unique_name": "경험치1",
     "Type": 11,
     "Ability": 1.0,
-    "Drop_icon_path": "UI/Temp/exp_1.png",
+    "Drop_icon_path": "UI/Temp/DropItem/exp_1.png",
     "Asset_path": "Object/DropItem/DropItemExp.prefab"
   },
   {
@@ -28,7 +28,7 @@
     "Unique_name": "경험치2",
     "Type": 11,
     "Ability": 3.0,
-    "Drop_icon_path": "UI/Temp/exp_2.png",
+    "Drop_icon_path": "UI/Temp/DropItem/exp_2.png",
     "Asset_path": "Object/DropItem/DropItemExp.prefab"
   },
   {
@@ -36,7 +36,7 @@
     "Unique_name": "경험치3",
     "Type": 11,
     "Ability": 6.0,
-    "Drop_icon_path": "UI/Temp/exp_3.png",
+    "Drop_icon_path": "UI/Temp/DropItem/exp_3.png",
     "Asset_path": "Object/DropItem/DropItemExp.prefab"
   }
 ]

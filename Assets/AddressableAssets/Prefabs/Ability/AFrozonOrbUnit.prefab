@@ -82,7 +82,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f512be3ea91efcc44b4e5e19ea214272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitPref: {fileID: 0}
 --- !u!1001 &1092625398274004133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91,6 +90,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4006145916761234067}
     m_Modifications:
+    - target: {fileID: 271826104973627996, guid: 293bf6566af19d14e80089e07a11177b, type: 3}
+      propertyPath: animatedLights.Array.data[0].light
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2018463179697688911, guid: 293bf6566af19d14e80089e07a11177b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -136,7 +139,8 @@ PrefabInstance:
       value: CFXR Projectile Ice
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2717489165347158558, guid: 293bf6566af19d14e80089e07a11177b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 293bf6566af19d14e80089e07a11177b, type: 3}
