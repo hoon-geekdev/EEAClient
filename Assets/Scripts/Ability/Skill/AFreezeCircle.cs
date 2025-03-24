@@ -61,7 +61,7 @@ namespace EEA.AbilitySystem
                     if (target == null)
                         continue;
 
-                    target.TakeDamage(new DamageEvent() { _damage = _damage, _hitEffect = _tableData.Asset_path_hit});
+                    target.TakeDamage(new DamageEvent() { _damage = _damage, _tableData = _tableData });
                 }
 
                 yield return wait;

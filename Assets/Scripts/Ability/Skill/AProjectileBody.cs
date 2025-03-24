@@ -33,7 +33,7 @@ namespace EEA.AbilitySystem
                     unit.rotation = Quaternion.FromToRotation(Vector3.up, dir);
 
                     Projectile projectile = unit.GetComponent<Projectile>();
-                    DamageEvent evt = new DamageEvent() { _damage = _damage, _speed = _speed, _penetration = _penetration, _hitEffect = _tableData.Asset_path_hit};
+                    DamageEvent evt = new DamageEvent() { _damage = _damage, _speed = _speed, _penetration = _penetration, _tableData = _tableData };
                     projectile.Init(evt);
                 }
 

@@ -29,7 +29,7 @@ namespace EEA.AbilitySystem
                     ALaserUnit projectile = unit.GetComponent<ALaserUnit>();
 
                     unit.transform.position = target.position;
-                    projectile.Init(new DamageEvent() { _damage = _damage, _range = _range, _hitEffect = _tableData.Asset_path_hit });
+                    projectile.Init(new DamageEvent() { _damage = _damage, _range = _range, _tableData = _tableData });
 
                     yield return new WaitForSeconds(0.1f);
                 }

@@ -89,10 +89,16 @@ namespace EEA.Object
             Vector2 dir = _target.position - _rigid.position;
 
             // 플레이어와 가까이 붙으면 kinematic으로 변경
-            if (dir.magnitude <= 1.5f)
+            if (dir.magnitude <= 2f)
+            {
                 _rigid.bodyType = RigidbodyType2D.Kinematic;
+                _collider.isTrigger = true;
+            }
             else
+            {
+                _collider.isTrigger = false;
                 _rigid.bodyType = RigidbodyType2D.Dynamic;
+            }
 
             if (dir.magnitude <= 0.5f)
                 return;
@@ -199,11 +205,11 @@ namespace EEA.Object
             _punchTween.Restart();
             _spriteRenderer.sharedMaterial = _hitMaterial;
 
-            string hitEffect = evt._hitEffect != string.Empty ? evt._hitEffect : AssetPathVFX.DefaultHit;
+            string hitEffect = evt._tableData != null? evt._tableData.Asset_path_hit : AssetPathVFX.DefaultHit;
             GameObject hit = PoolManager.Instance.GetObject(hitEffect);
             hit.transform.position = transform.position;
 
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
             _spriteRenderer.sharedMaterial = _defaultMaterial;
             _isHiting = false;
         }
@@ -224,15 +230,13 @@ namespace EEA.Object
             _animator.SetBool("Dead", true);
             //_spriteRenderer.sortingOrder = 0;
 
+            ItemDrop();
             GameManager.Instance.AddKillCount();
             yield return new WaitForSeconds(0.1f);
             
             PoolManager.Instance.GetEffect(0).transform.position = transform.position;
             yield return new WaitForSeconds(0.8f);
             gameObject.SetActive(false);
-
-            ItemDrop();
-
         }
 
         private void ItemDrop()

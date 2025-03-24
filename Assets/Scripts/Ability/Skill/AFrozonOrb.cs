@@ -54,7 +54,7 @@ namespace EEA.AbilitySystem
                         _damage = _damage, 
                         _speed = _speed, 
                         _penetration = _penetration, 
-                        _hitEffect = _tableData.Asset_path_hit, 
+                        _tableData = _tableData, 
                         _target = nearTarget
                     };
                     projectile.Init(evt);

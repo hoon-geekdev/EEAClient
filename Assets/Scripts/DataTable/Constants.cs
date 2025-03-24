@@ -1,5 +1,6 @@
 using EEA.AbilitySystem;
 using System.Transactions;
+using TableData;
 using UnityEngine;
 
 namespace EEA.Define
@@ -76,7 +77,7 @@ namespace EEA.Define
         public int _penetration;
         public int _count;
         public float _tick;
-        public string _hitEffect = string.Empty;
+        public AbilityTable _tableData;
         public Transform _target;
     }
 }

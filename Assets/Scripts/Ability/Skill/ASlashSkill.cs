@@ -37,7 +37,7 @@ namespace EEA.AbilitySystem
 
                     // _range만큼 이동 할 때까지의 시간
                     float lifeTime = _range / _speed;
-                    DamageEvent evt = new DamageEvent() { _damage = _damage, _speed = _speed, _penetration = _penetration, _hitEffect = _tableData.Asset_path_hit };
+                    DamageEvent evt = new DamageEvent() { _damage = _damage, _speed = _speed, _penetration = _penetration, _tableData = _tableData};
                     projectile.Init(evt, lifeTime);
                 }
 
