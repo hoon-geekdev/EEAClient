@@ -2,8 +2,9 @@
   {
     "Code": 13000001,
     "Unique_name": "쫄병1",
+    "Monster_type": 1,
     "Health": 15,
-    "Move_speed": 0.5,
+    "Move_speed": 0.3,
     "Damage": 6.0,
     "Drop_items": [
       0,
@@ -22,8 +23,9 @@
   {
     "Code": 13000002,
     "Unique_name": "쫄병2",
+    "Monster_type": 1,
     "Health": 25,
-    "Move_speed": 0.7,
+    "Move_speed": 0.3,
     "Damage": 6.0,
     "Drop_items": [
       0,
@@ -42,8 +44,9 @@
   {
     "Code": 13000003,
     "Unique_name": "쫄병3",
+    "Monster_type": 1,
     "Health": 50,
-    "Move_speed": 0.7,
+    "Move_speed": 0.5,
     "Damage": 6.0,
     "Drop_items": [
       0,
@@ -62,8 +65,9 @@
   {
     "Code": 13000004,
     "Unique_name": "쫄병4",
+    "Monster_type": 1,
     "Health": 70,
-    "Move_speed": 0.7,
+    "Move_speed": 0.3,
     "Damage": 8.0,
     "Drop_items": [
       0,
@@ -82,8 +86,9 @@
   {
     "Code": 13000005,
     "Unique_name": "쫄병5",
+    "Monster_type": 1,
     "Health": 100,
-    "Move_speed": 0.8,
+    "Move_speed": 0.3,
     "Damage": 8.0,
     "Drop_items": [
       0,
@@ -102,8 +107,9 @@
   {
     "Code": 13000006,
     "Unique_name": "쫄병6",
+    "Monster_type": 1,
     "Health": 130,
-    "Move_speed": 0.9,
+    "Move_speed": 0.4,
     "Damage": 8.0,
     "Drop_items": [
       0,
@@ -122,8 +128,9 @@
   {
     "Code": 13000007,
     "Unique_name": "쫄병7",
+    "Monster_type": 1,
     "Health": 150,
-    "Move_speed": 0.9,
+    "Move_speed": 0.4,
     "Damage": 10.0,
     "Drop_items": [
       0,
@@ -142,8 +149,9 @@
   {
     "Code": 13000008,
     "Unique_name": "섭보스",
+    "Monster_type": 2,
     "Health": 500,
-    "Move_speed": 1.2,
+    "Move_speed": 0.7,
     "Damage": 20.0,
     "Drop_items": [
       0,

@@ -114,12 +114,6 @@ namespace EEA.Manager
                 Enemy enemy = go.GetComponent<Enemy>();
                 enemy.Init(objectData.Code);
 
-                // 임시 코드. ㅋ
-                if (objectData.Code == 13000008)
-                    enemy.transform.localScale = new Vector3(2.5f, 2.5f, 1f);
-                else
-                    enemy.transform.localScale = new Vector3(1f, 1f, 1f);
-
                 switch (waveData._spawnAreaType)
                     {
                         case "left":
@@ -142,10 +136,25 @@ namespace EEA.Manager
                             break;
                     case "Random":
                         default:
-                            //Vector3 pos = playerPos + new Vector2(Random.Range(-10f, 10f), Random.Range(-5f, 5f));
-                            //go.transform.position = pos;
-                            go.transform.position = playerPos + Random.insideUnitCircle.normalized * Random.Range(10f, 20f);
-                            break;
+                        // 타원 반지름
+                        float ellipseX = 10f;
+                        float ellipseY = 5f;
+
+                        // 방향 랜덤
+                        Vector2 dir = Random.insideUnitCircle.normalized;
+
+                        // 타원 외곽 방향으로 확장 (타원 공식 적용)
+                        Vector2 edgePos = new Vector2(dir.x * ellipseX, dir.y * ellipseY);
+
+                        // 타원 바깥 범위까지 거리 확장 (최소 거리 설정)
+                        float distanceMultiplier = Random.Range(1.05f, 1.3f); // 1.05 = 살짝 바깥, 1.3 = 멀리
+
+                        Vector2 spawnOffset = edgePos * distanceMultiplier;
+
+                        // 최종 스폰 위치
+                        Vector2 spawnPos = playerPos + spawnOffset;
+                        go.transform.position = spawnPos;
+                        break;
                     }
 
                 waveData._spawnCurCount++;

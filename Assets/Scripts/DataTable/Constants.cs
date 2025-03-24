@@ -65,6 +65,7 @@ namespace EEA.Define
         public const string UIAbilityItem = "UI/UIAbilitySelectPopup/UIAbilityItem.prefab";
         public const string UIJoystick = "UI/UIJoystick/UIJoystick.prefab";
         public const string UIDamageText = "UI/UIDamageText/UIDamageText.prefab";
+        public const string UIMonsterHealth = "UI/UIMonsterHP/UIMonsterHealth.prefab";
     }
 
     public class DamageEvent

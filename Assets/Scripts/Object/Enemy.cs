@@ -9,6 +9,14 @@ using UnityEngine;
 
 namespace EEA.Object
 {
+    public enum eMonsterType
+    {
+        None = 0,
+        Normal,
+        Elite,
+        Boss,
+    }
+
     public class Enemy : ObjectBase
     {
         private Rigidbody2D _target;
@@ -20,31 +28,17 @@ namespace EEA.Object
         private Material _hitMaterial;
         private bool _isHiting = false;
         private Tween _punchTween;
+        private eMonsterType _type;
 
-        public void Init(float hp, float speed, int type)
-        {
-            base.Init(hp, speed);
+        private UIMonsterHealth _uiMonsterHealth;
 
-            _target = GameManager.Instance.Player.GetComponent<Rigidbody2D>();
-
-            _collider.enabled = true;
-            _rigid.simulated = true;
-            _animator.SetBool("Dead", false);
-            //_spriteRenderer.sortingOrder = 25;
-
-            if (_punchTween != null)
-                _punchTween.Kill();
-            _punchTween = transform.DOPunchScale(Vector3.one * -0.4f, 0.2f, 10, 1)
-            .SetAutoKill(false)
-            .Pause();
-
-            _isHiting = false;
-        }
+        public eMonsterType MonsterType { get => _type; set => _type = value; }
 
         public void Init(int tableId)
         {
             _id = tableId;
             _table = TableManager.Instance.GetData<ObjectTable>(_id);
+            _type = (eMonsterType)_table.Monster_type;
 
             _target = GameManager.Instance.Player.GetComponent<Rigidbody2D>();
             _collider.enabled = true;
@@ -58,6 +52,12 @@ namespace EEA.Object
             _punchTween = transform.DOPunchScale(Vector3.one * -0.4f, 0.2f, 10, 1)
             .SetAutoKill(false)
             .Pause();
+
+            if (_type == eMonsterType.Elite)
+            {
+                _uiMonsterHealth = UIManager.Instance.CreateUI<UIMonsterHealth>(AssetPathUI.UIMonsterHealth);
+                _uiMonsterHealth.Init(this);
+            }
 
             base.Init(_table.Health, _table.Move_speed);
         }
@@ -233,6 +233,12 @@ namespace EEA.Object
             ItemDrop();
             GameManager.Instance.AddKillCount();
             yield return new WaitForSeconds(0.1f);
+
+            if(_uiMonsterHealth != null)
+            {
+                UIManager.Instance.DestroyUI(_uiMonsterHealth);
+                _uiMonsterHealth = null;
+            }
             
             PoolManager.Instance.GetEffect(0).transform.position = transform.position;
             yield return new WaitForSeconds(0.8f);
