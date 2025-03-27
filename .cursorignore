@@ -1,0 +1,81 @@
+# Add directories or file patterns to ignore during indexing (e.g. foo/ or *.csv)
+# 기본 Unity 빌드 / 라이브러리 관련 폴더
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+ServerData/
+Tools/
+
+# Visual Studio 관련 파일
+.vscode/
+*.csproj
+*.sln
+*.user
+*.unityproj
+
+# Unity 설정 관련
+ProjectSettings/
+UserSettings/
+
+# 기타 Unity에서 자동 생성하는 메타파일/캐시
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.DS_Store
+
+# 숨김 메타데이터
+.DS_Store
+Thumbs.db
+.idea/
+
+# 유니티에서 생성된 빌드 결과물
+*.apk
+*.aab
+*.exe
+*.app
+*.unitypackage
+
+# Unity 메타 파일
+*.meta
+*.unity
+
+# 에셋: 프리팹, 머티리얼, 애니메이션, 셰이더 등
+*.prefab
+*.mat
+*.anim
+*.controller
+*.shader
+*.overrideController
+
+# 텍스처, 이미지
+*.png
+*.jpg
+*.jpeg
+*.tga
+*.psd
+*.exr
+*.hdr
+
+# 사운드
+*.mp3
+*.wav
+*.ogg
+
+# 모델
+*.fbx
+*.obj
+*.blend
+
+# 리소스 폴더 (Resources/, StreamingAssets/)
+Assets/Resources/
+Assets/StreamingAssets/
+
+# Addressables 빌드 결과
+Library/com.unity.addressables/
