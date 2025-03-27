@@ -8,10 +8,16 @@ namespace EEA.AbilitySystem
     public class ALaserBody : Ability
     {
         private Player _player;
+        private DamageEvent _damageEvent;
+
+        protected override void OnAwake()
+        {
+            _player = _owner as Player;
+            _damageEvent = new DamageEvent();
+        }
 
         protected override void OnStart()
         {
-            _player = _owner as Player;
             StartCoroutine(Fire());
         }
 
@@ -29,7 +35,10 @@ namespace EEA.AbilitySystem
                     ALaserUnit projectile = unit.GetComponent<ALaserUnit>();
 
                     unit.transform.position = target.position;
-                    projectile.Init(new DamageEvent() { _damage = _damage, _range = _range, _tableData = _tableData });
+                    _damageEvent.Setup(_owner, _damage, _tableData)
+                                .SetRange(_range);
+
+                    projectile.Init(_damageEvent);
 
                     yield return new WaitForSeconds(0.1f);
                 }

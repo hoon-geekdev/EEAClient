@@ -1,7 +1,8 @@
 using EEA.Define;
+using EEA.Manager;
+using EEA.Object;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace EEA.AbilitySystem
 {
@@ -14,6 +15,12 @@ namespace EEA.AbilitySystem
         {
             _damageEvent = evt;
             _lifeTime = lifetime;
+
+            // evt._tartget이 있을 경우 target을 향해 회전
+            if (_damageEvent._target != null)
+            {
+                transform.rotation = Quaternion.FromToRotation(Vector3.up, (_damageEvent._target.position - transform.position).normalized);
+            }
 
             StartCoroutine(LifeTime());
         }
@@ -31,22 +38,47 @@ namespace EEA.AbilitySystem
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (_damageEvent._penetration == -1 || _damageEvent._penetration > 0)
+            // _owner가 플레이어인 경우 (플레이어 공격이 적에게 맞음)
+            if (_damageEvent._owner != null && _damageEvent._owner.CompareTag("Player"))
             {
                 if (collision.CompareTag("Enemy"))
                 {
-                    if (_damageEvent._penetration > 0)
-                        --_damageEvent._penetration;
-
-                    collision.GetComponent<Object.ObjectBase>().TakeDamage(_damageEvent);
-
-                    if (_damageEvent._penetration == 0)
-                        gameObject.SetActive(false);
+                    HandleHit(collision);
                 }
             }
-            else
+            // _owner가 적인 경우 (적 공격이 플레이어에게 맞음)
+            else if (_damageEvent._owner != null && _damageEvent._owner.CompareTag("Enemy"))
             {
-                gameObject.SetActive(false);
+                if (collision.CompareTag("Player"))
+                {
+                    HandleHit(collision);
+                    gameObject.SetActive(false); // 적 공격은 관통 없이 바로 비활성화
+                }
+            }
+        }
+
+        private void HandleHit(Collider2D collision)
+        {
+            ObjectBase target = collision.GetComponent<ObjectBase>();
+            if (target != null)
+            {
+                target.TakeDamage(_damageEvent);
+
+                // 관통 처리 (플레이어 발사체만 관통 가능)
+                if (_damageEvent._owner.CompareTag("Player"))
+                {
+                    if (_damageEvent._penetration > 0)
+                    {
+                        --_damageEvent._penetration;
+                        
+                        if (_damageEvent._penetration == 0)
+                            gameObject.SetActive(false);
+                    }
+                    else if (_damageEvent._penetration != -1) // -1은 무한 관통
+                    {
+                        gameObject.SetActive(false);
+                    }
+                }
             }
         }
     }

@@ -8,11 +8,13 @@ namespace EEA.AbilitySystem
     public class AFreezeCircle : Ability
     {
         private ParticleSystem _particle;
+        private DamageEvent _damageEvent;
 
         protected override void OnAwake()
         {
             _particle = GetComponentInChildren<ParticleSystem>();
             _particle.gameObject.SetActive(false);
+            _damageEvent = new DamageEvent();
         }
 
         protected override void OnRefreshData()
@@ -50,6 +52,10 @@ namespace EEA.AbilitySystem
             int maxTickCount = Mathf.RoundToInt(_duration / _tick);
             int curCount = 0;
             WaitForSeconds wait = new WaitForSeconds(_tick);
+            
+            // DamageEvent 기본 설정
+            _damageEvent.Setup(_owner, _damage, _tableData);
+            
             while (curCount++ < maxTickCount)
             {
                 // 2D에서 OverlapCircleAll 사용 (적 레이어만 탐색)
@@ -61,7 +67,7 @@ namespace EEA.AbilitySystem
                     if (target == null)
                         continue;
 
-                    target.TakeDamage(new DamageEvent() { _damage = _damage, _tableData = _tableData });
+                    target.TakeDamage(_damageEvent);
                 }
 
                 yield return wait;

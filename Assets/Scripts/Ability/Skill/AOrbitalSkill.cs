@@ -8,8 +8,10 @@ namespace EEA.AbilitySystem
 {
     public class AOrbitalSkill : Ability
     {
+        private DamageEvent _damageEvent;
         protected override void OnAwake()
         {
+            _damageEvent = new DamageEvent();
             StartCoroutine(Effect());
         }
 
@@ -67,7 +69,10 @@ namespace EEA.AbilitySystem
                 trf.Translate(trf.up * 1.2f, Space.World);
 
                 AOrbitalUnit unit = trf.GetComponent<AOrbitalUnit>();
-                unit.Init(new DamageEvent() { _damage = _damage, _tableData = _tableData });
+                _damageEvent.Setup(_owner, _damage, _tableData)
+                            .SetRange(_range);
+
+                unit.Init(_damageEvent);
             }
         }
     }

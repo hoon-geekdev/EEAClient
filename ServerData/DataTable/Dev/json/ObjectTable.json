@@ -6,6 +6,9 @@
     "Health": 15,
     "Move_speed": 0.3,
     "Damage": 6.0,
+    "Range": 0.0,
+    "Attack_cooltime": 2.0,
+    "Attack_speed": 2.0,
     "Drop_items": [
       0,
       14000010,
@@ -18,7 +21,8 @@
       100,
       20
     ],
-    "Asset_path": "Object/Monster/EnemyA.prefab"
+    "Asset_path": "Object/Monster/EnemyA.prefab",
+    "Ability_asset_path": "Prefabs/Ability/AFireBallUnit.prefab"
   },
   {
     "Code": 13000002,
@@ -27,6 +31,9 @@
     "Health": 25,
     "Move_speed": 0.3,
     "Damage": 6.0,
+    "Range": 0.0,
+    "Attack_cooltime": 2.0,
+    "Attack_speed": 2.0,
     "Drop_items": [
       0,
       14000010,
@@ -39,7 +46,8 @@
       100,
       20
     ],
-    "Asset_path": "Object/Monster/EnemyB.prefab"
+    "Asset_path": "Object/Monster/EnemyB.prefab",
+    "Ability_asset_path": "Prefabs/Ability/AFireBallUnit.prefab"
   },
   {
     "Code": 13000003,
@@ -48,6 +56,9 @@
     "Health": 50,
     "Move_speed": 0.5,
     "Damage": 6.0,
+    "Range": 5.0,
+    "Attack_cooltime": 7.0,
+    "Attack_speed": 2.0,
     "Drop_items": [
       0,
       14000010,
@@ -60,7 +71,8 @@
       100,
       20
     ],
-    "Asset_path": "Object/Monster/EnemyC.prefab"
+    "Asset_path": "Object/Monster/EnemyC.prefab",
+    "Ability_asset_path": "Prefabs/Ability/AFireBallUnit.prefab"
   },
   {
     "Code": 13000004,
@@ -69,6 +81,9 @@
     "Health": 70,
     "Move_speed": 0.3,
     "Damage": 8.0,
+    "Range": 0.0,
+    "Attack_cooltime": 2.0,
+    "Attack_speed": 2.0,
     "Drop_items": [
       0,
       14000010,
@@ -81,7 +96,8 @@
       100,
       20
     ],
-    "Asset_path": "Object/Monster/EnemyD.prefab"
+    "Asset_path": "Object/Monster/EnemyD.prefab",
+    "Ability_asset_path": "Prefabs/Ability/AFireBallUnit.prefab"
   },
   {
     "Code": 13000005,
@@ -90,6 +106,9 @@
     "Health": 100,
     "Move_speed": 0.3,
     "Damage": 8.0,
+    "Range": 0.0,
+    "Attack_cooltime": 2.0,
+    "Attack_speed": 2.0,
     "Drop_items": [
       0,
       14000010,
@@ -102,7 +121,8 @@
       100,
       20
     ],
-    "Asset_path": "Object/Monster/EnemyE.prefab"
+    "Asset_path": "Object/Monster/EnemyE.prefab",
+    "Ability_asset_path": "Prefabs/Ability/AFireBallUnit.prefab"
   },
   {
     "Code": 13000006,
@@ -111,6 +131,9 @@
     "Health": 130,
     "Move_speed": 0.4,
     "Damage": 8.0,
+    "Range": 0.0,
+    "Attack_cooltime": 2.0,
+    "Attack_speed": 2.0,
     "Drop_items": [
       0,
       14000010,
@@ -123,7 +146,8 @@
       250,
       200
     ],
-    "Asset_path": "Object/Monster/EnemyB.prefab"
+    "Asset_path": "Object/Monster/EnemyB.prefab",
+    "Ability_asset_path": "Prefabs/Ability/AFireBallUnit.prefab"
   },
   {
     "Code": 13000007,
@@ -132,6 +156,9 @@
     "Health": 150,
     "Move_speed": 0.4,
     "Damage": 10.0,
+    "Range": 0.0,
+    "Attack_cooltime": 2.0,
+    "Attack_speed": 2.0,
     "Drop_items": [
       0,
       14000010,
@@ -144,7 +171,8 @@
       250,
       200
     ],
-    "Asset_path": "Object/Monster/EnemyA.prefab"
+    "Asset_path": "Object/Monster/EnemyA.prefab",
+    "Ability_asset_path": "Prefabs/Ability/AFireBallUnit.prefab"
   },
   {
     "Code": 13000008,
@@ -153,6 +181,9 @@
     "Health": 500,
     "Move_speed": 0.7,
     "Damage": 20.0,
+    "Range": 0.0,
+    "Attack_cooltime": 2.0,
+    "Attack_speed": 2.0,
     "Drop_items": [
       0,
       14000010,
@@ -165,6 +196,7 @@
       250,
       200
     ],
-    "Asset_path": "Object/Monster/EnemyA.prefab"
+    "Asset_path": "Object/Monster/EnemyA.prefab",
+    "Ability_asset_path": "Prefabs/Ability/AFireBallUnit.prefab"
   }
 ]

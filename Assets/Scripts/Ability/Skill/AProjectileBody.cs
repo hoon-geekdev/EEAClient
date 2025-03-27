@@ -9,6 +9,14 @@ namespace EEA.AbilitySystem
     public class AProjectileBody : Ability
     {
         private Player _player;
+        private DamageEvent _damageEvent;
+        
+        protected override void OnAwake()
+        {
+            base.OnAwake();
+            _damageEvent = new DamageEvent();
+        }
+        
         protected override void OnStart()
         {
             _player = _owner as Player;
@@ -33,8 +41,14 @@ namespace EEA.AbilitySystem
                     unit.rotation = Quaternion.FromToRotation(Vector3.up, dir);
 
                     Projectile projectile = unit.GetComponent<Projectile>();
-                    DamageEvent evt = new DamageEvent() { _damage = _damage, _speed = _speed, _penetration = _penetration, _tableData = _tableData };
-                    projectile.Init(evt);
+                    
+                    // DamageEvent 설정 - 재사용
+                    _damageEvent.Setup(_player, _damage, _tableData)
+                                .SetSpeed(_speed)
+                                .SetPenetration(_penetration)
+                                .SetTarget(nearTarget);
+                                
+                    projectile.Init(_damageEvent);
                 }
 
                 yield return new WaitForSeconds(_delay);
