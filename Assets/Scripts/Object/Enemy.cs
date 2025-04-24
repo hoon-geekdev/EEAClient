@@ -38,6 +38,8 @@ namespace EEA.Object
         protected ObjectTable _table;
         protected bool _isCollidingWithPlayer = false;
         protected DamageEvent _damageEvent;
+        protected Collider2D _collider;  // 컴포넌트 캐싱
+        protected float _flipTimer = 0f;  // LateUpdate 최적화를 위한 타이머
 
         protected Material _defaultMaterial;
         protected Material _hitMaterial;
@@ -48,6 +50,11 @@ namespace EEA.Object
         protected Dictionary<eEnemyState, IEnemyState> _states;
 
         protected UIMonsterHealth _uiMonsterHealth;
+
+        private Vector2 _cachedDirectionToPlayer = Vector2.zero;
+        private float _cachedDistanceToPlayer = float.MaxValue;
+        private float _lastDirectionUpdateTime = 0f;
+        private const float DIRECTION_UPDATE_INTERVAL = 0.1f; // 방향 업데이트 간격 (초)
 
         public eMonsterType MonsterType { get => _type; set => _type = value; }
         public float AttackRange => _attackRange;
@@ -70,10 +77,12 @@ namespace EEA.Object
             _attackRange = _table.Range;
 
             _target = GameManager.Instance.Player.GetComponent<Rigidbody2D>();
+            _collider = GetComponent<Collider2D>();  // 캐싱
             _collider.enabled = true;
             _rigid.simulated = true;
             _animator.SetBool("Dead", false);
             _isHiting = false;
+            _flipTimer = 0f;
 
             if (_punchTween != null)
                 _punchTween.Kill();
@@ -136,63 +145,115 @@ namespace EEA.Object
 
         protected override void OnFixedUpdate()
         {
-            if (IsDead) return;
+            if (IsDead || _states == null || !_states.ContainsKey(_currentState)) return;
+            
+            // 비활성화된 경우 처리하지 않음
+            if (!gameObject.activeSelf) return;
+            
+            // 유효한 상태만 실행
             _states[_currentState]?.FixedExecute();
         }
 
         protected override void OnLateUpdate()
         {
             if (IsDead || _target == null) return;
-            _spriteRenderer.flipX = _target.position.x < _rigid.position.x;
+            
+            // 매 프레임마다 계산하는 것이 아니라 일정 시간마다 계산하도록 수정
+            // 외형에 영향이 적은 최적화이므로 필요하다면 주석 해제
+            // _flipTimer += Time.deltaTime;
+            // if (_flipTimer >= 0.1f) 
+            // {
+            //     _flipTimer = 0f;
+                _spriteRenderer.flipX = _target.position.x < _rigid.position.x;
+            // }
         }
 
         public Vector2 GetDirectionToPlayer()
         {
-            if (_target == null) return Vector2.zero;
-            return (_target.position - _rigid.position).normalized;
+            UpdatePlayerPositionCache();
+            return _cachedDirectionToPlayer;
         }
 
         public float GetDistanceToPlayer()
         {
-            if (_target == null) return float.MaxValue;
-            return Vector2.Distance(_target.position, _rigid.position);
+            UpdatePlayerPositionCache();
+            return _cachedDistanceToPlayer;
+        }
+
+        private void UpdatePlayerPositionCache()
+        {
+            // 일정 시간마다만 플레이어 방향과 거리를 갱신
+            if (Time.time - _lastDirectionUpdateTime < DIRECTION_UPDATE_INTERVAL)
+                return;
+
+            _lastDirectionUpdateTime = Time.time;
+            
+            if (_target == null)
+            {
+                _cachedDirectionToPlayer = Vector2.zero;
+                _cachedDistanceToPlayer = float.MaxValue;
+                return;
+            }
+            
+            Vector2 toPlayer = _target.position - _rigid.position;
+            _cachedDirectionToPlayer = toPlayer.normalized;
+            
+            // 제곱근 계산은 필요할 때만 수행 (sqrMagnitude가 더 효율적)
+            _cachedDistanceToPlayer = toPlayer.magnitude;
         }
 
         private IEnumerator CheckDistance()
         {
-            while (true)
+            // 공유되는 WaitForSeconds 객체를 재사용하여 GC 부하 감소
+            WaitForSeconds wait = new WaitForSeconds(0.5f);
+            Transform playerTransform = GameManager.Instance.Player.transform;
+            
+            while (gameObject.activeSelf)
             {
-                Vector3 playerPos = GameManager.Instance.Player.transform.position;
-                Vector3 dist = playerPos - transform.position;
-                if (dist.magnitude >= 20)
+                // Player가 없으면 확인 중단
+                if (playerTransform == null) break;
+                
+                Vector3 dist = playerTransform.position - transform.position;
+                
+                // 제곱근 계산을 피하기 위해 sqrMagnitude 사용 
+                if (dist.sqrMagnitude >= 400f) // 20^2 = 400
                 {
-                    Vector3 randomPos = new Vector3(Random.Range(10f, 15f), Random.Range(5f, 10f), 0f);
-                    transform.Translate(randomPos + dist);
+                    Vector3 randomPos = new Vector3(
+                        Random.Range(10f, 15f), 
+                        Random.Range(5f, 10f), 
+                        0f
+                    );
+                    transform.Translate(randomPos + dist.normalized * 10f);
                 }
 
-                yield return new WaitForSeconds(0.5f);
-            }
-        }
-
-        protected virtual void HandleCollision(Collider2D collision)
-        {
-            if (collision.CompareTag("Player"))
-            {
-                // 처음 충돌 시 즉시 데미지
-                collision.GetComponent<ObjectBase>().TakeDamage(_damageEvent);
-
-                // 이미 데미지를 주는 중이 아니라면, 지속적인 데미지 코루틴 시작
-                if (!_isCollidingWithPlayer)
-                {
-                    _isCollidingWithPlayer = true;
-                    StartCoroutine(DealDamageOverTime(collision));
-                }
+                yield return wait;
             }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            HandleCollision(collision);
+            // 죽었으면 충돌 처리 무시
+            if (IsDead) return;
+            
+            // 플레이어와의 충돌만 처리
+            if (collision.CompareTag("Player"))
+            {
+                // 아직 콜라이딩 상태가 아닐 때만 처리
+                if (!_isCollidingWithPlayer)
+                {
+                    // 플레이어 컴포넌트 캐싱
+                    ObjectBase playerObj = collision.GetComponent<ObjectBase>();
+                    if (playerObj != null)
+                    {
+                        // 초기 데미지 적용
+                        playerObj.TakeDamage(_damageEvent);
+                        
+                        // 지속 데미지 코루틴 시작
+                        _isCollidingWithPlayer = true;
+                        StartCoroutine(DealDamageOverTime(collision));
+                    }
+                }
+            }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
@@ -205,15 +266,24 @@ namespace EEA.Object
 
         protected IEnumerator DealDamageOverTime(Collider2D collision)
         {
-            while (_isCollidingWithPlayer)
+            // 객체 재사용하여 GC 부하 감소
+            WaitForSeconds damageInterval = new WaitForSeconds(2f);
+            ObjectBase target = collision.GetComponent<ObjectBase>();
+            
+            while (_isCollidingWithPlayer && target != null)
             {
-                yield return new WaitForSeconds(2f);
-
-                if (collision != null)
-                {
-                    collision.GetComponent<ObjectBase>().TakeDamage(_damageEvent);
-                }
+                // 객체가 활성화 상태인지 확인
+                if (!target.gameObject.activeSelf)
+                    break;
+                
+                // 매번 새 DamageEvent를 만들지 않고 기존 것 재사용
+                _damageEvent.SetDamage(_table.Damage);
+                target.TakeDamage(_damageEvent);
+                
+                yield return damageInterval;
             }
+            
+            _isCollidingWithPlayer = false;
         }
 
         protected override void OnTakeDamage(DamageEvent evt)
@@ -222,35 +292,57 @@ namespace EEA.Object
                 return;
 
             _health -= evt._damage;
+            
+            // 데미지 텍스트 표시 (최적화: 풀에서 객체를 가져오기 전에 확인)
+            GameObject damageTextObj = PoolManager.Instance.GetObject(AssetPathUI.UIDamageText);
+            if (damageTextObj != null)
+            {
+                UIDamageText damageText = damageTextObj.GetComponent<UIDamageText>();
+                if (damageText != null)
+                {
+                    damageText.SetText(transform, evt._damage);
+                }
+            }
 
             if (IsDead)
             {
                 ChangeState(eEnemyState.Dead);
                 StartCoroutine(Dead());
             }
-            else
+            else if (!_isHiting)
             {
-                if (!_isHiting)
-                    StartCoroutine(Hit(evt));
+                StartCoroutine(Hit(evt));
             }
-
-            GameObject go = PoolManager.Instance.GetObject(AssetPathUI.UIDamageText);
-            UIDamageText damageText = go.GetComponent<UIDamageText>();
-            damageText.SetText(transform, evt._damage);
         }
 
         protected IEnumerator Hit(DamageEvent evt)
         {
             _isHiting = true;
             ChangeState(eEnemyState.Hit);
-            _punchTween.Restart();
+            
+            // 펀치 트윈 재사용 (새로 생성하지 않음)
+            if (_punchTween != null && _punchTween.IsActive())
+            {
+                _punchTween.Restart();
+            }
+            
+            // 히트 머티리얼 적용
             _spriteRenderer.sharedMaterial = _hitMaterial;
 
-            string hitEffect = evt._tableData != null ? evt._tableData.Asset_path_hit : AssetPathVFX.DefaultHit;
-            GameObject hit = PoolManager.Instance.GetObject(hitEffect);
-            hit.transform.position = transform.position;
+            // 히트 이펙트 표시 (최적화: 필요한 경우에만 생성)
+            if (!IsDead)
+            {
+                string hitEffect = evt._tableData != null ? evt._tableData.Asset_path_hit : AssetPathVFX.DefaultHit;
+                GameObject hit = PoolManager.Instance.GetObject(hitEffect);
+                if (hit != null)
+                {
+                    hit.transform.position = transform.position;
+                }
+            }
 
             yield return new WaitForSeconds(0.1f);
+            
+            // 기본 머티리얼 복원
             _spriteRenderer.sharedMaterial = _defaultMaterial;
             _isHiting = false;
             

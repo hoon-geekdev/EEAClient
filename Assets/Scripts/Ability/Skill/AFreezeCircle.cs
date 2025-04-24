@@ -53,18 +53,27 @@ namespace EEA.AbilitySystem
             int curCount = 0;
             WaitForSeconds wait = new WaitForSeconds(_tick);
             
-            // DamageEvent 기본 설정
+            // 미리 계산된 값들 캐시
+            float circleRadius = _range / 2;
+            int enemyLayerMask = LayerMask.GetMask("Enemy");
+            Vector3 circleCenter = transform.position;
+            
+            // DamageEvent 기본 설정 - 매 프레임마다 설정하지 않고 한 번만 설정
             _damageEvent.Setup(_owner, _damage, _tableData);
+            
+            // 최대 타겟 수 제한하여 배열 미리 할당
+            const int MAX_TARGETS = 20;
+            Collider2D[] hitColliders = new Collider2D[MAX_TARGETS];
             
             while (curCount++ < maxTickCount)
             {
-                // 2D에서 OverlapCircleAll 사용 (적 레이어만 탐색)
-                Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _range / 2, LayerMask.GetMask("Enemy"));
-
-                foreach (Collider2D collider in colliders)
+                // OverlapCircleNonAlloc을 사용하여 새 배열 할당을 피함
+                int numColliders = Physics2D.OverlapCircleNonAlloc(circleCenter, circleRadius, hitColliders, enemyLayerMask);
+                
+                for (int i = 0; i < numColliders; i++)
                 {
-                    ObjectBase target = collider.GetComponent<ObjectBase>();
-                    if (target == null)
+                    ObjectBase target = hitColliders[i].GetComponent<ObjectBase>();
+                    if (target == null || !target.gameObject.activeSelf)
                         continue;
 
                     target.TakeDamage(_damageEvent);

@@ -25,7 +25,14 @@ namespace EEA.AbilitySystem
 
         private IEnumerator Fire()
         {
-            while (true)
+            WaitForSeconds delayWait = new WaitForSeconds(_delay);
+            
+            // DamageEvent 기본 설정
+            _damageEvent.Setup(_player, _damage, _tableData)
+                        .SetSpeed(_speed)
+                        .SetPenetration(_penetration);
+                                
+            while (gameObject.activeSelf)
             {
                 for (int i = 0; i < _count; ++i)
                 {
@@ -37,21 +44,23 @@ namespace EEA.AbilitySystem
                     Vector3 dir = (targetPos - transform.position).normalized;
 
                     Transform unit = PoolManager.Instance.GetObject(_tableData.Asset_path_unit).transform;
+                    
+                    // 오브젝트가 실제로 얻어졌는지 확인
+                    if (unit == null) continue;
+                    
                     unit.position = transform.position;
                     unit.rotation = Quaternion.FromToRotation(Vector3.up, dir);
 
                     Projectile projectile = unit.GetComponent<Projectile>();
-                    
-                    // DamageEvent 설정 - 재사용
-                    _damageEvent.Setup(_player, _damage, _tableData)
-                                .SetSpeed(_speed)
-                                .SetPenetration(_penetration)
-                                .SetTarget(nearTarget);
-                                
-                    projectile.Init(_damageEvent);
+                    if (projectile != null)
+                    {
+                        // _damageEvent의 타겟만 업데이트
+                        _damageEvent.SetTarget(nearTarget);
+                        projectile.Init(_damageEvent);
+                    }
                 }
 
-                yield return new WaitForSeconds(_delay);
+                yield return delayWait;
             }
         }
     }

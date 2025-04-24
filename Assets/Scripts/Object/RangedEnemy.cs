@@ -75,6 +75,9 @@ namespace EEA.Object
     public class RangedMoveState : EnemyMoveState
     {
         private RangedEnemy _rangedEnemy;
+        private bool _isInAttackRange = false;
+        private float _checkRangeInterval = 0.1f;
+        private float _lastCheckTime = 0f;
 
         public RangedMoveState(RangedEnemy enemy) : base(enemy)
         {
@@ -83,38 +86,59 @@ namespace EEA.Object
 
         public override void Execute()
         {
-            float distanceToPlayer = _enemy.GetDistanceToPlayer();
-            
-            // 공격 범위 안에 있고 공격 가능하면 공격 상태로 전환
-            if (distanceToPlayer <= _enemy.AttackRange && _rangedEnemy.CanAttack)
+            // 불필요한 거리 계산을 줄이기 위해 일정 간격으로만 확인
+            if (Time.time - _lastCheckTime >= _checkRangeInterval)
             {
-                _enemy.ChangeState(eEnemyState.Attack);
+                _lastCheckTime = Time.time;
+                float distanceToPlayer = _enemy.GetDistanceToPlayer();
+                
+                // 공격 범위 안에 있고 공격 가능하면 공격 상태로 전환
+                if (distanceToPlayer <= _enemy.AttackRange && _rangedEnemy.CanAttack)
+                {
+                    _enemy.ChangeState(eEnemyState.Attack);
+                }
             }
         }
 
         public override void FixedExecute()
         {
-            Vector2 dir = _enemy.GetDirectionToPlayer();
-            float distanceToPlayer = _enemy.GetDistanceToPlayer();
+            if (_rigid == null || _collider == null) return;
             
-            // 공격 범위 내에 있으면
-            if (distanceToPlayer <= _enemy.AttackRange)
+            float distanceToPlayer = _enemy.GetDistanceToPlayer();
+            bool wasInAttackRange = _isInAttackRange;
+            _isInAttackRange = distanceToPlayer <= _enemy.AttackRange;
+            
+            // 공격 범위 상태가 변경될 때만 Rigidbody와 Collider 속성 변경
+            if (_isInAttackRange != wasInAttackRange)
             {
-                // Kinematic으로 변경하고 isTrigger 활성화
-                _rigid.bodyType = RigidbodyType2D.Kinematic;
-                _collider.isTrigger = true;
-                
-                return;
+                if (_isInAttackRange)
+                {
+                    // 공격 범위에 들어갔을 때만 Kinematic으로 변경
+                    _rigid.bodyType = RigidbodyType2D.Kinematic;
+                    _collider.isTrigger = true;
+                    _rigid.linearVelocity = Vector2.zero; // linearVelocity 대신 velocity 사용
+                }
+                else
+                {
+                    // 공격 범위에서 벗어났을 때만 Dynamic으로 변경
+                    _rigid.bodyType = RigidbodyType2D.Dynamic;
+                    _collider.isTrigger = false;
+                }
             }
+            
+            // 공격 범위 내에 있으면 이동하지 않음
+            if (_isInAttackRange) return;
 
             // 공격 범위 밖이면 플레이어를 향해 이동
+            Vector2 dir = _enemy.GetDirectionToPlayer();
             Vector2 moveVec = dir * _enemy.MoveSpeed * Time.fixedDeltaTime;
             _rigid.MovePosition(_rigid.position + moveVec);
-            _rigid.linearVelocity = Vector2.zero;
-
-            // 공격 범위 밖이면 Dynamic으로 변경하고 isTrigger 비활성화
-            _rigid.bodyType = RigidbodyType2D.Dynamic;
-            _collider.isTrigger = false;
+            
+            // velocity를 0으로 설정하는 것은 필요할 때만 수행
+            if (_rigid.linearVelocity.sqrMagnitude > 0.01f)
+            {
+                _rigid.linearVelocity = Vector2.zero;
+            }
         }
     }
 
@@ -123,6 +147,7 @@ namespace EEA.Object
     {
         private RangedEnemy _rangedEnemy;
         private bool _hasAttacked = false;
+        private float _attackDelay = 0.3f; // 공격 애니메이션 시작 후 지연
 
         public RangedAttackState(RangedEnemy enemy) : base(enemy)
         {
@@ -134,6 +159,7 @@ namespace EEA.Object
         {
             base.Enter();
             _hasAttacked = false;
+            _attackTimer = 0f;
         }
 
         public override void Execute()
@@ -141,7 +167,7 @@ namespace EEA.Object
             _attackTimer += Time.deltaTime;
             
             // 공격 시작시 한 번만 공격
-            if (!_hasAttacked && _attackTimer >= 0.3f) // 공격 애니메이션 시작 후 약간의 지연
+            if (!_hasAttacked && _attackTimer >= _attackDelay)
             {
                 _hasAttacked = true;
                 _rangedEnemy.Attack();
@@ -152,6 +178,12 @@ namespace EEA.Object
             {
                 _enemy.ChangeState(eEnemyState.Move);
             }
+        }
+        
+        // FixedExecute 메서드는 비워두어 물리 연산 부하 감소
+        public override void FixedExecute() 
+        {
+            // 공격 중에는 물리 연산 수행하지 않음
         }
     }
 } 
