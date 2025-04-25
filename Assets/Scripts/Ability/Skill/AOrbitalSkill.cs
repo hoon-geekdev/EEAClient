@@ -60,7 +60,6 @@ namespace EEA.AbilitySystem
                     trf.SetParent(transform);
                 }
 
-
                 trf.localRotation = Quaternion.identity;
                 trf.localPosition = Vector3.zero;
 

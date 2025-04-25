@@ -24,7 +24,7 @@
     ],
     "Name_key": 99000001,
     "Desc_key": 99000001,
-    "Icon_path": "UI/Temp/Sprites/UI.png[Select 3]",
+    "Icon_path": "UI/Abilities/_1.png",
     "Asset_path": "Prefabs/Ability/AFireBallBody.prefab",
     "Asset_path_unit": "Prefabs/Ability/AFireBallUnit.prefab",
     "Asset_path_hit": "VFX/Electro hit.prefab"
@@ -54,7 +54,7 @@
     ],
     "Name_key": 99000002,
     "Desc_key": 99000002,
-    "Icon_path": "UI/Temp/Sprites/UI.png[Select 3]",
+    "Icon_path": "UI/Abilities/_4.png",
     "Asset_path": "Prefabs/Ability/AFrozonOrbBody.prefab",
     "Asset_path_unit": "Prefabs/Ability/AFrozonOrbUnit.prefab",
     "Asset_path_hit": "VFX/Snow hit.prefab"
@@ -84,7 +84,7 @@
     ],
     "Name_key": 99000003,
     "Desc_key": 99000003,
-    "Icon_path": "UI/Temp/Sprites/UI.png[Select 0]",
+    "Icon_path": "UI/Abilities/_5.png",
     "Asset_path": "Prefabs/Ability/AOrbSphereBody.prefab",
     "Asset_path_unit": "Prefabs/Ability/AOrbSphereUnit.prefab",
     "Asset_path_hit": "VFX/Snow hit.prefab"
@@ -114,7 +114,7 @@
     ],
     "Name_key": 99000004,
     "Desc_key": 99000004,
-    "Icon_path": "UI/Temp/Sprites/UI.png[Select 0]",
+    "Icon_path": "UI/Abilities/_3.png",
     "Asset_path": "Prefabs/Ability/ASlashBody.prefab",
     "Asset_path_unit": "Prefabs/Ability/ASlashUnit.prefab",
     "Asset_path_hit": "VFX/Electro hit.prefab"
@@ -223,7 +223,7 @@
     ],
     "Name_key": 99000008,
     "Desc_key": 99000008,
-    "Icon_path": "UI/Temp/Sprites/UI.png[Select 9]",
+    "Icon_path": "UI/Abilities/_7.png",
     "Asset_path": "Prefabs/Ability/AFreezeCircle.prefab",
     "Asset_path_unit": "",
     "Asset_path_hit": "VFX/Electro hit.prefab"
@@ -253,7 +253,7 @@
     ],
     "Name_key": 99000009,
     "Desc_key": 99000009,
-    "Icon_path": "UI/Temp/Sprites/UI.png[Select 4]",
+    "Icon_path": "UI/Abilities/_2.png",
     "Asset_path": "Prefabs/Ability/AMeteorBody.prefab",
     "Asset_path_unit": "Prefabs/Ability/AMeteorUnit.prefab",
     "Asset_path_hit": "VFX/Electro hit.prefab"
@@ -283,7 +283,7 @@
     ],
     "Name_key": 99000010,
     "Desc_key": 99000010,
-    "Icon_path": "UI/Temp/Sprites/UI.png[Select 6]",
+    "Icon_path": "UI/Abilities/_6.png",
     "Asset_path": "Prefabs/Ability/ALaserBody.prefab",
     "Asset_path_unit": "Prefabs/Ability/ALaserUnit.prefab",
     "Asset_path_hit": "VFX/Electro hit.prefab"

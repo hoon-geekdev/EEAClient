@@ -16,7 +16,7 @@ public class ExcelParser : EditorWindow
     private string secretId = "IKIDIUR9f9WeYFhbFengKirkNlunQoxqTr2y";      // Tencent Cloud에서 제공한 SecretId
     private string secretKey = "kETSBesqY1ECuMZXFivsb5JI1UhfOr53";    // Tencent Cloud에서 제공한 SecretKey
     private string region = "ap-seoul";          // 사용 중인 지역
-    private string _bucket = "o2jam-1311333533"; // COS 버킷 이름
+    private string _bucket = "EEA-1311333533"; // COS 버킷 이름
 
     private string _excelFolderPath = "";
     private string _jsonOutputFolderPath = "";
@@ -214,10 +214,10 @@ public class ExcelParser : EditorWindow
             GenerateHash();
         }
 
-        if (GUILayout.Button("Check Validate & Patch list"))
-        {
-            TableDataValidateCheck.Init();
-        }
+        // if (GUILayout.Button("Check Validate & Patch list"))
+        // {
+        //     TableDataValidateCheck.Init();
+        // }
 
         if (GUILayout.Button("Make DataTableGenerater"))
         {
@@ -225,10 +225,10 @@ public class ExcelParser : EditorWindow
             EditorUtility.RequestScriptReload();
         }
 
-        if (GUILayout.Button("Upload CDN"))
-        {
-            UploadCDN();
-        }
+        // if (GUILayout.Button("Upload CDN"))
+        // {
+        //     UploadCDN();
+        // }
 
         if (GUILayout.Button("Update Server Tables"))
         {
@@ -238,7 +238,7 @@ public class ExcelParser : EditorWindow
         if (GUILayout.Button("Copy to server"))
         {
             string fromPath = $"{Application.dataPath}/Scripts/DataTable";
-            string toPath = $"{_serverRootPath}/o2jam-server/DataTable";
+            string toPath = $"{_serverRootPath}/DataTable";
             CopyCSFiles(fromPath, toPath);
         }
 
@@ -752,7 +752,7 @@ public class TableDataValidateCheck : EditorWindow
     private Vector2 _scrollPosDuplicateItems;
     private bool _duplicateItemsLoaded = false;
     private bool _patchListLoaded = false;
-    private string _cdnObjectAddress = "https://o2jam-1311333533.cos.ap-seoul.myqcloud.com/table";
+    private string _cdnObjectAddress = "https://EEA-1311333533.cos.ap-seoul.myqcloud.com/table";
     public static void Init()
     {
         TableDataValidateCheck window = GetWindow<TableDataValidateCheck>();
