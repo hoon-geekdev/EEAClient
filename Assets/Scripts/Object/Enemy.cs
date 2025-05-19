@@ -211,19 +211,26 @@ namespace EEA.Object
             while (gameObject.activeSelf)
             {
                 // Player가 없으면 확인 중단
-                if (playerTransform == null) break;
+                if (playerTransform == null) 
+                    break;
                 
                 Vector3 dist = playerTransform.position - transform.position;
-                
-                // 제곱근 계산을 피하기 위해 sqrMagnitude 사용 
-                if (dist.sqrMagnitude >= 400f) // 20^2 = 400
+
+                if (dist.magnitude > 20f)
                 {
-                    Vector3 randomPos = new Vector3(
-                        Random.Range(10f, 15f), 
-                        Random.Range(5f, 10f), 
-                        0f
-                    );
-                    transform.Translate(randomPos + dist.normalized * 10f);
+                    // 플레이어가 바라보는 방향
+                    Vector3 lookDir = playerTransform.forward.normalized;
+
+                    // XZ 방향 거리
+                    float randomDistance = Random.Range(10f, 15f);
+
+                    // Y값은 10 ~ 15 사이 랜덤
+                    float randomY = Random.Range(7f, 10f);
+
+                    Vector3 targetPosition = playerTransform.position + lookDir * randomDistance;
+                    targetPosition.y = randomY;
+
+                    transform.position = targetPosition;
                 }
 
                 yield return wait;
@@ -236,23 +243,21 @@ namespace EEA.Object
             if (IsDead) return;
             
             // 플레이어와의 충돌만 처리
-            if (collision.CompareTag("Player"))
+            if (collision.CompareTag("Player") == false)
+                return;
+            
+            if (_isCollidingWithPlayer == true)
+                return;
+        
+            ObjectBase playerObj = collision.GetComponent<ObjectBase>();
+            if (playerObj != null)
             {
-                // 아직 콜라이딩 상태가 아닐 때만 처리
-                if (!_isCollidingWithPlayer)
-                {
-                    // 플레이어 컴포넌트 캐싱
-                    ObjectBase playerObj = collision.GetComponent<ObjectBase>();
-                    if (playerObj != null)
-                    {
-                        // 초기 데미지 적용
-                        playerObj.TakeDamage(_damageEvent);
-                        
-                        // 지속 데미지 코루틴 시작
-                        _isCollidingWithPlayer = true;
-                        StartCoroutine(DealDamageOverTime(collision));
-                    }
-                }
+                // 초기 데미지 적용
+                playerObj.TakeDamage(_damageEvent);
+                
+                // 지속 데미지 코루틴 시작
+                _isCollidingWithPlayer = true;
+                StartCoroutine(DealDamageOverTime(collision));
             }
         }
 
@@ -377,7 +382,7 @@ namespace EEA.Object
             
             PoolManager.Instance.GetEffect(0).transform.position = transform.position;
             yield return new WaitForSeconds(0.8f);
-            gameObject.SetActive(false);
+            StageManager.Instance.DespawnObject(this);
         }
 
         public virtual void Attack()

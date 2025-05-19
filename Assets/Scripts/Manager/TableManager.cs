@@ -21,13 +21,7 @@ namespace EEA.Manager
 {
     public class TableManager : SingletonMono<TableManager>
     {
-#if DEVELOPMENT
-        private string _url = "https://EEA-1311333533.cos.ap-seoul.myqcloud.com/table/Dev";
-#elif USE_LOCAL_TABLE && UNITY_EDITOR
         private string _url = "";
-#else
-        private string _url = "https://EEA-1311333533.cos.ap-seoul.myqcloud.com/table/Dev";
-#endif
         private List<string> _patchList = new List<string>();
         private int _retryCount = 0;
         private Dictionary<string, Dictionary<int, BaseTable>> _tables = new Dictionary<string, Dictionary<int, BaseTable>>();

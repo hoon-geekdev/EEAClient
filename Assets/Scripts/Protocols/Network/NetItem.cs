@@ -15,7 +15,12 @@ namespace EEA.Protocols
             return HTTPInstance.Instance.SendPostRequestAsync("item/acquire", req, onComplete);
         }
 
-        public IEnumerator GetItemListAsync(Action<ItemListRes> onComplete = null)
+        public void GetItemListAsync(Action<ItemListRes> onComplete = null)
+        {
+            CoroutineHelper.Instance.StartCoroutine(GetItemListCoroutine(onComplete));
+        }
+
+        public IEnumerator GetItemListCoroutine(Action<ItemListRes> onComplete = null)
         {
             ItemListReq req = new ItemListReq();
             ItemManager.Instance.ClearItems();

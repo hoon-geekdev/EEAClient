@@ -68,6 +68,8 @@ namespace EEA.Define
         public const string UIJoystick = "UI/UIJoystick/UIJoystick.prefab";
         public const string UIDamageText = "UI/UIDamageText/UIDamageText.prefab";
         public const string UIMonsterHealth = "UI/UIMonsterHP/UIMonsterHealth.prefab";
+        public const string UISystemPopup = "UI/UISystemPopup/UISystemPopup.prefab";
+        public const string UIInventory = "UI/UIInventory/UIInventory.prefab";
     }
 
     // 기본 데미지 이벤트 클래스

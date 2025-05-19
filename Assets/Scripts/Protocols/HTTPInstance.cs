@@ -1,4 +1,5 @@
 using EEA.Manager;
+using EEA.Utils;
 using Newtonsoft.Json;
 using Protocols;
 using System;
@@ -22,12 +23,12 @@ namespace EEA.Manager
 
         public void SendPostRequest<T>(string url, object obj, Action<T> action)
         {
-            GameManager.Instance.StartCoroutine(SendWebRequest(url, UnityWebRequest.kHttpVerbPOST, obj, action));
+            CoroutineHelper.Instance.StartCoroutine(SendWebRequest(url, UnityWebRequest.kHttpVerbPOST, obj, action));
         }
 
         public IEnumerator SendPostRequestAsync<T>(string url, object obj, Action<T> action)
         {
-            yield return GameManager.Instance.StartCoroutine(SendWebRequest(url, UnityWebRequest.kHttpVerbPOST, obj, action));
+            yield return CoroutineHelper.Instance.StartCoroutine(SendWebRequest(url, UnityWebRequest.kHttpVerbPOST, obj, action));
         }
 
         private IEnumerator SendWebRequest<T>(string url, string method, object obj, Action<T> onCmdComplete)
@@ -47,7 +48,7 @@ namespace EEA.Manager
                 uwr.uploadHandler = new UploadHandlerRaw(jsonBytes);
                 uwr.downloadHandler = new DownloadHandlerBuffer();
 
-                string token = GameManager.Instance.Token;
+                string token = AccountInfo.Token;
                 if (token != "")
                     uwr.SetRequestHeader("Authorization", "Bearer " + token);
 

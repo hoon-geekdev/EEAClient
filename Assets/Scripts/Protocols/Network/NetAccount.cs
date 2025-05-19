@@ -1,5 +1,5 @@
 using EEA.Manager;
-using EEA.Manager;
+using EEA.Utils;
 using Protocols;
 using System;
 using UnityEngine;
@@ -16,7 +16,7 @@ namespace EEA.Protocols
                 if (res.Token != null)
                 {
                     Debug.Log($"Login Success - Token: {res.Token}");
-                    GameManager.Instance.SetToken(res.Token);
+                    AccountInfo.SetToken(res.Token);
                 }
                 else
                 {
@@ -37,7 +37,7 @@ namespace EEA.Protocols
                 if (res.Token != null)
                 {
                     Debug.Log($"Login Success - Token: {res.Token}");
-                    GameManager.Instance.SetToken(res.Token);
+                    AccountInfo.SetToken(res.Token);
                 }
                 else
                 {

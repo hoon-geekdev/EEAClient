@@ -6,7 +6,7 @@ namespace EEA.Manager
 {
     public class ItemManager : Singleton<ItemManager>
     {
-        private Dictionary<long, ItemDto> _items;
+        private Dictionary<long, ItemDto> _items = new Dictionary<long, ItemDto>();
         public void ClearItems()
         {
             // 아이템 목록 초기화
@@ -26,6 +26,11 @@ namespace EEA.Manager
         public ItemDto GetItem(long itemId)
         {
             return _items.TryGetValue(itemId, out var item) ? item : null;
+        }
+
+        public List<ItemDto> GetItems()
+        {
+            return new List<ItemDto>(_items.Values);
         }
     }
 }

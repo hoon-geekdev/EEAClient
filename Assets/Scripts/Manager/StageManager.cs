@@ -1,4 +1,6 @@
+using EEA.Define;
 using EEA.Object;
+using EEA.UI;
 using System.Collections;
 using System.Collections.Generic;
 using TableData;
@@ -12,9 +14,11 @@ namespace EEA.Manager
         private int _stageCode;
         private int _currentWaveIndex;
         public List<WaveData[]> _waveDatas = new List<WaveData[]>();
+        private List<ObjectBase> _spawnObjects = new List<ObjectBase>();
 
         public void SetStage(int stageCode)
         {
+            _spawnObjects.Clear();
             _waveDatas.Clear();
             _stageCode = stageCode;
             _currentWaveIndex = 0;
@@ -58,8 +62,12 @@ namespace EEA.Manager
 
         public void Update()
         {
-            if (_waveDatas.Count == 0 || _currentWaveIndex >= _waveDatas.Count)
+            if (_waveDatas.Count == 0 || _currentWaveIndex >= _waveDatas.Count) {
+                if (_spawnObjects.Count == 0 && UIManager.Instance.GetUI<UISystemPopup>() == null) {
+                    UIManager.Instance.CreateUI<UISystemPopup>(AssetPathUI.UISystemPopup);
+                }
                 return;
+            }
 
             bool isWaveEnd = true;
             for (int i = 0; i < _waveDatas[_currentWaveIndex].Length; i++)
@@ -93,6 +101,11 @@ namespace EEA.Manager
             }
         }
 
+        public void DespawnObject(ObjectBase obj) {
+            _spawnObjects.Remove(obj);
+            obj.gameObject.SetActive(false);
+        }
+
         private IEnumerator SpawnWave(WaveData waveData)
         {
             WaitForSeconds wait = new WaitForSeconds(waveData._spawnTime);
@@ -113,6 +126,8 @@ namespace EEA.Manager
                 GameObject go = PoolManager.Instance.GetObject(objectData.Asset_path);
                 Enemy enemy = go.GetComponent<Enemy>();
                 enemy.Init(objectData.Code);
+
+                _spawnObjects.Add(enemy);
 
                 switch (waveData._spawnAreaType)
                     {

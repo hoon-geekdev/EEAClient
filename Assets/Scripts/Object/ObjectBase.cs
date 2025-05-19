@@ -15,6 +15,7 @@ namespace EEA.Object
         protected SpriteRenderer _spriteRenderer;
         protected Collider2D _collider;
         protected Animator _animator;
+        public Animator Animator => _animator;
 
         public bool IsDead => _health <= 0;
         public float Health => _health;

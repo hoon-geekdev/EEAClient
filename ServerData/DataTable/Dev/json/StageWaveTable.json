@@ -5,7 +5,7 @@
     "Wave": 1,
     "Time": 0.0,
     "Monster_id": 13000001,
-    "Spawn_count": 100,
+    "Spawn_count": 30,
     "Spawn_interval": 0.5,
     "Spawn_area": "random"
   },
@@ -15,7 +15,7 @@
     "Wave": 1,
     "Time": 10.0,
     "Monster_id": 13000002,
-    "Spawn_count": 100,
+    "Spawn_count": 30,
     "Spawn_interval": 0.5,
     "Spawn_area": "random"
   },
@@ -25,7 +25,7 @@
     "Wave": 1,
     "Time": 20.0,
     "Monster_id": 13000003,
-    "Spawn_count": 100,
+    "Spawn_count": 5,
     "Spawn_interval": 0.5,
     "Spawn_area": "random"
   },
@@ -35,7 +35,7 @@
     "Wave": 1,
     "Time": 30.0,
     "Monster_id": 13000004,
-    "Spawn_count": 100,
+    "Spawn_count": 30,
     "Spawn_interval": 0.5,
     "Spawn_area": "random"
   },
@@ -45,7 +45,7 @@
     "Wave": 1,
     "Time": 40.0,
     "Monster_id": 13000005,
-    "Spawn_count": 100,
+    "Spawn_count": 30,
     "Spawn_interval": 0.5,
     "Spawn_area": "random"
   },
@@ -75,7 +75,7 @@
     "Wave": 2,
     "Time": 0.0,
     "Monster_id": 13000004,
-    "Spawn_count": 100,
+    "Spawn_count": 30,
     "Spawn_interval": 0.5,
     "Spawn_area": "random"
   },
@@ -95,7 +95,7 @@
     "Wave": 2,
     "Time": 20.0,
     "Monster_id": 13000004,
-    "Spawn_count": 100,
+    "Spawn_count": 30,
     "Spawn_interval": 0.5,
     "Spawn_area": "left"
   },
@@ -115,7 +115,7 @@
     "Wave": 2,
     "Time": 40.0,
     "Monster_id": 13000005,
-    "Spawn_count": 100,
+    "Spawn_count": 30,
     "Spawn_interval": 0.5,
     "Spawn_area": "random"
   },

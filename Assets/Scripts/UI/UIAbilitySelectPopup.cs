@@ -20,6 +20,7 @@ namespace EEA.UI
         private void OnDisable()
         {
             GameManager.Instance.GameResume();
+            UIManager.Instance.DestroyUI(this);
         }
 
         private void RandomPeak()

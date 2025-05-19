@@ -7,6 +7,7 @@ namespace EEA.Manager
         public NetAdmin Admin { get; private set; } = new NetAdmin();
         public NetAccount Account { get; private set; } = new NetAccount();
         public NetItem Item { get; private set; } = new NetItem();
+        public NetStage Stage { get; private set; } = new NetStage();
         public NetUpdatePacket UpdatePacket { get; private set; } = new NetUpdatePacket();
 
         override protected void OnInit()

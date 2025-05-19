@@ -1,11 +1,11 @@
 [
   {
     "fileName": "StageTable.bin",
-    "md5Hash": "e4923b074498338dc8ae250312aff4fd"
+    "md5Hash": "7e45e28fb1d23dc442f41fc5f4a0312a"
   },
   {
     "fileName": "StageWaveTable.bin",
-    "md5Hash": "557fbd73838ad3160466d9ab33c6c754"
+    "md5Hash": "f95e8b4fd613100a1a963c0ee4b61e61"
   },
   {
     "fileName": "ObjectTable.bin",
@@ -13,7 +13,7 @@
   },
   {
     "fileName": "ItemTable.bin",
-    "md5Hash": "67a9ac77dc9f566c72ca47e781a1a140"
+    "md5Hash": "630aae311e41e2b5398edc7829a0b1ee"
   },
   {
     "fileName": "AbilityTable.bin",

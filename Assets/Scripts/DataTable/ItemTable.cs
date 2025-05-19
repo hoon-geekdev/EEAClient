@@ -12,6 +12,7 @@ namespace TableData {
 		public float Ability { get; set; }
 		public string Drop_icon_path { get; set; }
 		public string Asset_path { get; set; }
+		public string Icon_path { get; set; }
 		
     }
 }

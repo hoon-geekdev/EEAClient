@@ -9,7 +9,8 @@
     "Evolution_code": 0,
     "Ability": 0.0,
     "Drop_icon_path": "",
-    "Asset_path": ""
+    "Asset_path": "",
+    "Icon_path": ""
   },
   {
     "Code": 14000002,
@@ -21,7 +22,8 @@
     "Evolution_code": 0,
     "Ability": 0.0,
     "Drop_icon_path": "",
-    "Asset_path": ""
+    "Asset_path": "",
+    "Icon_path": ""
   },
   {
     "Code": 14000010,
@@ -33,7 +35,8 @@
     "Evolution_code": 0,
     "Ability": 1.0,
     "Drop_icon_path": "UI/Temp/DropItem/exp_1.png",
-    "Asset_path": "Object/DropItem/DropItemExp.prefab"
+    "Asset_path": "Object/DropItem/DropItemExp.prefab",
+    "Icon_path": ""
   },
   {
     "Code": 14000011,
@@ -45,7 +48,8 @@
     "Evolution_code": 0,
     "Ability": 3.0,
     "Drop_icon_path": "UI/Temp/DropItem/exp_2.png",
-    "Asset_path": "Object/DropItem/DropItemExp.prefab"
+    "Asset_path": "Object/DropItem/DropItemExp.prefab",
+    "Icon_path": ""
   },
   {
     "Code": 14000012,
@@ -57,6 +61,33 @@
     "Evolution_code": 0,
     "Ability": 6.0,
     "Drop_icon_path": "UI/Temp/DropItem/exp_3.png",
-    "Asset_path": "Object/DropItem/DropItemExp.prefab"
+    "Asset_path": "Object/DropItem/DropItemExp.prefab",
+    "Icon_path": ""
+  },
+  {
+    "Code": 14000013,
+    "Unique_name": "해머",
+    "Type": 3,
+    "Single_stack": 1,
+    "Parts_code": 0,
+    "Level_code": 0,
+    "Evolution_code": 0,
+    "Ability": 10.0,
+    "Drop_icon_path": "",
+    "Asset_path": "",
+    "Icon_path": "UI/Items/_1.png"
+  },
+  {
+    "Code": 14000014,
+    "Unique_name": "방패",
+    "Type": 4,
+    "Single_stack": 1,
+    "Parts_code": 0,
+    "Level_code": 0,
+    "Evolution_code": 0,
+    "Ability": 10.0,
+    "Drop_icon_path": "",
+    "Asset_path": "",
+    "Icon_path": "UI/Items/_2.png"
   }
 ]

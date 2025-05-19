@@ -84,6 +84,11 @@ namespace EEA.Object
             _rangedEnemy = enemy;
         }
 
+        public override void Enter()
+        {
+            base.Enter();
+        }
+
         public override void Execute()
         {
             // 불필요한 거리 계산을 줄이기 위해 일정 간격으로만 확인
@@ -127,7 +132,9 @@ namespace EEA.Object
             }
             
             // 공격 범위 내에 있으면 이동하지 않음
-            if (_isInAttackRange) return;
+            // if (_isInAttackRange)  {
+            //     return;
+            // }
 
             // 공격 범위 밖이면 플레이어를 향해 이동
             Vector2 dir = _enemy.GetDirectionToPlayer();

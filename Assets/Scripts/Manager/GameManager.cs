@@ -20,9 +20,7 @@ namespace EEA.Manager
         public int KillCount => _killCount;
         public float GameTime => _time;
         public Material SharedHitMaterial => _sharedHitMaterial;
-        public string Token => _token;
 
-        private string _token;
         private int _level;
         private int _killCount;
         private int _exp;
@@ -73,11 +71,6 @@ namespace EEA.Manager
         private void Update()
         {
             _time += Time.deltaTime;
-        }
-
-        public void SetToken(string token)
-        {
-            _token = token;
         }
         
         public void ShakeCamera()
